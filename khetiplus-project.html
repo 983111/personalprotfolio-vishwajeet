@@ -201,6 +201,7 @@
             overflow: hidden;
             border: 1px solid var(--border);
             transition: transform 0.3s;
+            position: relative;
         }
 
         .screenshot-box:hover {
@@ -212,6 +213,19 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        .screenshot-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--green);
+            font-weight: 600;
         }
 
         .metrics {
@@ -270,6 +284,7 @@
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -285,6 +300,23 @@
         .btn:hover {
             background: var(--green);
             transform: translateY(-3px);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         @media (max-width: 768px) {
@@ -311,9 +343,9 @@
         <section>
             <h2>🚀 Overview</h2>
             <div class="card">
-                <p>KhetiAI is an AI-powered digital agriculture platform built to help farmers across India manage their operations more efficiently. The platform combines crop disease detection, weather forecasting, budget tracking, and an equipment marketplace into one comprehensive mobile application.</p>
-                <p>Started in June 2025, I led a team of 7 members from around the world to build a solution that addresses real problems faced by farmers in Maharashtra and Telangana. The app integrates Google's Gemini 2.5 Flash for AI-powered crop disease detection, providing instant analysis and treatment recommendations.</p>
-                <p>What makes KhetiAI different is that it's built by someone who understands farming. My family runs an agriculture shop, and I've helped farmers apply for government subsidies. This direct experience shaped every feature in the app.</p>
+                <p>KhetiAI started from a simple observation: farmers in my area struggled with crop diseases but had no quick way to identify or treat them. Having helped farmers at my family's agriculture shop, I saw this problem firsthand.</p>
+                <p>So in June 2025, I started building KhetiAI - a mobile app that uses AI to detect crop diseases instantly. But it became more than that. Farmers also needed help managing budgets, finding equipment to rent, checking weather, and planning their tasks. So we built all of that into one platform.</p>
+                <p>I led a team of 7 people from different countries to build this. The app uses Google's Gemini 2.5 Flash AI model, which analyzes crop photos and tells farmers exactly what's wrong and how to fix it. We also added a marketplace where farmers can rent tractors and equipment, a budget tracker, weather forecasts, and a task scheduler.</p>
             </div>
         </section>
 
@@ -322,27 +354,27 @@
             <div class="features">
                 <div class="feature">
                     <h3>AI Crop Disease Detection</h3>
-                    <p>Upload a photo of your crop, and our AI instantly identifies the plant type, disease name, severity level, and provides step-by-step treatment instructions</p>
+                    <p>Snap a photo of your crop. Our AI tells you the plant type, what disease it has, how severe it is, and exactly what treatment to use</p>
                 </div>
                 <div class="feature">
                     <h3>Budget Management</h3>
-                    <p>Track daily, monthly, and yearly expenses with income/expense categorization and savings goals</p>
+                    <p>Track your income and expenses daily, monthly, or yearly. See where your money goes and plan better</p>
                 </div>
                 <div class="feature">
                     <h3>Equipment Marketplace</h3>
-                    <p>Buy or rent farming equipment like tractors, harvesters, and tools from local sellers</p>
+                    <p>Need a tractor or harvester? Browse local listings to buy or rent farming equipment</p>
                 </div>
                 <div class="feature">
                     <h3>Weather Forecasting</h3>
-                    <p>Real-time weather data including temperature, humidity, wind speed, and forecasts for better planning</p>
+                    <p>Get real-time weather data - temperature, humidity, wind speed. Plan your farming activities accordingly</p>
                 </div>
                 <div class="feature">
                     <h3>Task Scheduler</h3>
-                    <p>Plan farming activities with reminders for watering, fertilizing, and harvesting</p>
+                    <p>Set reminders for watering, fertilizing, harvesting. Never miss an important farming task</p>
                 </div>
                 <div class="feature">
                     <h3>OTP Authentication</h3>
-                    <p>Secure Firebase-based phone authentication for easy and safe user access</p>
+                    <p>Simple phone-based login using Firebase. No passwords to remember</p>
                 </div>
             </div>
         </section>
@@ -352,7 +384,7 @@
             
             <div class="code-section">
                 <h3>Gemini API Integration</h3>
-                <p style="color: var(--text-dim); margin-bottom: 1rem;">The disease detection system uses a Cloudflare Worker to handle image uploads and communicate with Gemini's API. Here's how we handle retries when the API is rate-limited:</p>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">I built a Cloudflare Worker to handle the AI requests. The tricky part was handling rate limits from Google's API. Here's how I implemented retry logic with exponential backoff:</p>
 <pre>let apiResponse;
 for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     try {
@@ -386,8 +418,8 @@ for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
             </div>
 
             <div class="code-section">
-                <h3>Structured Response Format</h3>
-                <p style="color: var(--text-dim); margin-bottom: 1rem;">We use JSON schema to force the AI to return consistent results every time:</p>
+                <h3>Structured JSON Responses</h3>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">The AI needs to return consistent data every time. I enforce this using a JSON schema that guarantees we always get plant type, disease name, severity, and treatment steps:</p>
 <pre>const responseSchema = {
     type: "OBJECT",
     properties: {
@@ -429,7 +461,7 @@ for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
         <section>
             <h2>📊 Data Pipeline</h2>
             <div class="flow">
-                <p style="color: var(--text-dim); margin-bottom: 1rem;">How disease detection works from start to finish:</p>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">Here's how the disease detection works from start to finish:</p>
                 <div class="flow-steps">
                     <div class="step">User Upload</div>
                     <span class="arrow">→</span>
@@ -445,35 +477,50 @@ for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
         </section>
 
         <section>
-            <h2>📱 Screenshots</h2>
+            <h2>📱 App Screenshots</h2>
             <div class="screenshots">
                 <div class="screenshot-box">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2339FF14' font-size='20' text-anchor='middle'%3EOnboarding%3C/text%3E%3C/svg%3E" alt="Onboarding">
+                    <img src="https://drive.google.com/uc?export=view&id=15To4WAA6N-_WeAdxsyTXlZlxd2huVMH1" alt="Welcome Screen">
+                    <div class="screenshot-label">Welcome Screen</div>
                 </div>
                 <div class="screenshot-box">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2300A3FF' font-size='20' text-anchor='middle'%3EWeather%3C/text%3E%3C/svg%3E" alt="Weather">
+                    <img src="https://drive.google.com/uc?export=view&id=1Ty-nHMgyJsmA7Xg7CAIyFdwD4gNG_Bze" alt="Weather">
+                    <div class="screenshot-label">Weather Forecast</div>
                 </div>
                 <div class="screenshot-box">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2339FF14' font-size='20' text-anchor='middle'%3EBudget%3C/text%3E%3C/svg%3E" alt="Budget">
+                    <img src="https://drive.google.com/uc?export=view&id=13esN-TcTo7XOsXsvEVmo-iE0AmaOvc3R" alt="Budget">
+                    <div class="screenshot-label">Budget Tracking</div>
                 </div>
                 <div class="screenshot-box">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2300A3FF' font-size='20' text-anchor='middle'%3EDisease Detection%3C/text%3E%3C/svg%3E" alt="Disease">
+                    <img src="https://drive.google.com/uc?export=view&id=1t-byQcqtuWqQtoGy35FN9Hrbub4Ol1lR" alt="Disease Detection">
+                    <div class="screenshot-label">AI Disease Detection</div>
                 </div>
                 <div class="screenshot-box">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2339FF14' font-size='20' text-anchor='middle'%3EMarketplace%3C/text%3E%3C/svg%3E" alt="Marketplace">
+                    <img src="https://drive.google.com/uc?export=view&id=1oi3VoW_gnQ0SwlPU09iKLlHwRTOqb_Xv" alt="Marketplace">
+                    <div class="screenshot-label">Equipment Marketplace</div>
                 </div>
                 <div class="screenshot-box">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2300A3FF' font-size='20' text-anchor='middle'%3ETask Scheduler%3C/text%3E%3C/svg%3E" alt="Tasks">
+                    <img src="https://drive.google.com/uc?export=view&id=1PGCqwg7mFZRKmUg4uYwDAXavPc_X8Flq" alt="Tasks">
+                    <div class="screenshot-label">Task Scheduler</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=13_W3d5I3eD7GAaULc3olAdiJUOvu5dIg" alt="Profile">
+                    <div class="screenshot-label">User Profile</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=1tw2aw43JpyjuCVXzN57ozCic3NTqf2w1" alt="Settings">
+                    <div class="screenshot-label">Settings</div>
                 </div>
             </div>
-            <p style="color: var(--text-dim); margin-top: 1rem;">Note: Replace placeholder images with actual screenshots by updating the src attributes</p>
         </section>
 
         <section>
             <h2>🎥 Demo Video</h2>
             <div class="card">
-                <iframe width="100%" height="500" src="https://drive.google.com/file/d/YOUR_VIDEO_ID/preview" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
-                <p style="margin-top: 1rem;">Watch the full demo showing disease detection, marketplace, weather, and budget features in action</p>
+                <div class="video-wrapper">
+                    <iframe src="https://drive.google.com/file/d/12-85fACzZrOu8bsQ7XZNZIJJ_9b_ffbu/preview" allow="autoplay"></iframe>
+                </div>
+                <p style="margin-top: 1rem;">Full walkthrough showing disease detection, marketplace browsing, weather updates, and budget management</p>
             </div>
         </section>
 
@@ -481,7 +528,7 @@ for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
             <h2>📈 Impact</h2>
             <div class="metrics">
                 <div class="metric">
-                    <span class="number">6,000+</span>
+                    <span class="number">6K+</span>
                     <span class="label">Instagram Followers</span>
                 </div>
                 <div class="metric">
@@ -489,55 +536,57 @@ for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
                     <span class="label">Team Members</span>
                 </div>
                 <div class="metric">
-                    <span class="number">2026</span>
-                    <span class="label">Planned Launch</span>
+                    <span class="number">Early 2026</span>
+                    <span class="label">Launch Date</span>
                 </div>
                 <div class="metric">
                     <span class="number">MVP</span>
-                    <span class="label">Status</span>
+                    <span class="label">Live</span>
                 </div>
             </div>
             <div class="card" style="margin-top: 2rem;">
-                <p>The platform is actively used by farmers in Maharashtra and Telangana regions. We're receiving regular feedback from our social media community, which is helping us refine features before the full launch in early 2026.</p>
+                <p>We're getting regular feedback from farmers in Maharashtra and Telangana who are testing the app. They're telling us what works and what doesn't, which helps us improve before the full launch.</p>
             </div>
         </section>
 
         <section>
             <h2>💡 What I Learned</h2>
             <ul class="learnings">
-                <li>Leading a small but efficient team across different time zones taught me the importance of clear communication and setting realistic milestones</li>
-                <li>Working with developers from different countries gave me experience in managing global talent and understanding different work cultures</li>
-                <li>Got hands-on experience with Flutter development by coordinating closely with our mobile developers</li>
-                <li>Biggest challenge was convincing talented developers to work on a revenue-sharing model with no upfront payment. Had to sell the vision and potential</li>
-                <li>Time management became critical since most team members were college students juggling academics and development</li>
-                <li>The most important lesson: just start. Things fall into place when you invest time and don't give up</li>
-                <li>Learned to protect my idea while staying open to feedback and iteration</li>
+                <li>Managing a remote team across time zones is harder than I thought. Clear communication and realistic deadlines became essential</li>
+                <li>Working with developers from different countries taught me how to adapt to different work styles and cultures</li>
+                <li>I learned Flutter by working closely with our mobile developers and asking tons of questions</li>
+                <li>Hardest part: convincing good developers to work for revenue share instead of upfront payment. Had to really sell the vision</li>
+                <li>Most of us were students juggling classes and development. Time management became critical</li>
+                <li>Biggest lesson: just start building. Don't wait for everything to be perfect. Things work out when you put in the time</li>
+                <li>You have to believe in your idea and protect it, but also stay open to feedback</li>
             </ul>
         </section>
 
         <section>
-            <h2>🔮 Future Plans</h2>
+            <h2>🔮 What's Next</h2>
             <div class="card">
-                <p><strong>AI Fertilizer Recommendations:</strong> Suggest the right fertilizers based on soil type, crop, and season</p>
+                <p><strong>AI Fertilizer Recommendations:</strong> Tell farmers which fertilizers to use based on their soil and crops</p>
             </div>
             <div class="card">
-                <p><strong>Government Form Automation:</strong> Help farmers fill and submit subsidy forms automatically</p>
+                <p><strong>Government Form Automation:</strong> Auto-fill subsidy forms for farmers so they don't have to deal with paperwork</p>
             </div>
             <div class="card">
-                <p><strong>Agriculture News Feed:</strong> Curated news about farming policies, weather alerts, and market prices</p>
+                <p><strong>Agriculture News:</strong> Daily updates on farming policies, weather alerts, and market prices</p>
             </div>
             <div class="card">
-                <p><strong>Regional Expansion:</strong> Add support for more Indian languages and regions beyond Maharashtra and Telangana</p>
+                <p><strong>More Languages:</strong> Add support for regional Indian languages beyond English and Hindi</p>
             </div>
             <div class="card">
-                <p><strong>Offline Mode:</strong> Allow farmers to use core features even without internet connectivity</p>
+                <p><strong>Offline Mode:</strong> Let farmers use basic features even without internet</p>
             </div>
         </section>
 
         <div class="links">
-            <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="btn">Visit Website</a>
+            <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="btn">Live Website</a>
             <a href="https://www.instagram.com/khetiplus.ai/" class="btn">Instagram</a>
             <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="btn">View Proofs</a>
+            <a href="https://drive.google.com/uc?export=download&id=1OulEQD1p9swolZzoK1ZIdOzY4LMmgR8W" class="btn">App Repo</a>
+            <a href="https://drive.google.com/uc?export=download&id=1pF7QTcYHOeAsRRKzKGBELuXlOtP0bUE3" class="btn">Website Repo</a>
         </div>
     </div>
 </body>
