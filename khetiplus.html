@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhetiAI Project - Vishwajeet Adkine</title>
+    <style>
+        :root {
+            --bg-dark: #0A0A0A;
+            --bg-card: #1C1C1C;
+            --text-main: #FFFFFF;
+            --text-dim: #B0B0B0;
+            --blue: #00A3FF;
+            --green: #39FF14;
+            --border: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .project-title {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--green);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--blue);
+            margin-bottom: 3rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .feature h3 {
+            color: var(--green);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .code-section {
+            background: #0d1117;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        .code-section h3 {
+            color: var(--green);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        pre {
+            color: #c9d1d9;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .flow {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .flow-steps {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .step {
+            background: linear-gradient(135deg, var(--blue), #0080cc);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .arrow {
+            color: var(--green);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .screenshot-box {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .screenshot-box:hover {
+            transform: scale(1.05);
+            border-color: var(--blue);
+        }
+
+        .screenshot-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metric {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .metric .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--green);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric .label {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        .learnings li {
+            background: var(--bg-card);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--green);
+            color: var(--text-dim);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--border);
+            color: var(--text-main);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background: var(--blue);
+            color: var(--bg-dark);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--green);
+            transform: translateY(-3px);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .project-title { font-size: 2.5rem; }
+            .flow-steps { flex-direction: column; }
+            .arrow { transform: rotate(90deg); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">VA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">← Back to Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="project-title">KhetiAI</h1>
+        <p class="subtitle">AI-Powered Agriculture Platform</p>
+
+        <section>
+            <h2>🚀 Overview</h2>
+            <div class="card">
+                <p>KhetiAI started from a simple observation: farmers in my area struggled with crop diseases but had no quick way to identify or treat them. Having helped farmers at my family's agriculture shop, I saw this problem firsthand.</p>
+                <p>So in June 2025, I started building KhetiAI - a mobile app that uses AI to detect crop diseases instantly. But it became more than that. Farmers also needed help managing budgets, finding equipment to rent, checking weather, and planning their tasks. So we built all of that into one platform.</p>
+                <p>I led a team of 7 people from different countries to build this. The app uses Google's Gemini 2.5 Flash AI model, which analyzes crop photos and tells farmers exactly what's wrong and how to fix it. We also added a marketplace where farmers can rent tractors and equipment, a budget tracker, weather forecasts, and a task scheduler.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>AI Crop Disease Detection</h3>
+                    <p>Snap a photo of your crop. Our AI tells you the plant type, what disease it has, how severe it is, and exactly what treatment to use</p>
+                </div>
+                <div class="feature">
+                    <h3>Budget Management</h3>
+                    <p>Track your income and expenses daily, monthly, or yearly. See where your money goes and plan better</p>
+                </div>
+                <div class="feature">
+                    <h3>Equipment Marketplace</h3>
+                    <p>Need a tractor or harvester? Browse local listings to buy or rent farming equipment</p>
+                </div>
+                <div class="feature">
+                    <h3>Weather Forecasting</h3>
+                    <p>Get real-time weather data - temperature, humidity, wind speed. Plan your farming activities accordingly</p>
+                </div>
+                <div class="feature">
+                    <h3>Task Scheduler</h3>
+                    <p>Set reminders for watering, fertilizing, harvesting. Never miss an important farming task</p>
+                </div>
+                <div class="feature">
+                    <h3>OTP Authentication</h3>
+                    <p>Simple phone-based login using Firebase. No passwords to remember</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧩 Technical Details</h2>
+            
+            <div class="code-section">
+                <h3>Gemini API Integration</h3>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">I built a Cloudflare Worker to handle the AI requests. The tricky part was handling rate limits from Google's API. Here's how I implemented retry logic with exponential backoff:</p>
+<pre>let apiResponse;
+for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            apiResponse = await response.json();
+            break;
+        }
+
+        if (response.status === 429 || response.status >= 500) {
+            if (attempt < MAX_RETRIES - 1) {
+                const delay = getExponentialBackoffDelay(attempt);
+                await new Promise(resolve => setTimeout(resolve, delay));
+                continue;
+            }
+        }
+    } catch (networkError) {
+        if (attempt < MAX_RETRIES - 1) {
+            const delay = getExponentialBackoffDelay(attempt);
+            await new Promise(resolve => setTimeout(resolve, delay));
+            continue;
+        }
+        throw networkError;
+    }
+}</pre>
+            </div>
+
+            <div class="code-section">
+                <h3>Structured JSON Responses</h3>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">The AI needs to return consistent data every time. I enforce this using a JSON schema that guarantees we always get plant type, disease name, severity, and treatment steps:</p>
+<pre>const responseSchema = {
+    type: "OBJECT",
+    properties: {
+        "plant_type": {
+            "type": "STRING",
+            "description": "Type of plant (e.g., 'Tomato', 'Rose')"
+        },
+        "disease_name": {
+            "type": "STRING",
+            "description": "Disease name or 'Healthy'"
+        },
+        "severity": {
+            "type": "STRING",
+            "description": "'Low', 'Medium', or 'High'"
+        },
+        "treatment_steps": {
+            "type": "ARRAY",
+            "items": { "type": "STRING" }
+        }
+    },
+    required: ["plant_type", "disease_name", "severity", "treatment_steps"]
+};</pre>
+            </div>
+
+            <div class="card">
+                <h3 style="color: var(--green); margin-bottom: 1rem;">Tech Stack</h3>
+                <div class="tech-tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">Cloudflare Workers</span>
+                    <span class="tag">Gemini 2.5 Flash</span>
+                    <span class="tag">Firebase Auth</span>
+                    <span class="tag">Weather API</span>
+                    <span class="tag">Vercel</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📊 Data Pipeline</h2>
+            <div class="flow">
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">Here's how the disease detection works from start to finish:</p>
+                <div class="flow-steps">
+                    <div class="step">User Upload</div>
+                    <span class="arrow">→</span>
+                    <div class="step">Cloudflare Worker</div>
+                    <span class="arrow">→</span>
+                    <div class="step">Gemini API</div>
+                    <span class="arrow">→</span>
+                    <div class="step">JSON Response</div>
+                    <span class="arrow">→</span>
+                    <div class="step">Flutter App</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📱 App Screenshots</h2>
+            <div class="screenshots">
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=15To4WAA6N-_WeAdxsyTXlZlxd2huVMH1" alt="Welcome Screen">
+                    <div class="screenshot-label">Welcome Screen</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=1Ty-nHMgyJsmA7Xg7CAIyFdwD4gNG_Bze" alt="Weather">
+                    <div class="screenshot-label">Weather Forecast</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=13esN-TcTo7XOsXsvEVmo-iE0AmaOvc3R" alt="Budget">
+                    <div class="screenshot-label">Budget Tracking</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=1t-byQcqtuWqQtoGy35FN9Hrbub4Ol1lR" alt="Disease Detection">
+                    <div class="screenshot-label">AI Disease Detection</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=1oi3VoW_gnQ0SwlPU09iKLlHwRTOqb_Xv" alt="Marketplace">
+                    <div class="screenshot-label">Equipment Marketplace</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=1PGCqwg7mFZRKmUg4uYwDAXavPc_X8Flq" alt="Tasks">
+                    <div class="screenshot-label">Task Scheduler</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=13_W3d5I3eD7GAaULc3olAdiJUOvu5dIg" alt="Profile">
+                    <div class="screenshot-label">User Profile</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://drive.google.com/uc?export=view&id=1tw2aw43JpyjuCVXzN57ozCic3NTqf2w1" alt="Settings">
+                    <div class="screenshot-label">Settings</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎥 Demo Video</h2>
+            <div class="card">
+                <div class="video-wrapper">
+                    <iframe src="https://drive.google.com/file/d/12-85fACzZrOu8bsQ7XZNZIJJ_9b_ffbu/preview" allow="autoplay"></iframe>
+                </div>
+                <p style="margin-top: 1rem;">Full walkthrough showing disease detection, marketplace browsing, weather updates, and budget management</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📈 Impact</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <span class="number">6K+</span>
+                    <span class="label">Instagram Followers</span>
+                </div>
+                <div class="metric">
+                    <span class="number">7</span>
+                    <span class="label">Team Members</span>
+                </div>
+                <div class="metric">
+                    <span class="number">Early 2026</span>
+                    <span class="label">Launch Date</span>
+                </div>
+                <div class="metric">
+                    <span class="number">MVP</span>
+                    <span class="label">Live</span>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 2rem;">
+                <p>We're getting regular feedback from farmers in Maharashtra and Telangana who are testing the app. They're telling us what works and what doesn't, which helps us improve before the full launch.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>💡 What I Learned</h2>
+            <ul class="learnings">
+                <li>Managing a remote team across time zones is harder than I thought. Clear communication and realistic deadlines became essential</li>
+                <li>Working with developers from different countries taught me how to adapt to different work styles and cultures</li>
+                <li>I learned Flutter by working closely with our mobile developers and asking tons of questions</li>
+                <li>Hardest part: convincing good developers to work for revenue share instead of upfront payment. Had to really sell the vision</li>
+                <li>Most of us were students juggling classes and development. Time management became critical</li>
+                <li>Biggest lesson: just start building. Don't wait for everything to be perfect. Things work out when you put in the time</li>
+                <li>You have to believe in your idea and protect it, but also stay open to feedback</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🔮 What's Next</h2>
+            <div class="card">
+                <p><strong>AI Fertilizer Recommendations:</strong> Tell farmers which fertilizers to use based on their soil and crops</p>
+            </div>
+            <div class="card">
+                <p><strong>Government Form Automation:</strong> Auto-fill subsidy forms for farmers so they don't have to deal with paperwork</p>
+            </div>
+            <div class="card">
+                <p><strong>Agriculture News:</strong> Daily updates on farming policies, weather alerts, and market prices</p>
+            </div>
+            <div class="card">
+                <p><strong>More Languages:</strong> Add support for regional Indian languages beyond English and Hindi</p>
+            </div>
+            <div class="card">
+                <p><strong>Offline Mode:</strong> Let farmers use basic features even without internet</p>
+            </div>
+        </section>
+
+        <div class="links">
+            <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="btn">Live Website</a>
+            <a href="https://www.instagram.com/khetiplus.ai/" class="btn">Instagram</a>
+            <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="btn">View Proofs</a>
+            <a href="https://drive.google.com/uc?export=download&id=1OulEQD1p9swolZzoK1ZIdOzY4LMmgR8W" class="btn">App Repo</a>
+            <a href="https://drive.google.com/uc?export=download&id=1pF7QTcYHOeAsRRKzKGBELuXlOtP0bUE3" class="btn">Website Repo</a>
+        </div>
+    </div>
+</body>
+</html>
