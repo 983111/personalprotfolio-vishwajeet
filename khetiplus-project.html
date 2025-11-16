@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhetiAI Project - Vishwajeet Adkine</title>
+    <style>
+        :root {
+            --bg-dark: #0A0A0A;
+            --bg-card: #1C1C1C;
+            --text-main: #FFFFFF;
+            --text-dim: #B0B0B0;
+            --blue: #00A3FF;
+            --green: #39FF14;
+            --border: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .project-title {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--green);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--blue);
+            margin-bottom: 3rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .feature h3 {
+            color: var(--green);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .code-section {
+            background: #0d1117;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        .code-section h3 {
+            color: var(--green);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        pre {
+            color: #c9d1d9;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .flow {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .flow-steps {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .step {
+            background: linear-gradient(135deg, var(--blue), #0080cc);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .arrow {
+            color: var(--green);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .screenshot-box {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .screenshot-box:hover {
+            transform: scale(1.05);
+            border-color: var(--blue);
+        }
+
+        .screenshot-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metric {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .metric .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--green);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric .label {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        .learnings li {
+            background: var(--bg-card);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--green);
+            color: var(--text-dim);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--border);
+            color: var(--text-main);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background: var(--blue);
+            color: var(--bg-dark);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--green);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .project-title { font-size: 2.5rem; }
+            .flow-steps { flex-direction: column; }
+            .arrow { transform: rotate(90deg); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">VA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">← Back to Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="project-title">KhetiAI</h1>
+        <p class="subtitle">AI-Powered Agriculture Platform</p>
+
+        <section>
+            <h2>🚀 Overview</h2>
+            <div class="card">
+                <p>KhetiAI is an AI-powered digital agriculture platform built to help farmers across India manage their operations more efficiently. The platform combines crop disease detection, weather forecasting, budget tracking, and an equipment marketplace into one comprehensive mobile application.</p>
+                <p>Started in June 2025, I led a team of 7 members from around the world to build a solution that addresses real problems faced by farmers in Maharashtra and Telangana. The app integrates Google's Gemini 2.5 Flash for AI-powered crop disease detection, providing instant analysis and treatment recommendations.</p>
+                <p>What makes KhetiAI different is that it's built by someone who understands farming. My family runs an agriculture shop, and I've helped farmers apply for government subsidies. This direct experience shaped every feature in the app.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>AI Crop Disease Detection</h3>
+                    <p>Upload a photo of your crop, and our AI instantly identifies the plant type, disease name, severity level, and provides step-by-step treatment instructions</p>
+                </div>
+                <div class="feature">
+                    <h3>Budget Management</h3>
+                    <p>Track daily, monthly, and yearly expenses with income/expense categorization and savings goals</p>
+                </div>
+                <div class="feature">
+                    <h3>Equipment Marketplace</h3>
+                    <p>Buy or rent farming equipment like tractors, harvesters, and tools from local sellers</p>
+                </div>
+                <div class="feature">
+                    <h3>Weather Forecasting</h3>
+                    <p>Real-time weather data including temperature, humidity, wind speed, and forecasts for better planning</p>
+                </div>
+                <div class="feature">
+                    <h3>Task Scheduler</h3>
+                    <p>Plan farming activities with reminders for watering, fertilizing, and harvesting</p>
+                </div>
+                <div class="feature">
+                    <h3>OTP Authentication</h3>
+                    <p>Secure Firebase-based phone authentication for easy and safe user access</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧩 Technical Details</h2>
+            
+            <div class="code-section">
+                <h3>Gemini API Integration</h3>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">The disease detection system uses a Cloudflare Worker to handle image uploads and communicate with Gemini's API. Here's how we handle retries when the API is rate-limited:</p>
+<pre>let apiResponse;
+for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            apiResponse = await response.json();
+            break;
+        }
+
+        if (response.status === 429 || response.status >= 500) {
+            if (attempt < MAX_RETRIES - 1) {
+                const delay = getExponentialBackoffDelay(attempt);
+                await new Promise(resolve => setTimeout(resolve, delay));
+                continue;
+            }
+        }
+    } catch (networkError) {
+        if (attempt < MAX_RETRIES - 1) {
+            const delay = getExponentialBackoffDelay(attempt);
+            await new Promise(resolve => setTimeout(resolve, delay));
+            continue;
+        }
+        throw networkError;
+    }
+}</pre>
+            </div>
+
+            <div class="code-section">
+                <h3>Structured Response Format</h3>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">We use JSON schema to force the AI to return consistent results every time:</p>
+<pre>const responseSchema = {
+    type: "OBJECT",
+    properties: {
+        "plant_type": {
+            "type": "STRING",
+            "description": "Type of plant (e.g., 'Tomato', 'Rose')"
+        },
+        "disease_name": {
+            "type": "STRING",
+            "description": "Disease name or 'Healthy'"
+        },
+        "severity": {
+            "type": "STRING",
+            "description": "'Low', 'Medium', or 'High'"
+        },
+        "treatment_steps": {
+            "type": "ARRAY",
+            "items": { "type": "STRING" }
+        }
+    },
+    required: ["plant_type", "disease_name", "severity", "treatment_steps"]
+};</pre>
+            </div>
+
+            <div class="card">
+                <h3 style="color: var(--green); margin-bottom: 1rem;">Tech Stack</h3>
+                <div class="tech-tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">Cloudflare Workers</span>
+                    <span class="tag">Gemini 2.5 Flash</span>
+                    <span class="tag">Firebase Auth</span>
+                    <span class="tag">Weather API</span>
+                    <span class="tag">Vercel</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📊 Data Pipeline</h2>
+            <div class="flow">
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">How disease detection works from start to finish:</p>
+                <div class="flow-steps">
+                    <div class="step">User Upload</div>
+                    <span class="arrow">→</span>
+                    <div class="step">Cloudflare Worker</div>
+                    <span class="arrow">→</span>
+                    <div class="step">Gemini API</div>
+                    <span class="arrow">→</span>
+                    <div class="step">JSON Response</div>
+                    <span class="arrow">→</span>
+                    <div class="step">Flutter App</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📱 Screenshots</h2>
+            <div class="screenshots">
+                <div class="screenshot-box">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2339FF14' font-size='20' text-anchor='middle'%3EOnboarding%3C/text%3E%3C/svg%3E" alt="Onboarding">
+                </div>
+                <div class="screenshot-box">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2300A3FF' font-size='20' text-anchor='middle'%3EWeather%3C/text%3E%3C/svg%3E" alt="Weather">
+                </div>
+                <div class="screenshot-box">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2339FF14' font-size='20' text-anchor='middle'%3EBudget%3C/text%3E%3C/svg%3E" alt="Budget">
+                </div>
+                <div class="screenshot-box">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2300A3FF' font-size='20' text-anchor='middle'%3EDisease Detection%3C/text%3E%3C/svg%3E" alt="Disease">
+                </div>
+                <div class="screenshot-box">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2339FF14' font-size='20' text-anchor='middle'%3EMarketplace%3C/text%3E%3C/svg%3E" alt="Marketplace">
+                </div>
+                <div class="screenshot-box">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 700'%3E%3Crect fill='%231C1C1C' width='400' height='700'/%3E%3Ctext x='50%25' y='50%25' fill='%2300A3FF' font-size='20' text-anchor='middle'%3ETask Scheduler%3C/text%3E%3C/svg%3E" alt="Tasks">
+                </div>
+            </div>
+            <p style="color: var(--text-dim); margin-top: 1rem;">Note: Replace placeholder images with actual screenshots by updating the src attributes</p>
+        </section>
+
+        <section>
+            <h2>🎥 Demo Video</h2>
+            <div class="card">
+                <iframe width="100%" height="500" src="https://drive.google.com/file/d/YOUR_VIDEO_ID/preview" frameborder="0" allowfullscreen style="border-radius: 8px;"></iframe>
+                <p style="margin-top: 1rem;">Watch the full demo showing disease detection, marketplace, weather, and budget features in action</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📈 Impact</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <span class="number">6,000+</span>
+                    <span class="label">Instagram Followers</span>
+                </div>
+                <div class="metric">
+                    <span class="number">7</span>
+                    <span class="label">Team Members</span>
+                </div>
+                <div class="metric">
+                    <span class="number">2026</span>
+                    <span class="label">Planned Launch</span>
+                </div>
+                <div class="metric">
+                    <span class="number">MVP</span>
+                    <span class="label">Status</span>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 2rem;">
+                <p>The platform is actively used by farmers in Maharashtra and Telangana regions. We're receiving regular feedback from our social media community, which is helping us refine features before the full launch in early 2026.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>💡 What I Learned</h2>
+            <ul class="learnings">
+                <li>Leading a small but efficient team across different time zones taught me the importance of clear communication and setting realistic milestones</li>
+                <li>Working with developers from different countries gave me experience in managing global talent and understanding different work cultures</li>
+                <li>Got hands-on experience with Flutter development by coordinating closely with our mobile developers</li>
+                <li>Biggest challenge was convincing talented developers to work on a revenue-sharing model with no upfront payment. Had to sell the vision and potential</li>
+                <li>Time management became critical since most team members were college students juggling academics and development</li>
+                <li>The most important lesson: just start. Things fall into place when you invest time and don't give up</li>
+                <li>Learned to protect my idea while staying open to feedback and iteration</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🔮 Future Plans</h2>
+            <div class="card">
+                <p><strong>AI Fertilizer Recommendations:</strong> Suggest the right fertilizers based on soil type, crop, and season</p>
+            </div>
+            <div class="card">
+                <p><strong>Government Form Automation:</strong> Help farmers fill and submit subsidy forms automatically</p>
+            </div>
+            <div class="card">
+                <p><strong>Agriculture News Feed:</strong> Curated news about farming policies, weather alerts, and market prices</p>
+            </div>
+            <div class="card">
+                <p><strong>Regional Expansion:</strong> Add support for more Indian languages and regions beyond Maharashtra and Telangana</p>
+            </div>
+            <div class="card">
+                <p><strong>Offline Mode:</strong> Allow farmers to use core features even without internet connectivity</p>
+            </div>
+        </section>
+
+        <div class="links">
+            <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="btn">Visit Website</a>
+            <a href="https://www.instagram.com/khetiplus.ai/" class="btn">Instagram</a>
+            <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="btn">View Proofs</a>
+        </div>
+    </div>
+</body>
+</html>
