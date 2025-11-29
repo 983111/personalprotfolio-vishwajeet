@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishwajeet Adkine - AI Engineer & Researcher</title>
+    <title>Vishwajeet Adkine - Aspiring AI Engineer & Researcher</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -266,6 +266,12 @@
             border: 1px solid var(--accent-color);
             text-decoration: none; /* Remove general underline from button links */
             border-radius: 6px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            text-underline-offset: 0;
+            text-decoration: none;
         }
         
         .project-link:hover {
@@ -288,6 +294,7 @@
             font-size: 0.88rem;
             border: 1px solid var(--accent-color);
             box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
+            margin-right: 1rem;
         }
         
         /* FIX: Ensures visited/active buttons retain accent background and white text */
@@ -303,15 +310,59 @@
             box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
         }
         
-        /* --- Research Styling --- */
-        .research-paper {
-            border-left: 3px solid var(--accent-color);
-        }
-        .research-paper h4 {
+        /* --- Research Styling (Simplified for consistency) --- */
+        .research-card h3 {
+            font-size: 1.3rem;
             color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+        .research-card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
         }
 
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .skill-category {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+        }
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .skill-tag {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--text-main);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            margin: 0.3rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+
         /* Contact links: Made more prominent with hover effect */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.05rem;
+        }
         .contact-item a {
             color: var(--accent-color);
             text-decoration: underline;
@@ -343,6 +394,16 @@
             .hero h1 { font-size: 2.8rem; }
             section { padding: 4rem 1.5rem; }
             .cta-button { display: block; width: 100%; margin-top: 0.5rem; }
+            .view-full-project, .proof-button, .research-link { 
+                display: block; 
+                width: 100%; 
+                margin-right: 0;
+                margin-top: 0.75rem;
+            }
+            .project-card { 
+                display: flex; 
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -481,7 +542,7 @@
     <section id="projects">
         <h2 class="section-title">Major Projects & Initiatives</h2>
         <div class="grid">
-            <div class="project-card">
+            <div class="project-card card">
                 <div>
                     <h3>KhetiAI</h3>
                     <span class="project-role">Founder | June 2025 – Present</span>
@@ -503,7 +564,7 @@
                 <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="proof-button">View KhetiAI Proofs →</a>
             </div>
 
-            <div class="project-card">
+            <div class="project-card card">
                 <div>
                     <h3>Stremini AI</h3>
                     <span class="project-role">Co-Founder & Lead Developer | Aug 2025 – Present</span>
@@ -530,42 +591,41 @@
 
     <section id="research">
         <h2 class="section-title">Research & Publications</h2>
-        <div class="research-grid">
-            <div class="research-section">
-                <h3>🔒 AI Reliability & Safety</h3>
-                
-                <div class="research-paper">
-                    <h4>Improving Temporal Awareness in Large Language Models</h4>
-                    <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Successfully implemented in the Stremini-AI app.</p>
-                </div>
-
-                <div class="research-paper">
-                    <h4>Self-Verification Prompting for Reliable Chatbots</h4>
-                    <p>Developed a two-step self-checking system designed to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
-                </div>
-
-                <div class="research-paper">
-                    <h4>Prompt Injection Defense using Context Sanitization</h4>
-                    <p>Proposed semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions.</p>
-                </div>
-
-                <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 Read Research Papers →</a>
+        <div class="grid">
+            
+            <div class="card research-card">
+                <h3>⏳ Temporal Awareness in LLMs</h3>
+                <span class="project-role">AI Reliability & Safety</span>
+                <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Implemented in the Stremini-AI app.</p>
             </div>
 
-            <div class="research-section">
-                <h3>🌱 Agri-Tech Research</h3>
-                
-                <div class="research-paper">
-                    <h4>Core Problems Faced by Indian Farmers: Region-Specific Analysis and AI Solutions</h4>
-                    <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
-                    <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 Read Research Papers →</a>
-                </div>
-                
-                <div class="research-paper">
-                    <h4>80+ Page E-book on Interdisciplinary JEE Concepts</h4>
-                    <p>Exploring links between Physics, Mathematics, and AI. Expected completion: November 30, 2025.</p>
-                </div>
+            <div class="card research-card">
+                <h3>✅ Self-Verification Prompting</h3>
+                <span class="project-role">AI Reliability & Safety</span>
+                <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
             </div>
+            
+            <div class="card research-card">
+                <h3>🛡️ Prompt Injection Defense</h3>
+                <span class="project-role">AI Reliability & Safety</span>
+                <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization).</p>
+            </div>
+            
+            <div class="card research-card">
+                <h3>🌾 Problems Faced by Indian Farmers</h3>
+                <span class="project-role">Agri-Tech Research</span>
+                <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
+            </div>
+
+            <div class="card research-card">
+                <h3>📚 Interdisciplinary JEE E-book (WIP)</h3>
+                <span class="project-role">Interdisciplinary Research | Expected Nov 2025</span>
+                <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
+            </div>
+
+        </div>
+        <div style="text-align: center;">
+            <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 View Full Research Blog →</a>
         </div>
     </section>
 
