@@ -25,7 +25,7 @@
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .nav-container {
@@ -40,7 +40,10 @@
         .logo {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #000;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             letter-spacing: -0.5px;
         }
 
@@ -55,7 +58,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: color 0.2s;
+            transition: all 0.2s;
             position: relative;
         }
 
@@ -66,12 +69,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #000;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
             transition: width 0.3s;
         }
 
         .nav-links a:hover {
-            color: #000;
+            color: #3b82f6;
         }
 
         .nav-links a:hover::after {
@@ -85,19 +88,23 @@
             justify-content: center;
             text-align: center;
             padding: 2rem 2.5rem;
+            background: linear-gradient(180deg, rgba(59, 130, 246, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
         }
         
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
             font-weight: 800;
-            color: #000;
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             letter-spacing: -2px;
         }
 
         .hero h2 {
             font-size: 1.8rem;
-            color: #555;
+            color: #6366f1;
             margin-bottom: 1.5rem;
             font-weight: 400;
         }
@@ -123,14 +130,14 @@
         }
 
         .social-links a:hover {
-            color: #000;
+            color: #3b82f6;
             transform: scale(1.1);
         }
 
         .cta-button {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: #000;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: #fff;
             text-decoration: none;
             border-radius: 8px;
@@ -139,12 +146,12 @@
             margin-top: 1rem;
             font-size: 0.9rem;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
         }
 
         section {
@@ -157,7 +164,10 @@
             font-size: 2.2rem;
             margin-bottom: 3rem;
             text-align: center;
-            color: #000;
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 700;
             letter-spacing: -1px;
         }
@@ -166,25 +176,26 @@
             background: #fff;
             padding: 2rem;
             border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
             transition: all 0.3s;
         }
         
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.3);
         }
 
         .card h3 {
-            color: #000;
+            color: #3b82f6;
             margin-bottom: 0.5rem;
             font-weight: 700;
             font-size: 1.2rem;
         }
         
         .year {
-            color: #666;
+            color: #8b5cf6;
             font-size: 0.9rem;
             margin-bottom: 1rem;
             display: block;
@@ -208,7 +219,7 @@
 
         .card li::before {
             content: '•';
-            color: #000;
+            color: #10b981;
             position: absolute;
             left: -1.5rem;
             font-size: 1.2rem;
@@ -234,61 +245,85 @@
             background: #fff;
             padding: 2rem;
             border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
         }
 
+        .skill-category:nth-child(1) { border-color: rgba(59, 130, 246, 0.3); }
+        .skill-category:nth-child(2) { border-color: rgba(139, 92, 246, 0.3); }
+        .skill-category:nth-child(3) { border-color: rgba(236, 72, 153, 0.3); }
+        .skill-category:nth-child(4) { border-color: rgba(16, 185, 129, 0.3); }
+        .skill-category:nth-child(5) { border-color: rgba(251, 146, 60, 0.3); }
+
         .skill-category h3 {
-            color: #000;
+            color: #3b82f6;
             margin-bottom: 1rem;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
             padding-bottom: 0.5rem;
             font-weight: 700;
         }
+
+        .skill-category:nth-child(1) h3 { color: #3b82f6; }
+        .skill-category:nth-child(2) h3 { color: #8b5cf6; }
+        .skill-category:nth-child(3) h3 { color: #ec4899; }
+        .skill-category:nth-child(4) h3 { color: #10b981; }
+        .skill-category:nth-child(5) h3 { color: #fb923c; }
 
         .skill-tag {
             display: inline-block;
             padding: 0.5rem 1rem;
             margin: 0.5rem 0.5rem 0.5rem 0;
             border-radius: 6px;
-            background: #f8f9fa;
-            color: #333;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            color: #3b82f6;
             font-size: 0.88rem;
             font-weight: 600;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             transition: all 0.2s;
         }
 
         .skill-tag:hover {
-            background: #000;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: #fff;
-            border-color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
 
         .project-card {
             background: #fff;
             padding: 2rem;
             border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
+        }
+
+        .project-card:nth-child(odd) {
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .project-card:nth-child(even) {
+            border-color: rgba(139, 92, 246, 0.3);
         }
 
         .project-card:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
             transform: translateY(-4px);
         }
 
         .project-card h3 {
-            color: #000;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 700;
             font-size: 1.3rem;
         }
 
         .project-role {
-            color: #666;
+            color: #8b5cf6;
             font-size: 0.9rem;
             font-weight: 500;
         }
@@ -312,7 +347,7 @@
 
         .project-card li::before {
             content: '•';
-            color: #000;
+            color: #10b981;
             position: absolute;
             left: 0;
             font-size: 1.2rem;
@@ -327,7 +362,7 @@
 
         .project-link {
             padding: 0.6rem 1.2rem;
-            background: #000;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: #fff;
             text-decoration: none;
             border-radius: 6px;
@@ -338,13 +373,13 @@
         
         .project-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
         }
 
         .view-full-project {
             display: inline-block;
             padding: 0.9rem 2rem;
-            background: #000;
+            background: linear-gradient(135deg, #10b981, #14b8a6);
             color: #fff;
             text-decoration: none;
             border-radius: 8px;
@@ -352,32 +387,31 @@
             transition: all 0.3s;
             font-size: 0.9rem;
             margin-top: 1rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
         }
 
         .view-full-project:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
         }
 
         .proof-button {
             display: inline-block;
             padding: 0.8rem 1.5rem;
             margin-top: 2rem;
-            background: #fff;
-            color: #000;
+            background: linear-gradient(135deg, #ec4899, #f43f5e);
+            color: #fff;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s;
             font-size: 0.88rem;
-            border: 1px solid rgba(0, 0, 0, 0.15);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 12px rgba(236, 72, 153, 0.3);
         }
 
         .proof-button:hover {
-            background: #f8f9fa;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
         }
 
         .research-grid {
@@ -387,20 +421,28 @@
         }
 
         .research-section h3 {
-            color: #000;
+            color: #3b82f6;
             margin-bottom: 1.5rem;
             font-size: 1.3rem;
             font-weight: 700;
         }
 
+        .research-section:nth-child(2) h3 {
+            color: #10b981;
+        }
+
         .research-paper {
-            border-left: 3px solid #000;
+            border-left: 3px solid #3b82f6;
             padding-left: 1rem;
             margin-bottom: 1.5rem;
         }
 
+        .research-section:nth-child(2) .research-paper {
+            border-left-color: #10b981;
+        }
+
         .research-paper h4 {
-            color: #000;
+            color: #1e40af;
             margin-bottom: 0.5rem;
             font-weight: 700;
             font-size: 1.05rem;
@@ -415,7 +457,7 @@
             display: inline-block;
             padding: 0.6rem 1.2rem;
             margin-top: 1rem;
-            background: #000;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: #fff;
             text-decoration: none;
             border-radius: 6px;
@@ -426,16 +468,20 @@
 
         .research-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
         }
 
+        #leadership .card:nth-child(1) h3 { color: #ec4899; }
+        #leadership .card:nth-child(2) h3 { color: #8b5cf6; }
+        #leadership .card:nth-child(3) h3 { color: #10b981; }
+
         .contact-container {
-            background: #fff;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
             padding: 2.5rem;
             border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
             text-align: center;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
         }
 
         .contact-info {
@@ -453,14 +499,36 @@
         }
 
         .contact-item a {
-            color: #000;
+            color: #3b82f6;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
         }
 
         .contact-item a:hover {
-            color: #666;
+            color: #8b5cf6;
+        }
+
+        #honors .card:nth-child(1) {
+            border-color: rgba(251, 191, 36, 0.4);
+        }
+
+        #honors .card:nth-child(2) {
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+
+        #honors .card h3:first-child {
+            background: linear-gradient(135deg, #f59e0b, #eab308);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #honors .card:nth-child(2) h3 {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         @media (max-width: 900px) {
@@ -667,92 +735,3 @@
                 </div>
                 <a href="https://streminiai-protfolio.vercel.app/" class="view-full-project">📖 View Full Project Details</a>
                 <a href="https://drive.google.com/drive/folders/1_B6cbjjJ0xu3G0eOa7IHKpuEn4Xradfe?usp=sharing" class="proof-button">View Stremini AI Proofs</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="research">
-        <h2 class="section-title">Research & Publications</h2>
-        <div class="research-grid">
-            <div class="research-section">
-                <h3>🔒 AI Reliability & Safety</h3>
-                
-                <div class="research-paper">
-                    <h4>Improving Temporal Awareness in Large Language Models</h4>
-                    <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Successfully implemented in the Stremini-AI app.</p>
-                </div>
-
-                <div class="research-paper">
-                    <h4>Self-Verification Prompting for Reliable Chatbots</h4>
-                    <p>Developed a two-step self-checking system designed to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
-                </div>
-
-                <div class="research-paper">
-                    <h4>Prompt Injection Defense using Context Sanitization</h4>
-                    <p>Proposed semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions.</p>
-                </div>
-
-                <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 Read Research Papers</a>
-            </div>
-
-            <div class="research-section">
-                <h3>🌱 Agri-Tech Research</h3>
-                
-                <div class="research-paper">
-                    <h4>Core Problems Faced by Indian Farmers: Region-Specific Analysis and AI Solutions</h4>
-                    <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
-                    <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 Read Research Papers</a>
-                </div>
-                
-                <div class="research-paper">
-                    <h4>80+ Page E-book on Interdisciplinary JEE Concepts</h4>
-                    <p>Exploring links between Physics, Mathematics, and AI. Expected completion: November 30, 2025.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="leadership">
-        <h2 class="section-title">Leadership & Management Experience</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🎉 Event Organizer - School Farewell</h3>
-                <p>Led a 20-member team managing comprehensive event logistics for 200+ attendees. Awarded "Most Beautiful Organization" for exceptional planning and execution.</p>
-            </div>
-            
-            <div class="card">
-                <h3>👥 Team Lead - Stremini AI</h3>
-                <p>Oversaw technical milestones, recruitment processes, and global team coordination across multiple time zones. Managed a diverse team of developers and operations personnel.</p>
-            </div>
-            
-            <div class="card">
-                <h3>🌾 Family Business Support - Agriculture</h3>
-                <p>Managed agricultural shop operations and provided hands-on assistance to farmers in applying for government subsidies, gaining practical insights that inspired KhetiAI development.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <p style="font-size: 1.05rem; color: #555; margin-bottom: 2rem;">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's connect!
-            </p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📧</span>
-                    <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📍</span>
-                    <span>India</span>
-                </div>
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📷</span>
-                    <a href="https://www.instagram.com/vishwajeet_streminiai/">@vishwajeet_streminiai</a>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
