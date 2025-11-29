@@ -14,10 +14,10 @@
             /* --- The "Paper & Ink" Palette --- */
             --bg-color: #FDFBF7;       /* Warm Alabaster - Looks like premium paper */
             --card-bg: #ffffff;        /* Pure white for contrast */
-            --text-main: #1C1C1C;      /* Soft Charcoal - easier to read than pure black */
+            --text-main: #1C1C1C;      /* Soft Charcoal */
             --text-muted: #555555;     
-            --accent-color: #1a3c34;   /* Deep Forest Green - Academic & Grounded */
-            --accent-light: #e8eceb;   /* Very light green for hover states */
+            --accent-color: #1a3c34;   /* Deep Forest Green - Professional & Grounded */
+            --accent-light: #e8eceb;   /* Very light green/grey */
             --border-color: #E5E5E0;
             
             --radius: 12px;
@@ -29,19 +29,16 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
+        /* --- Global Styling --- */
         body {
             font-family: 'Outfit', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.65;
             overflow-x: hidden;
-            
             /* Subtle architectural grid pattern */
             background-image: radial-gradient(#d8d6d0 1px, transparent 1px);
             background-size: 32px 32px;
@@ -54,13 +51,22 @@
             line-height: 1.2;
         }
 
+        /* --- Link Visibility Styling (Critical Change) --- */
         a {
             text-decoration: none;
-            color: inherit;
-            transition: color 0.2s;
+            color: var(--accent-color);
+            transition: color 0.2s, opacity 0.2s;
+            /* Default text links are underlined and accent-colored */
+            text-decoration: underline; 
+            text-underline-offset: 3px;
+        }
+        
+        a:hover {
+            opacity: 0.8;
+            color: var(--text-main);
         }
 
-        /* --- Glass Navigation --- */
+        /* --- Navigation Bar --- */
         nav {
             position: fixed;
             top: 20px;
@@ -68,11 +74,11 @@
             transform: translateX(-50%);
             width: 90%;
             max-width: 1000px;
-            background: rgba(253, 251, 247, 0.85);
+            background: rgba(253, 251, 247, 0.95);
             backdrop-filter: blur(12px);
             z-index: 1000;
-            border: 1px solid rgba(0,0,0,0.05);
-            border-radius: 50px; /* Pill shape */
+            border: 1px solid var(--border-color);
+            border-radius: 50px; 
             padding: 0.8rem 2rem;
             box-shadow: var(--shadow-sm);
         }
@@ -92,7 +98,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
         }
 
@@ -100,8 +106,9 @@
             font-size: 0.9rem;
             font-weight: 500;
             color: var(--text-muted);
+            text-decoration: none; /* Hide underline on nav for clean look */
         }
-
+        
         .nav-links a:hover {
             color: var(--accent-color);
         }
@@ -116,24 +123,18 @@
             text-align: center;
             padding: 8rem 2rem 4rem;
         }
-
-        .hero-badge {
-            background: var(--accent-light);
-            color: var(--accent-color);
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
+        
         .hero h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
+            font-size: clamp(3rem, 6vw, 4.5rem);
             font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--text-main);
+        }
+
+        .hero h2 {
+            font-size: 1.6rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 400;
         }
 
         .hero p {
@@ -144,74 +145,68 @@
             font-weight: 300;
         }
 
-        /* --- Human-Centric Buttons --- */
-        .btn-primary {
+        /* --- Social Links (Made more visible) --- */
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            text-decoration: none; 
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        /* --- CTA Buttons (Styled for clear action) --- */
+        .cta-button {
             display: inline-block;
+            padding: 1rem 2.5rem;
             background: var(--accent-color);
             color: #fff;
-            padding: 1rem 2.2rem;
+            text-decoration: none; /* Remove default underline from button */
             border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
             border: 1px solid var(--accent-color);
         }
 
-        .btn-primary:hover {
+        .cta-button:hover {
             background: transparent;
             color: var(--accent-color);
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
         }
 
-        .btn-secondary {
-            display: inline-block;
-            background: transparent;
-            color: var(--text-main);
-            padding: 1rem 2.2rem;
-            border-radius: 30px;
-            font-weight: 500;
-            border: 1px solid #ccc;
-            margin-left: 10px;
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--text-main);
-            background: #fff;
-        }
-
-        /* --- Layout --- */
+        /* --- Section Layouts --- */
         section {
-            padding: 5rem 2rem;
             max-width: 1100px;
             margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 3.5rem;
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
+            padding: 60px 2.5rem;
         }
 
         .section-title {
-            font-size: 2rem;
-            color: var(--text-main);
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
         }
 
-        .section-subtitle {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        /* --- Bento Box Cards --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
         }
 
         .card {
@@ -219,10 +214,10 @@
             padding: 2.2rem;
             border-radius: var(--radius);
             border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
         }
-
+        
         .card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
@@ -233,171 +228,136 @@
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
         }
-
-        .card .meta {
-            display: block;
-            font-size: 0.85rem;
+        
+        .year, .project-role {
             color: var(--accent-color);
-            font-weight: 600;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            display: block;
+            font-weight: 600;
         }
-
-        .card ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
+        
         .card li {
-            margin-bottom: 0.6rem;
             color: var(--text-muted);
             padding-left: 1.2rem;
-            position: relative;
         }
 
         .card li::before {
             content: '•';
             color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
         }
 
-        /* --- Skills (Tag Cloud) --- */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+        /* --- Skills Styling --- */
+        .skill-category h3 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-light);
         }
-        
-        .skill-box {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-        }
-
-        .skill-box h4 {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .tag {
-            font-size: 0.8rem;
-            padding: 0.3rem 0.8rem;
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            color: var(--text-muted);
+        .skill-tag {
+            background: var(--accent-light);
+            color: var(--text-main);
             font-weight: 500;
-        }
-
-        /* --- Research Papers (Clean List) --- */
-        .paper-item {
-            display: block;
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: var(--radius);
             border: 1px solid var(--border-color);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s;
         }
 
-        .paper-item:hover {
+        .skill-tag:hover {
+            background: var(--accent-color);
+            color: #fff;
             border-color: var(--accent-color);
-            box-shadow: var(--shadow-sm);
         }
 
-        .paper-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-            margin-bottom: 0.5rem;
+        /* --- Project Links (High Visibility) --- */
+        .project-links {
+            margin-top: 1rem;
         }
 
-        .paper-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .paper-tag {
-            display: inline-block;
-            font-size: 0.75rem;
+        .project-link {
+            padding: 0.6rem 1.2rem;
             background: var(--accent-light);
             color: var(--accent-color);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            margin-bottom: 0.8rem;
+            border: 1px solid var(--accent-color);
+            text-decoration: none;
             font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .project-link:hover {
+            background: var(--accent-color);
+            color: #fff;
+            transform: none;
+        }
+
+        .view-full-project, .proof-button {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent-color);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0; /* Remove padding to make it look less like a button */
+            background: none;
+            box-shadow: none;
+            border: none;
+        }
+
+        .view-full-project:hover, .proof-button:hover {
+            color: var(--text-main);
+            transform: none;
+        }
+        
+        /* --- Research Styling --- */
+        .research-paper {
+            border-left: 3px solid var(--accent-color);
+        }
+        .research-paper h4 {
+            color: var(--text-main);
+        }
+
+        .research-link {
+            background: var(--accent-color);
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .research-link:hover {
+            background: var(--text-main);
         }
 
         /* --- Contact --- */
-        .contact-section {
-            text-align: center;
-            padding-bottom: 8rem;
-        }
-
-        .social-links {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-        
-        .social-links a {
-            font-size: 1.1rem;
-            border-bottom: 1px solid var(--text-muted);
-            padding-bottom: 2px;
-        }
-        
-        .social-links a:hover {
+        .contact-item a {
             color: var(--accent-color);
-            border-color: var(--accent-color);
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
-        /* --- Mobile --- */
+        .contact-item a:hover {
+            color: var(--text-main);
+        }
+
+
         @media (max-width: 768px) {
             nav {
                 width: 95%;
                 padding: 0.8rem 1.5rem;
-                bottom: 20px; /* Move nav to bottom for easier thumb reach on mobile */
+                bottom: 20px; 
                 top: auto;
             }
-            .nav-links { display: none; } /* Hide links, show only logo/action on mobile */
+            .nav-links { display: none; } 
             .logo { margin: 0 auto; }
             .hero h1 { font-size: 2.8rem; }
             section { padding: 4rem 1.5rem; }
-            .btn-secondary { margin-left: 0; margin-top: 10px; display: block; width: 100%; }
-            .btn-primary { display: block; width: 100%; }
-        }
-
-        /* Scroll Reveal Animation Class */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+            .cta-button { display: block; width: 100%; margin-top: 0.5rem; }
         }
     </style>
 </head>
 <body>
-
     <nav>
         <div class="nav-container">
             <div class="logo">VA.</div>
             <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Work</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Connect</a></li>
@@ -405,196 +365,255 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="reveal">
-            <span class="hero-badge">AI Engineer & Researcher</span>
-            <h1>Vishwajeet Adkine</h1>
-            <p>Building <b>scalable, ethical, and accessible AI</b>. <br>Founder of KhetiAI & Lead Developer at Stremini AI.</p>
-            
-            <div style="margin-top: 2rem;">
-                <a href="#projects" class="btn-primary">View My Work</a>
-                <a href="#contact" class="btn-secondary">Let's Talk</a>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Vishwajeet Shashikant Adkine</h1>
+            <h2>Aspiring AI Engineer & Researcher</h2> 
+            <p>Aspiring to be an AI engineer, I'm passionate about developing scalable, ethical, and accessible artificial intelligence systems. Experienced in leading international tech teams, building AI-integrated applications, and conducting independent research in AI reliability and agri-tech innovation.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+            <div class="social-links">
+                <a href="mailto:vishwajeetadkine705@gmail.com" title="Email">📧</a>
+                <a href="https://www.instagram.com/vishwajeet_streminiai/" title="Instagram">📷</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="reveal">
-        <div class="section-header">
-            <h2 class="section-title">About</h2>
-            <span class="section-subtitle">The Mission</span>
-        </div>
-        <div style="max-width: 800px;">
-            <p style="font-size: 1.25rem; color: var(--text-main); margin-bottom: 1.5rem;">
-                I am an aspiring AI engineer driven by a single goal: <b>creating technology that solves real human problems.</b>
-            </p>
-            <p style="color: var(--text-muted); font-size: 1.05rem;">
-                My journey isn't just about code; it's about impact. From leading international teams to developing <b>KhetiAI</b> for Indian farmers, I focus on systems that are not just smart, but accessible. Based in India, I research AI reliability (hallucination reduction) and build practical tools for everyday automation.
-            </p>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p>I am an aspiring AI engineer and researcher with a passion for creating technology that makes a real difference. My journey has been focused on developing scalable, ethical, and accessible artificial intelligence systems that address real-world challenges.</p>
+            <br>
+            <p>With experience leading multi-member international tech teams, I have successfully built AI-integrated applications and conducted independent research in AI reliability and agri-tech innovation. My work spans from developing practical AI solutions for farmers through KhetiAI to advancing AI safety through research on temporal awareness, self-verification prompting, and prompt injection defense.</p>
+            <br>
+            <p>Currently based in India, I am committed to leveraging artificial intelligence to solve critical problems in agriculture, cybersecurity, and everyday automation, while ensuring these technologies remain accessible and beneficial to all.</p>
         </div>
     </section>
 
-    <section id="projects" class="reveal">
-        <div class="section-header">
-            <h2 class="section-title">Selected Work</h2>
-            <span class="section-subtitle">Major Initiatives</span>
-        </div>
-        
+    <section id="education">
+        <h2 class="section-title">Education</h2>
         <div class="grid">
             <div class="card">
-                <span class="meta">Founder | June 2025 - Present</span>
-                <h3>KhetiAI</h3>
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">An AI-powered digital agriculture ecosystem designed to empower farmers with data.</p>
+                <h3>Gokulnath Secondary & Higher Secondary School</h3>
+                <span class="year">Current Studies</span>
                 <ul>
-                    <li>Led a 7-member global team (Ops, Dev, Marketing).</li>
-                    <li>Built AI crop-disease predictor & marketplace.</li>
-                    <li>Scaled to 5.5K+ users via social growth.</li>
+                    <li>School Topper in Class 11th: 93.17%</li> 
+                    <li>Class 12th expected topper based on previous results</li>
                 </ul>
-                <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                    <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" style="text-decoration: underline; font-weight: 600;">Visit Live Site ↗</a>
-                    <a href="https://my-portfolio-delta-weld-18.vercel.app/" style="color: var(--text-muted); font-size: 0.9rem;">Case Study</a>
-                </div>
             </div>
-
             <div class="card">
-                <span class="meta">Co-Founder & Lead Dev</span>
-                <h3>Stremini AI</h3>
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">Building self-tuned AI systems for everyday life automation and scam detection.</p>
+                <h3>Scottish Academy (CBSE)</h3>
+                <span class="year">Former Student</span>
                 <ul>
-                    <li>Managed 20-member team (10 Developers).</li>
-                    <li>Extracted 30k+ vulnerabilities from NVD for security.</li>
-                    <li>Built Custom Chatbot API on Cloudflare Workers.</li>
+                    <li>Class 10: 85% (Top 5 in English)</li>
+                    <li>Class 9: 92.75%</li>
                 </ul>
-                <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                    <a href="https://www.stremini.site/" style="text-decoration: underline; font-weight: 600;">Visit Live Site ↗</a>
-                    <a href="https://streminiai-protfolio.vercel.app/" style="color: var(--text-muted); font-size: 0.9rem;">Case Study</a>
-                </div>
             </div>
         </div>
+        <a href="https://drive.google.com/drive/folders/1lSu3zSzK5nUoyVcBfjg5gVVGa4lw37Xp?usp=sharing" class="proof-button">View Academic Proofs →</a>
     </section>
 
-    <section id="research" class="reveal">
-        <div class="section-header">
-            <h2 class="section-title">Research</h2>
-            <span class="section-subtitle">Papers & Studies</span>
-        </div>
-
+    <section id="honors">
+        <h2 class="section-title">Honors & Achievements</h2>
         <div class="grid">
-            <div class="paper-group">
-                <a href="https://vishwajeetadkine.blogspot.com/" class="paper-item">
-                    <span class="paper-tag">AI Safety</span>
-                    <div class="paper-title">Improving Temporal Awareness in LLMs</div>
-                    <div class="paper-desc">Methodology to fix AI hallucinations regarding current date/time via API injection grounding.</div>
-                </a>
-
-                <a href="https://vishwajeetadkine.blogspot.com/" class="paper-item">
-                    <span class="paper-tag">Reliability</span>
-                    <div class="paper-title">Self-Verification Prompting</div>
-                    <div class="paper-desc">A two-step self-checking system designed to significantly reduce hallucinated responses in chatbots.</div>
-                </a>
+            <div class="card">
+                <h3>🏆 IMUN Maths Olympiad</h3>
+                <p>Certificate of Excellence & Letter of Recommendation (2025)</p>
             </div>
-
-            <div class="paper-group">
-                <a href="https://vishwajeetadkine.blogspot.com/" class="paper-item">
-                    <span class="paper-tag">Agri-Tech</span>
-                    <div class="paper-title">Core Problems of Indian Farmers</div>
-                    <div class="paper-desc">Region-specific analysis of agricultural challenges that informed the architectural design of KhetiAI.</div>
-                </a>
-                
-                <div class="paper-item">
-                    <span class="paper-tag">Education</span>
-                    <div class="paper-title">Interdisciplinary JEE Concepts</div>
-                    <div class="paper-desc">An 80+ page E-book exploring the mathematical links between Physics and Artificial Intelligence.</div>
-                </div>
+            <div class="card">
+                <h3>🌟 School Connect AI Olympiad</h3>
+                <p>Top International Ranker</p>
             </div>
         </div>
+        <a href="https://drive.google.com/drive/folders/1mg0SHKM6rXX0trGhEEkcIn_9B6d5ovsP?usp=sharing" class="proof-button">View Honors & Certificates →</a>
     </section>
 
-    <section id="skills" class="reveal">
-        <div class="section-header">
-            <h2 class="section-title">Technical Arsenal</h2>
-            <span class="section-subtitle">Tools & Stack</span>
-        </div>
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
         <div class="skills-container">
-            <div class="skill-box">
-                <h4>Languages</h4>
-                <div class="tag-cloud">
-                    <span class="tag">Python</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">C++</span>
-                    <span class="tag">HTML/CSS</span>
+            <div class="skill-category">
+                <h3>💻 Programming</h3>
+                <div>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">C++</span>
                 </div>
             </div>
-            <div class="skill-box">
-                <h4>Web Infrastructure</h4>
-                <div class="tag-cloud">
-                    <span class="tag">Cloudflare Workers</span>
-                    <span class="tag">Firebase</span>
-                    <span class="tag">Vercel</span>
-                    <span class="tag">REST APIs</span>
+            <div class="skill-category">
+                <h3>🌐 Web Development</h3>
+                <div>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">Cloudflare Workers</span>
+                    <span class="skill-tag">Vercel</span>
+                    <span class="skill-tag">REST APIs</span>
                 </div>
             </div>
-            <div class="skill-box">
-                <h4>AI & Data</h4>
-                <div class="tag-cloud">
-                    <span class="tag">Gemini API</span>
-                    <span class="tag">Prompt Engineering</span>
-                    <span class="tag">NLP</span>
-                    <span class="tag">Safe Browsing API</span>
+            <div class="skill-category">
+                <h3>🤖 AI & Tools</h3>
+                <div>
+                    <span class="skill-tag">Google Gemini API</span>
+                    <span class="skill-tag">Prompt Engineering</span>
+                    <span class="skill-tag">Safe Browsing API</span>
+                    <span class="skill-tag">WHOIS</span>
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">ML Basics</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>🛠️ Other Tools</h3>
+                <div>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Canva</span>
+                    <span class="skill-tag">SEO</span>
+                    <span class="skill-tag">Google Search Console</span>
+                    <span class="skill-tag">Blogger</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>🎯 Soft Skills</h3>
+                <div>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Research</span>
+                    <span class="skill-tag">Team Management</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="reveal">
-        <div class="section-header">
-            <h2 class="section-title">Education & Honors</h2>
+    <section id="projects">
+        <h2 class="section-title">Major Projects & Initiatives</h2>
+        <div class="grid">
+            <div class="project-card">
+                <div>
+                    <h3>KhetiAI</h3>
+                    <span class="project-role">Founder | June 2025 – Present</span>
+                    <p>AI-powered digital agriculture platform for farmers, focused on integrating crop guidance, marketplace, weather insights, and task scheduling.</p>
+                    <ul>
+                        <li>Led a 7-member global team (operations, development, marketing).</li>
+                        <li>Built MVP with weather forecast, budget management, and rental marketplace.</li>
+                        <li>Designed stable backend for AI-crop disease predictor & clean UI hosted on Vercel.</li>
+                        <li>The AI-Powered crop disease predictor is available on the website and will be soon added to the app, along with the eCommerce marketplace and task scheduler.</li>
+                        <li>Reached 5.5K+ users on social media, projected 20K by Dec 2025.</li>
+                        <li>Coordinated with Flutter developers to build the app MVP and add features.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="project-link">🌐 Website</a> 
+                        <a href="https://www.instagram.com/khetiplus.ai/" class="project-link">📷 Instagram</a>
+                    </div>
+                </div>
+                <a href="https://my-portfolio-delta-weld-18.vercel.app/" class="view-full-project">📖 View Full Project Details →</a>
+                <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="proof-button">View KhetiAI Proofs →</a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3>Stremini AI</h3>
+                    <span class="project-role">Co-Founder & Lead Developer | Aug 2025 – Present</span>
+                    <p>Startup focused on building self-tuned AI systems for everyday life automation. The team consisted of 20 total members with 10 developers.</p>
+                    <ul>
+                        <li>Managed the website and the app development as the Lead Developer.</li>
+                        <li>Developed a Website Trust Score System using WHOIS & Safe Browsing APIs.</li>
+                        <li>Extracted 30,000+ vulnerabilities from NVD for scam detection backend.</li>
+                        <li>Created a Gemini 2.5 Flash API chatbot hosted on Cloudflare Worker.</li>
+                        <li>I developed the Cloudflare Worker API endpoint for features like the Chatbot, automation, AI-powered keyboard, and Scam detection.</li>
+                        <li>Managed branding, SEO (score 78), and GSC indexing.</li>
+                        <li>Coordinated with other developers to build the app MVP within the deadline.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://www.stremini.site/" class="project-link">🌐 Website</a>
+                        <a href="https://www.instagram.com/streminiai/" class="project-link">📷 Instagram</a>
+                    </div>
+                </div>
+                <a href="https://streminiai-protfolio.vercel.app/" class="view-full-project">📖 View Full Project Details →</a>
+                <a href="https://drive.google.com/drive/folders/1_B6cbjjJ0xu3G0eOa7IHKpuEn4Xradfe?usp=sharing" class="proof-button">View Stremini AI Proofs →</a>
+            </div>
         </div>
+    </section>
+
+    <section id="research">
+        <h2 class="section-title">Research & Publications</h2>
+        <div class="research-grid">
+            <div class="research-section">
+                <h3>🔒 AI Reliability & Safety</h3>
+                
+                <div class="research-paper">
+                    <h4>Improving Temporal Awareness in Large Language Models</h4>
+                    <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Successfully implemented in the Stremini-AI app.</p>
+                </div>
+
+                <div class="research-paper">
+                    <h4>Self-Verification Prompting for Reliable Chatbots</h4>
+                    <p>Developed a two-step self-checking system designed to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
+                </div>
+
+                <div class="research-paper">
+                    <h4>Prompt Injection Defense using Context Sanitization</h4>
+                    <p>Proposed semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions.</p>
+                </div>
+
+                <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 Read Research Papers →</a>
+            </div>
+
+            <div class="research-section">
+                <h3>🌱 Agri-Tech Research</h3>
+                
+                <div class="research-paper">
+                    <h4>Core Problems Faced by Indian Farmers: Region-Specific Analysis and AI Solutions</h4>
+                    <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
+                    <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 Read Research Papers →</a>
+                </div>
+                
+                <div class="research-paper">
+                    <h4>80+ Page E-book on Interdisciplinary JEE Concepts</h4>
+                    <p>Exploring links between Physics, Mathematics, and AI. Expected completion: November 30, 2025.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <h2 class="section-title">Leadership & Management Experience</h2>
         <div class="grid">
             <div class="card">
-                <span class="meta">Academic</span>
-                <h3>Gokulnath Secondary School</h3>
-                <ul>
-                    <li>School Topper Class 11 (93.17%)</li>
-                    <li>Predicted Class 12 Topper</li>
-                </ul>
-                <a href="https://drive.google.com/drive/folders/1lSu3zSzK5nUoyVcBfjg5gVVGa4lw37Xp?usp=sharing" style="font-size:0.85rem; margin-top:1rem; display:block; text-decoration:underline;">View Proofs</a>
+                <h3>🎉 Event Organizer - School Farewell</h3>
+                <p>Led a 20-member team managing comprehensive event logistics for 200+ attendees. Awarded "Most Beautiful Organization" for exceptional planning and execution.</p>
             </div>
+            
             <div class="card">
-                <span class="meta">Awards</span>
-                <h3>Global Recognition</h3>
-                <ul>
-                    <li>🏆 IMUN Maths Olympiad: Excellence & LoR</li>
-                    <li>🌟 School Connect AI Olympiad: Top Ranker</li>
-                </ul>
-                <a href="https://drive.google.com/drive/folders/1mg0SHKM6rXX0trGhEEkcIn_9B6d5ovsP?usp=sharing" style="font-size:0.85rem; margin-top:1rem; display:block; text-decoration:underline;">View Certificates</a>
+                <h3>👥 Team Lead - Stremini AI</h3>
+                <p>Oversaw technical milestones, recruitment processes, and global team coordination across multiple time zones. Managed a diverse team of developers and operations personnel.</p>
+            </div>
+            
+            <div class="card">
+                <h3>🌾 Family Business Support - Agriculture</h3>
+                <p>Managed agricultural shop operations and provided hands-on assistance to farmers in applying for government subsidies, gaining practical insights that inspired KhetiAI development.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section reveal">
-        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to collaborate?</h2>
-        <p style="color: var(--text-muted);">I'm always open to discussing new projects, research ideas, or opportunities.</p>
-        
-        <div class="social-links">
-            <a href="mailto:vishwajeetadkine705@gmail.com">Email</a>
-            <a href="https://www.instagram.com/vishwajeet_streminiai/">Instagram</a>
-            <a href="https://www.linkedin.com/">LinkedIn</a>
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem;">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's connect!
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📧</span>
+                    <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📍</span>
+                    <span>India</span>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📷</span>
+                    <a href="https://www.instagram.com/vishwajeet_streminiai/">@vishwajeet_streminiai</a>
+                </div>
+            </div>
         </div>
-        
-        <p style="margin-top: 4rem; font-size: 0.8rem; color: #999;">© 2025 Vishwajeet Adkine. Crafted with intent.</p>
     </section>
-
-    <script>
-        // Smooth reveal animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
 </body>
 </html>
