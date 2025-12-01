@@ -225,12 +225,18 @@
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         
-        .card:hover {
+        /* Specific styling for research card links */
+        .research-card.card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
             border-color: var(--accent-color);
+            text-decoration: none;
         }
-
+        
+        .research-card.card:hover h3 {
+            color: var(--accent-color);
+        }
+        
         .card h3 {
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
@@ -311,6 +317,11 @@
         }
         
         /* --- Research Styling (Simplified for consistency) --- */
+        .research-card {
+            text-decoration: none; /* Remove underline from card link */
+            color: inherit;
+        }
+        
         .research-card h3 {
             font-size: 1.3rem;
             color: var(--text-main);
@@ -579,35 +590,45 @@
         <h2 class="section-title">Research & Publications</h2>
         <div class="grid">
             
-            <div class="card research-card">
-                <h3>⏳ Temporal Awareness in LLMs</h3>
-                <span class="project-role">AI Reliability & Safety</span>
-                <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Implemented in the Stremini-AI app.</p>
-            </div>
+            <a href="temporal-awareness.html" class="card research-card">
+                <div>
+                    <h3>⏳ Temporal Awareness in LLMs</h3>
+                    <span class="project-role">AI Reliability & Safety</span>
+                    <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. (Click for Full Paper)</p>
+                </div>
+            </a>
 
-            <div class="card research-card">
-                <h3>✅ Self-Verification Prompting</h3>
-                <span class="project-role">AI Reliability & Safety</span>
-                <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
-            </div>
+            <a href="self-verification.html" class="card research-card">
+                <div>
+                    <h3>✅ Self-Verification Prompting</h3>
+                    <span class="project-role">AI Reliability & Safety</span>
+                    <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology. (Click for Details)</p>
+                </div>
+            </a>
             
-            <div class="card research-card">
-                <h3>🛡️ Prompt Injection Defense</h3>
-                <span class="project-role">AI Reliability & Safety</span>
-                <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization).</p>
-            </div>
+            <a href="prompt-defense.html" class="card research-card">
+                <div>
+                    <h3>🛡️ Prompt Injection Defense</h3>
+                    <span class="project-role">AI Reliability & Safety</span>
+                    <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization). (Click for Details)</p>
+                </div>
+            </a>
             
-            <div class="card research-card">
-                <h3>🌾 Problems Faced by Indian Farmers</h3>
-                <span class="project-role">Agri-Tech Research</span>
-                <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
-            </div>
+            <a href="agritech-research.html" class="card research-card">
+                <div>
+                    <h3>🌾 Problems Faced by Indian Farmers</h3>
+                    <span class="project-role">Agri-Tech Research</span>
+                    <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app. (Click for Study)</p>
+                </div>
+            </a>
 
-            <div class="card research-card">
-                <h3>📚 Interdisciplinary JEE E-book (WIP)</h3>
-                <span class="project-role">Interdisciplinary Research | Expected Nov 2025</span>
-                <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
-            </div>
+            <a href="jee-ebook.html" class="card research-card">
+                <div>
+                    <h3>📚 Interdisciplinary JEE E-book (WIP)</h3>
+                    <span class="project-role">Interdisciplinary Research | Expected Nov 2025</span>
+                    <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation. (Click for Abstract)</p>
+                </div>
+            </a>
 
         </div>
         <div style="text-align: center;">
