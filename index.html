@@ -223,18 +223,14 @@
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            /* Important for research cards, so they look clickable but aren't */
+            cursor: default; 
         }
         
-        /* Specific styling for research card links */
-        .research-card.card:hover {
+        .card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
             border-color: var(--accent-color);
-            text-decoration: none;
-        }
-        
-        .research-card.card:hover h3 {
-            color: var(--accent-color);
         }
         
         .card h3 {
@@ -287,7 +283,7 @@
         }
         
         /* Proofs and Details - Made into highly visible accent buttons */
-        .view-full-project, .proof-button, .research-link {
+        .view-full-project, .proof-button, .research-link, .research-button {
             display: inline-block;
             padding: 0.8rem 1.5rem;
             margin-top: 1.5rem;
@@ -303,13 +299,22 @@
             margin-right: 1rem;
         }
         
+        /* Research button specific style for placement inside card */
+        .research-button {
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            box-shadow: none;
+        }
+        
         /* FIX: Ensures visited/active buttons retain accent background and white text */
-        .view-full-project:visited, .proof-button:visited, .research-link:visited {
+        .view-full-project:visited, .proof-button:visited, .research-link:visited, .research-button:visited {
              color: #fff; 
              background: var(--accent-color); 
         }
 
-        .view-full-project:hover, .proof-button:hover, .research-link:hover {
+        .view-full-project:hover, .proof-button:hover, .research-link:hover, .research-button:hover {
             background: var(--text-main); /* Change color completely on hover */
             border-color: var(--text-main);
             transform: translateY(-2px);
@@ -317,11 +322,6 @@
         }
         
         /* --- Research Styling (Simplified for consistency) --- */
-        .research-card {
-            text-decoration: none; /* Remove underline from card link */
-            color: inherit;
-        }
-        
         .research-card h3 {
             font-size: 1.3rem;
             color: var(--text-main);
@@ -405,7 +405,7 @@
             .hero h1 { font-size: 2.8rem; }
             section { padding: 4rem 1.5rem; }
             .cta-button { display: block; width: 100%; margin-top: 0.5rem; }
-            .view-full-project, .proof-button, .research-link { 
+            .view-full-project, .proof-button, .research-link, .research-button { 
                 display: block; 
                 width: 100%; 
                 margin-right: 0;
@@ -590,45 +590,50 @@
         <h2 class="section-title">Research & Publications</h2>
         <div class="grid">
             
-            <a href="temporal-awareness.html" class="card research-card">
+            <div class="card research-card">
                 <div>
                     <h3>⏳ Temporal Awareness in LLMs</h3>
                     <span class="project-role">AI Reliability & Safety</span>
-                    <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. (Click for Full Paper)</p>
+                    <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time.</p>
                 </div>
-            </a>
+                <a href="temporal-awareness.html" class="research-button">View Full Paper →</a>
+            </div>
 
-            <a href="self-verification.html" class="card research-card">
+            <div class="card research-card">
                 <div>
                     <h3>✅ Self-Verification Prompting</h3>
                     <span class="project-role">AI Reliability & Safety</span>
-                    <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology. (Click for Details)</p>
+                    <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
                 </div>
-            </a>
+                <a href="self-verification.html" class="research-button">View Details →</a>
+            </div>
             
-            <a href="prompt-defense.html" class="card research-card">
+            <div class="card research-card">
                 <div>
                     <h3>🛡️ Prompt Injection Defense</h3>
                     <span class="project-role">AI Reliability & Safety</span>
-                    <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization). (Click for Details)</p>
+                    <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization).</p>
                 </div>
-            </a>
+                <a href="prompt-defense.html" class="research-button">View Details →</a>
+            </div>
             
-            <a href="agritech-research.html" class="card research-card">
+            <div class="card research-card">
                 <div>
                     <h3>🌾 Problems Faced by Indian Farmers</h3>
                     <span class="project-role">Agri-Tech Research</span>
-                    <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app. (Click for Study)</p>
+                    <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
                 </div>
-            </a>
+                <a href="agritech-research.html" class="research-button">View Study →</a>
+            </div>
 
-            <a href="jee-ebook.html" class="card research-card">
+            <div class="card research-card">
                 <div>
                     <h3>📚 Interdisciplinary JEE E-book (WIP)</h3>
                     <span class="project-role">Interdisciplinary Research | Expected Nov 2025</span>
-                    <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation. (Click for Abstract)</p>
+                    <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
                 </div>
-            </a>
+                <a href="jee-ebook.html" class="research-button">View Abstract →</a>
+            </div>
 
         </div>
         <div style="text-align: center;">
