@@ -192,49 +192,49 @@
 </head>
 <body>
     <div class="research-detail-container">
-        <h1>⏳ Improving Temporal Awareness in LLMs</h1>
+        <h1> Improving Temporal Awareness in LLMs</h1>
         <span class="author">Author: Vishwajeet Adkine | AI Reliability & Safety</span>
         <span class="date">Research Topic: Agri-Tech</span>
         
         <h2>Abstract</h2>
-        <p>Large Language Models (LLMs) suffer from a **knowledge cutoff**, limiting their utility for tasks requiring current or evolving information, such as financial analysis. This paper addresses this limitation by proposing and evaluating a system that combines **Retrieval-Augmented Generation (RAG)** for factual grounding and **Function Calling** for real-time data access. We demonstrate that this integrated approach effectively mitigates temporal conflict, improves the accuracy of outputs, and provides a robust framework for agentic workflows, ultimately boosting LLM reliability in dynamic environments.</p>
+        <p>Large Language Models (LLMs) suffer from a knowledge cutoff, limiting their utility for tasks requiring current or evolving information, such as financial analysis. This paper addresses this limitation by proposing and evaluating a system that combines Retrieval-Augmented Generation (RAG) for factual grounding and Function Calling for real-time data access. We demonstrate that this integrated approach effectively mitigates temporal conflict, improves the accuracy of outputs, and provides a robust framework for agentic workflows, ultimately boosting LLM reliability in dynamic environments.</p>
         
         <h2>Introduction</h2>
         <h3>Context</h3>
-        <p>LLMs have revolutionized AI but rely on static, historical training data, making them susceptible to **temporal generalization failures** and the "outdated knowledge" problem (as seen in papers discussing temporal conflict and knowledge cutoffs).</p>
+        <p>LLMs have revolutionized AI but rely on static, historical training data, making them susceptible to temporal generalization failures and the "outdated knowledge" problem (as seen in papers discussing temporal conflict and knowledge cutoffs).</p>
 
         <h3>Problem Statement</h3>
-        <p>The core challenge is the LLM's inability to access and incorporate knowledge that appeared **after** its training cutoff date, leading to **inaccurate or hallucinated answers**, especially in fast-changing domains like finance.</p>
+        <p>The core challenge is the LLM's inability to access and incorporate knowledge that appeared after its training cutoff date, leading to inaccurate or hallucinated answers, especially in fast-changing domains like finance.</p>
 
         <h3>Proposed Solution</h3>
         <p>We investigate LLM Grounding via two primary methods:</p>
         <ul>
-            <li>**Retrieval-Augmented Generation (RAG):** Injecting relevant external text/documents into the context.</li>
-            <li>**External Tool Integration (Function Calling):** Allowing the model to execute code (like calling a Stock Market API) for real-time data.</li>
+            <li> Retrieval-Augmented Generation (RAG): Injecting relevant external text/documents into the context.</li>
+            <li> External Tool Integration (Function Calling): Allowing the model to execute code (like calling a Stock Market API) for real-time data.</li>
         </ul>
         
         <h2>Methodology: Integrated Grounding Framework</h2>
         <h3>Framework Design</h3>
         <p>A comparison of three systems (see AWS case study on RAG vs. Customization):</p>
         <ul>
-            <li>**Baseline:** The vanilla LLM (pre-knowledge cutoff).</li>
-            <li>**RAG-Augmented System:** Uses an external document index and a systematic review of RAG systems to retrieve and pass documents into the LLM's context.</li>
-            <li>**Tool-Augmented System (Proposed):** Integrates **Function Calling** capabilities (as described in Google Cloud docs) to allow the LLM to access live financial data (e.g., using Financial Modeling Prep APIs).</li>
+            <li> Baseline: The vanilla LLM (pre-knowledge cutoff).</li>
+            <li> RAG-Augmented System: Uses an external document index and a systematic review of RAG systems to retrieve and pass documents into the LLM's context.</li>
+            <li> Tool-Augmented System (Proposed): Integrates **Function Calling capabilities (as described in Google Cloud docs) to allow the LLM to access live financial data (e.g., using Financial Modeling Prep APIs).</li>
         </ul>
 
         <h3>Evaluation</h3>
         <ul>
-            <li>**Data:** A custom benchmark based on temporal reasoning papers (like TIME/TEST OF TIME) and specific questions requiring post-cutoff financial knowledge.</li>
-            <li>**Metrics:** We use established LLM Evaluation Metrics to measure Accuracy, Temporal Relevance, and Factual Grounding.</li>
-            <li>**Robustness Measures:** We implement strategies to handle operational issues like API errors, incorporating concepts of **fault tolerance** (retries, fallbacks) and error handling in agentic workflows (SHIELDA).</li>
+            <li> Data: A custom benchmark based on temporal reasoning papers (like TIME/TEST OF TIME) and specific questions requiring post-cutoff financial knowledge.</li>
+            <li> Metrics: We use established LLM Evaluation Metrics to measure Accuracy, Temporal Relevance, and Factual Grounding.</li>
+            <li> Robustness Measures: We implement strategies to handle operational issues like API errors, incorporating concepts of **fault tolerance** (retries, fallbacks) and error handling in agentic workflows (SHIELDA).</li>
         </ul>
 
         <h2>Results and Discussion</h2>
         <ul>
-            <li>**RAG Effectiveness:** The RAG-Augmented System significantly outperforms the Baseline in answering general factual questions, confirming its role in providing static grounding.</li>
-            <li>**Temporal Superiority:** The **Tool-Augmented System** demonstrates the highest accuracy for time-sensitive queries, successfully retrieving and utilizing up-to-the-minute data to resolve temporal conflicts.</li>
-            <li>**Agentic Considerations:** While highly accurate, the Tool-Augmented System introduces challenges related to latency optimization (reducing API call delays) and cost optimization (managing the price of function calls).</li>
-            <li>**Security Note:** The integration of external tools necessitates a discussion on implementing defense mechanisms against Prompt Injection Attacks.</li>
+            <li> RAG Effectiveness: The RAG-Augmented System significantly outperforms the Baseline in answering general factual questions, confirming its role in providing static grounding.</li>
+            <li> Temporal Superiority: The Tool-Augmented System demonstrates the highest accuracy for time-sensitive queries, successfully retrieving and utilizing up-to-the-minute data to resolve temporal conflicts.</li>
+            <li> Agentic Considerations: While highly accurate, the Tool-Augmented System introduces challenges related to latency optimization (reducing API call delays) and cost optimization (managing the price of function calls).</li>
+            <li> Security Note: The integration of external tools necessitates a discussion on implementing defense mechanisms against Prompt Injection Attacks.</li>
         </ul>
         
         <h2>Conclusion and Future Work</h2>
@@ -249,7 +249,7 @@
 
         <h2>References</h2>
         <ul class="ref-list">
-            <li>[All the provided arXiv, Neptune, Aisera, AWS, Google Cloud, and other source links, formatted consistently]</li>
+            <li> All the provided arXiv, Neptune, Aisera, AWS, Google Cloud, and other source links, formatted consistently]</li>
         </ul>
         
         <div style="margin-top: 3rem;">
