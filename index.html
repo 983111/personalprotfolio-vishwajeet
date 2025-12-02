@@ -11,13 +11,12 @@
 
     <style>
         :root {
-            /* --- The "Paper & Ink" Palette --- */
-            --bg-color: #FDFBF7;       /* Warm Alabaster - Looks like premium paper */
-            --card-bg: #ffffff;        /* Pure white for contrast */
-            --text-main: #1C1C1C;      /* Soft Charcoal */
-            --text-muted: #555555;     
-            --accent-color: #1a3c34;   /* Deep Forest Green - Professional & Grounded */
-            --accent-light: #e8eceb;   /* Very light green/grey */
+            --bg-color: #FDFBF7;
+            --card-bg: #ffffff;
+            --text-main: #1C1C1C;
+            --text-muted: #555555;
+            --accent-color: #1a3c34;
+            --accent-light: #e8eceb;
             --border-color: #E5E5E0;
             
             --radius: 12px;
@@ -32,14 +31,12 @@
             scroll-behavior: smooth;
         }
 
-        /* --- Global Styling --- */
         body {
             font-family: 'Outfit', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.65;
             overflow-x: hidden;
-            /* Subtle architectural grid pattern */
             background-image: radial-gradient(#d8d6d0 1px, transparent 1px);
             background-size: 32px 32px;
         }
@@ -51,7 +48,6 @@
             line-height: 1.2;
         }
 
-        /* --- Link Visibility Styling (CRITICAL FIXES) --- */
         a {
             color: var(--accent-color);
             transition: color 0.2s, background-color 0.2s, opacity 0.2s;
@@ -62,7 +58,6 @@
             font-weight: 500;
         }
         
-        /* FIX: Ensures visited links retain the accent color and don't turn black/purple */
         a:visited {
             color: var(--accent-color);
             text-decoration-color: var(--accent-color);
@@ -74,7 +69,6 @@
             opacity: 1;
         }
 
-        /* Nav links are subtle but visible */
         .nav-links a {
             text-decoration: none;
             color: var(--text-muted);
@@ -84,7 +78,6 @@
             color: var(--accent-color);
         }
         
-        /* --- Navigation Bar --- */
         nav {
             position: fixed;
             top: 20px;
@@ -120,7 +113,6 @@
             list-style: none;
         }
 
-        /* --- Hero Section --- */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -152,7 +144,6 @@
             font-weight: 300;
         }
 
-        /* --- Social Links --- */
         .social-links {
             margin-top: 2rem;
             display: flex;
@@ -171,13 +162,12 @@
             transform: scale(1.1);
         }
 
-        /* --- CTA Buttons (Styled for clear action) --- */
         .cta-button {
             display: inline-block;
             padding: 1rem 2.5rem;
             background: var(--accent-color);
             color: #fff;
-            text-decoration: none; /* Remove underline from button */
+            text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
             transition: all 0.3s;
@@ -194,7 +184,6 @@
             box-shadow: var(--shadow-hover);
         }
 
-        /* --- Section Layouts --- */
         section {
             max-width: 1100px;
             margin: 0 auto;
@@ -223,7 +212,6 @@
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            /* Important for research cards, so they look clickable but aren't */
             cursor: default; 
         }
         
@@ -258,7 +246,6 @@
             left: -0.5rem;
         }
 
-        /* --- Project Links (High Visibility Styling for Buttons/Proofs) --- */
         .project-links {
             margin-top: 1rem;
         }
@@ -268,14 +255,13 @@
             background: var(--accent-light);
             color: var(--accent-color);
             border: 1px solid var(--accent-color);
-            text-decoration: none; /* Remove general underline from button links */
+            text-decoration: none;
             border-radius: 6px;
             display: inline-block;
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
             font-weight: 500;
             text-underline-offset: 0;
-            text-decoration: none;
         }
         
         .project-link:hover {
@@ -284,14 +270,13 @@
             transform: none;
         }
         
-        /* Proofs and Details - Made into highly visible accent buttons */
         .view-full-project, .proof-button, .research-link, .research-button {
             display: inline-block;
             padding: 0.8rem 1.5rem;
             margin-top: 1.5rem;
             background: var(--accent-color);
             color: #fff;
-            text-decoration: none; /* Crucial: Remove text underline from styled buttons */
+            text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s;
@@ -301,7 +286,6 @@
             margin-right: 1rem;
         }
         
-        /* Research button specific style for placement inside card */
         .research-button {
             margin-top: 1rem;
             padding: 0.6rem 1.2rem;
@@ -310,20 +294,18 @@
             box-shadow: none;
         }
         
-        /* FIX: Ensures visited/active buttons retain accent background and white text */
         .view-full-project:visited, .proof-button:visited, .research-link:visited, .research-button:visited {
              color: #fff; 
              background: var(--accent-color); 
         }
 
         .view-full-project:hover, .proof-button:hover, .research-link:hover, .research-button:hover {
-            background: var(--text-main); /* Change color completely on hover */
+            background: var(--text-main);
             border-color: var(--text-main);
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
         }
         
-        /* --- Research Styling (Simplified for consistency) --- */
         .research-card h3 {
             font-size: 1.3rem;
             color: var(--text-main);
@@ -334,7 +316,6 @@
             margin-bottom: 0;
         }
 
-        /* Skills Tags */
         .skills-container {
             display: flex;
             flex-direction: column;
@@ -361,8 +342,6 @@
             font-weight: 500;
         }
 
-
-        /* Contact links: Made more prominent with hover effect */
         .contact-info {
             display: flex;
             flex-direction: column;
@@ -381,7 +360,6 @@
             text-decoration: underline;
             text-underline-offset: 4px;
         }
-        /* FIX: Ensures visited contact links retain accent color */
         .contact-item a:visited {
             color: var(--accent-color);
         }
@@ -393,7 +371,6 @@
             text-decoration: none;
             border-radius: 2px;
         }
-
 
         @media (max-width: 768px) {
             nav {
@@ -441,8 +418,8 @@
             <p>Aspiring to be an AI engineer, I'm passionate about developing scalable, ethical, and accessible artificial intelligence systems. Experienced in leading international tech teams, building AI-integrated applications, and conducting independent research in AI reliability and agri-tech innovation.</p>
             <a href="#contact" class="cta-button">Get In Touch</a>
             <div class="social-links">
-                <a href="mailto:vishwajeetadkine705@gmail.com" title="Email">📧</a>
-                <a href="https://www.instagram.com/vishwajeet_streminiai/" title="Instagram">📷</a>
+                <a href="mailto:vishwajeetadkine705@gmail.com" title="Email">Email</a>
+                <a href="https://www.instagram.com/vishwajeet_streminiai/" title="Instagram">Instagram</a>
             </div>
         </div>
     </section>
@@ -467,29 +444,29 @@
                 </ul>
             </div>
         </div>
-        <a href="https://drive.google.com/drive/folders/1lSu3zSzK5nUoyVcBfjg5gVVGa4lw37Xp?usp=sharing" class="proof-button">View Academic Proofs →</a>
+        <a href="https://drive.google.com/drive/folders/1lSu3zSzK5nUoyVcBfjg5gVVGa4lw37Xp?usp=sharing" class="proof-button">View Academic Proofs</a>
     </section>
 
     <section id="honors">
         <h2 class="section-title">Honors & Achievements</h2>
         <div class="grid">
             <div class="card">
-                <h3>🏆 IMUN Maths Olympiad</h3>
+                <h3>IMUN Maths Olympiad</h3>
                 <p>Certificate of Excellence & Letter of Recommendation (2025)</p>
             </div>
             <div class="card">
-                <h3>🌟 School Connect AI Olympiad</h3>
+                <h3>School Connect AI Olympiad</h3>
                 <p>Top International Ranker</p>
             </div>
         </div>
-        <a href="https://drive.google.com/drive/folders/1mg0SHKM6rXX0trGhEEkcIn_9B6d5ovsP?usp=sharing" class="proof-button">View Honors & Certificates →</a>
+        <a href="https://drive.google.com/drive/folders/1mg0SHKM6rXX0trGhEEkcIn_9B6d5ovsP?usp=sharing" class="proof-button">View Honors & Certificates</a>
     </section>
 
     <section id="skills">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-container">
             <div class="skill-category">
-                <h3>💻 Programming</h3>
+                <h3>Programming</h3>
                 <div>
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">JavaScript</span>
@@ -497,7 +474,7 @@
                 </div>
             </div>
             <div class="skill-category">
-                <h3>🌐 Web Development</h3>
+                <h3>Web Development</h3>
                 <div>
                     <span class="skill-tag">HTML</span>
                     <span class="skill-tag">CSS</span>
@@ -508,7 +485,7 @@
                 </div>
             </div>
             <div class="skill-category">
-                <h3>🤖 AI & Tools</h3>
+                <h3>AI & Tools</h3>
                 <div>
                     <span class="skill-tag">Google Gemini API</span>
                     <span class="skill-tag">Prompt Engineering</span>
@@ -519,7 +496,7 @@
                 </div>
             </div>
             <div class="skill-category">
-                <h3>🛠️ Other Tools</h3>
+                <h3>Other Tools</h3>
                 <div>
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">Canva</span>
@@ -529,7 +506,7 @@
                 </div>
             </div>
             <div class="skill-category">
-                <h3>🎯 Soft Skills</h3>
+                <h3>Soft Skills</h3>
                 <div>
                     <span class="skill-tag">Leadership</span>
                     <span class="skill-tag">Problem Solving</span>
@@ -550,17 +527,17 @@
                     <p>AI-powered digital agriculture platform for farmers, focused on integrating crop guidance, marketplace, weather insights, and task scheduling.</p>
                     <ul>
                         <li>Led a 7-member global team (operations, development, marketing).</li>
-                        <li><strong>Production-ready app is complete</strong> with core features: <strong>AI Plant Disease Detector</strong>, <strong>AI Chatbot</strong>, <strong>Marketplace</strong>, <strong>Weather Forecast</strong>, and <strong>Budget Management</strong>.</li>
-                        <li>The app is <strong>expected to launch on the Play Store before the scheduled date</strong>.</li>
+                        <li>Production-ready app is complete with core features: AI Plant Disease Detector, AI Chatbot, Marketplace, Weather Forecast, and Budget Management.</li>
+                        <li>The app is expected to launch on the Play Store before the scheduled date.</li>
                         <li>Reached 5.5K+ users on social media, projected 20K by Dec 2025.</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="project-link">🌐 Website</a> 
-                        <a href="https://www.instagram.com/khetiplus.ai/" class="project-link">📷 Instagram</a>
+                        <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="project-link">Website</a> 
+                        <a href="https://www.instagram.com/khetiplus.ai/" class="project-link">Instagram</a>
                     </div>
                 </div>
-                <a href="https://my-portfolio-delta-weld-18.vercel.app/" class="view-full-project">📖 View Full Project Details →</a>
-                <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="proof-button">View KhetiAI Proofs →</a>
+                <a href="https://my-portfolio-delta-weld-18.vercel.app/" class="view-full-project">View Full Project Details</a>
+                <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="proof-button">View KhetiAI Proofs</a>
             </div>
 
             <div class="project-card card">
@@ -578,12 +555,12 @@
                         <li>Coordinated with other developers to build the app MVP within the deadline.</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://www.stremini.site/" class="project-link">🌐 Website</a>
-                        <a href="https://www.instagram.com/streminiai/" class="project-link">📷 Instagram</a>
+                        <a href="https://www.stremini.site/" class="project-link">Website</a>
+                        <a href="https://www.instagram.com/streminiai/" class="project-link">Instagram</a>
                     </div>
                 </div>
-                <a href="https://streminiai-protfolio.vercel.app/" class="view-full-project">📖 View Full Project Details →</a>
-                <a href="https://drive.google.com/drive/folders/1_B6cbjjJ0xu3G0eOa7IHKpuEn4Xradfe?usp=sharing" class="proof-button">View Stremini AI Proofs →</a>
+                <a href="https://streminiai-protfolio.vercel.app/" class="view-full-project">View Full Project Details</a>
+                <a href="https://drive.google.com/drive/folders/1_B6cbjjJ0xu3G0eOa7IHKpuEn4Xradfe?usp=sharing" class="proof-button">View Stremini AI Proofs</a>
             </div>
         </div>
     </section>
@@ -594,61 +571,61 @@
             
             <div class="card research-card">
                 <div>
-                    <h3>⏳ Improving Temporal Awareness in LLMs</h3>
+                    <h3>Improving Temporal Awareness in LLMs</h3>
                     <span class="project-role">AI Reliability & Safety</span>
                     <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time.</p>
                 </div>
-                <a href="temporal-awareness.html" class="research-button">View Full Paper →</a>
+                <a href="temporal-awareness.html" class="research-button">View Full Paper</a>
             </div>
 
             <div class="card research-card">
                 <div>
-                    <h3>✅ Self-Verification Prompting</h3>
+                    <h3>Self-Verification Prompting</h3>
                     <span class="project-role">AI Reliability & Safety</span>
                     <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
                 </div>
-                <a href="self-verification.html" class="research-button">View Details →</a>
+                <a href="self-verification.html" class="research-button">View Details</a>
             </div>
             
             <div class="card research-card">
                 <div>
-                    <h3>🛡️ AI-Driven Scam Detection</h3>
+                    <h3>AI-Driven Scam Detection</h3>
                     <span class="project-role">AI Security & Reliability</span>
                     <p>A multi-talented AI detective that combines WHOIS, NLP, and Safe Browsing to spot sophisticated text and link pattern scams.</p>
                 </div>
-                <a href="scam-detection.html" class="research-button">View Details →</a>
+                <a href="scam-detection.html" class="research-button">View Details</a>
             </div>
             
             <div class="card research-card">
                 <div>
-                    <h3>🛡️ Prompt Injection Defense</h3>
+                    <h3>Prompt Injection Defense</h3>
                     <span class="project-role">AI Reliability & Safety</span>
                     <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization).</p>
                 </div>
-                <a href="prompt-defense.html" class="research-button">View Details →</a>
+                <a href="prompt-defense.html" class="research-button">View Details</a>
             </div>
             
             <div class="card research-card">
                 <div>
-                    <h3>🌾 Problems Faced by Indian Farmers</h3>
+                    <h3>Problems Faced by Indian Farmers</h3>
                     <span class="project-role">Agri-Tech Research</span>
                     <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
                 </div>
-                <a href="agritech-research.html" class="research-button">View Study →</a>
+                <a href="agritech-research.html" class="research-button">View Study</a>
             </div>
 
             <div class="card research-card">
                 <div>
-                    <h3>📚 Interdisciplinary JEE E-book (WIP)</h3>
+                    <h3>Interdisciplinary JEE E-book (WIP)</h3>
                     <span class="project-role">Interdisciplinary Research | Expected Nov 2025</span>
                     <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
                 </div>
-                <a href="jee-ebook.html" class="research-button">View Abstract →</a>
+                <a href="jee-ebook.html" class="research-button">View Abstract</a>
             </div>
 
         </div>
         <div style="text-align: center;">
-            <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 View Full Research Blog →</a>
+            <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">View Full Research Blog</a>
         </div>
     </section>
 
@@ -656,17 +633,17 @@
         <h2 class="section-title">Leadership & Management Experience</h2>
         <div class="grid">
             <div class="card">
-                <h3>🎉 Event Organizer - School Farewell</h3>
+                <h3>Event Organizer - School Farewell</h3>
                 <p>Led a 20-member team managing comprehensive event logistics for 200+ attendees. Awarded "Most Beautiful Organization" for exceptional planning and execution.</p>
             </div>
             
             <div class="card">
-                <h3>👥 Team Lead - Stremini AI</h3>
+                <h3>Team Lead - Stremini AI</h3>
                 <p>Oversaw technical milestones, recruitment processes, and global team coordination across multiple time zones. Managed a diverse team of developers and operations personnel.</p>
             </div>
             
             <div class="card">
-                <h3>🌾 Family Business Support - Agriculture</h3>
+                <h3>Family Business Support - Agriculture</h3>
                 <p>Managed agricultural shop operations and provided hands-on assistance to farmers in applying for government subsidies, gaining practical insights that inspired KhetiAI development.</p>
             </div>
         </div>
@@ -680,15 +657,15 @@
             </p>
             <div class="contact-info">
                 <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📧</span>
+                    <span style="font-size: 1.5rem;">Email:</span>
                     <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a>
                 </div>
                 <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📍</span>
+                    <span style="font-size: 1.5rem;">Location:</span>
                     <span>India</span>
                 </div>
                 <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📷</span>
+                    <span style="font-size: 1.5rem;">Instagram:</span>
                     <a href="https://www.instagram.com/vishwajeet_streminiai/">@vishwajeet_streminiai</a>
                 </div>
             </div>
