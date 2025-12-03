@@ -134,7 +134,7 @@
         }
 
 
-        .back-link, .proof-button {
+        .back-link, .proof-button, .technical-button {
             display: inline-block;
             padding: 0.8rem 1.5rem;
             margin-top: 1.5rem;
@@ -158,13 +158,18 @@
             border: 1px solid var(--accent-color);
         }
         
+        .technical-button {
+            background: #2d5a4f;
+            border-color: #2d5a4f;
+        }
+        
         .back-link:hover {
             background: var(--accent-color);
             color: #fff;
             box-shadow: 0 6px 15px rgba(26, 60, 52, 0.3);
         }
 
-        .proof-button:hover {
+        .proof-button:hover, .technical-button:hover {
             background: var(--text-main);
             border-color: var(--text-main);
             transform: translateY(-2px);
@@ -182,6 +187,16 @@
             color: var(--text-muted);
             font-size: 0.9rem;
         }
+        
+        @media (max-width: 768px) {
+            .back-link, .proof-button, .technical-button {
+                display: block;
+                width: 100%;
+                margin-right: 0;
+                margin-top: 0.75rem;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -197,10 +212,10 @@
         <h2>Methodology: How the AI Works</h2>
         <p>The scam detection operates through three distinct analytical modules to build a comprehensive risk score:</p>
 
-        <h3>1. It Reads the Message’s Mind (NLP/Text Analysis)</h3>
+        <h3>1. It Reads the Message's Mind (NLP/Text Analysis)</h3>
         <p>The AI uses advanced language processing to analyze the actual text for high-risk emotional and rhetorical patterns. It specifically looks for the classic "scam voice"—words that create panic ("Your account is suspended!") or sound too good to be true ("You've won a prize!"). This module identifies psychological manipulation techniques common in phishing and scam messages.</p>
 
-        <h3>2. It Checks the Link’s ID (WHOIS & Safe Browsing)</h3>
+        <h3>2. It Checks the Link's ID (WHOIS & Safe Browsing)</h3>
         <p>If a message includes a URL, the AI initiates a background check using external security APIs:</p>
         <ul>
             <li><strong>WHOIS:</strong> Queries the registration database to see if the website is brand new (a big red flag for disposable scam sites).</li>
@@ -229,6 +244,7 @@
 
         <div style="margin-top: 3rem;">
             <a href="https://websitetrustscore.vishwajeetadkine705.workers.dev/" class="proof-button">Test the Deployed Trust Score System →</a>
+            <a href="trust-score-technical.html" class="technical-button">View Technical Implementation →</a>
             <a href="index.html#research" class="back-link">← Back to Research Overview</a>
         </div>
     </div>
