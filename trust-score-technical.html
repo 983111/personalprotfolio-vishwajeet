@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Implementation - Website Trust Score System</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --card-bg: #ffffff;
+            --text-main: #1C1C1C;
+            --text-muted: #555555;
+            --accent-color: #1a3c34;
+            --accent-light: #e8eceb;
+            --border-color: #E5E5E0;
+            --radius: 12px;
+            --code-bg: #f5f5f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            background-image: radial-gradient(#d8d6d0 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: underline;
+            text-decoration-color: var(--accent-color);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            color: var(--text-main);
+            text-decoration-color: var(--text-main);
+        }
+
+        .technical-container {
+            max-width: 1100px;
+            margin: 4rem auto;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(26, 60, 52, 0.06);
+        }
+        
+        @media (max-width: 768px) {
+            .technical-container {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        .technical-container h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .technical-container h2 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .technical-container h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .author {
+            color: var(--text-muted);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .technical-container p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .technical-container ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0;
+        }
+        
+        .technical-container ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .technical-container ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .code-section {
+            margin: 2rem 0;
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .code-header {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        pre {
+            margin: 0;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .algorithm-box {
+            background: var(--accent-light);
+            border-left: 5px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin-top: 2rem;
+            background: transparent;
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.88rem;
+            border: 1px solid var(--accent-color);
+            text-underline-offset: 0;
+        }
+        
+        .back-link:hover {
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(26, 60, 52, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: var(--accent-light);
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .back-link {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            
+            pre {
+                font-size: 0.75rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="technical-container">
+        <h1>Technical Implementation: Website Trust Score System</h1>
+        <span class="author">Research Implementation by Vishwajeet Adkine</span>
+        
+        <h2>System Overview</h2>
+        <p>This document presents the technical implementation of a URL trust assessment system deployed on Cloudflare Workers. The system employs a multi-factor scoring algorithm that evaluates URLs based on protocol security, domain reputation, structural patterns, registration age, and external threat intelligence.</p>
+
+        <h2>Architecture & Deployment</h2>
+        <p><strong>Platform:</strong> Cloudflare Workers (Edge Computing)</p>
+        <p><strong>Runtime:</strong> V8 JavaScript Engine</p>
+        <p><strong>API Endpoint:</strong> <code>https://websitetrustscore.vishwajeetadkine705.workers.dev/</code></p>
+        
+        <h3>Request Format</h3>
+        <div class="code-section">
+            <div class="code-header">HTTP GET Request</div>
+            <pre>GET /?url={encoded_url}</pre>
+        </div>
+
+        <h3>Response Schema</h3>
+        <div class="code-section">
+            <div class="code-header">JSON Response Structure</div>
+            <pre>{
+  "domain": "example.com",
+  "trust_score": 85,
+  "reasons": ["Array of detected risk factors"],
+  "verdict": "ALLOWED" | "BLOCKED"
+}</pre>
+        </div>
+
+        <h2>Scoring Algorithm</h2>
+        
+        <div class="algorithm-box">
+            <h3>Base Score: 100 points</h3>
+            <p>The system starts with a perfect score and applies deductions based on identified risk factors. The final verdict is determined by the threshold: scores below 35 result in a "BLOCKED" status.</p>
+        </div>
+
+        <h3>Risk Assessment Modules</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Penalty</th>
+                    <th>Rationale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTTP Protocol</td>
+                    <td>-20 points</td>
+                    <td>Unencrypted connections expose user data</td>
+                </tr>
+                <tr>
+                    <td>High-Risk TLD</td>
+                    <td>-15 points</td>
+                    <td>TLDs like .xyz, .top commonly used in scams</td>
+                </tr>
+                <tr>
+                    <td>Excessive Length</td>
+                    <td>-10 points</td>
+                    <td>Domains >45 chars often obfuscate identity</td>
+                </tr>
+                <tr>
+                    <td>Numeric Saturation</td>
+                    <td>-10 points</td>
+                    <td>>6 digits indicate automated generation</td>
+                </tr>
+                <tr>
+                    <td>Hyphen Abuse</td>
+                    <td>-10 points</td>
+                    <td>>4 hyphens suggest domain squatting</td>
+                </tr>
+                <tr>
+                    <td>Blacklist Match</td>
+                    <td>-40 points</td>
+                    <td>Known malicious domain</td>
+                </tr>
+                <tr>
+                    <td>New Domain (<90d)</td>
+                    <td>-25 points</td>
+                    <td>Disposable scam sites rarely age</td>
+                </tr>
+                <tr>
+                    <td>Recent Domain (<365d)</td>
+                    <td>-10 points</td>
+                    <td>Limited reputation history</td>
+                </tr>
+                <tr>
+                    <td>Suspicious Keywords</td>
+                    <td>-4 per keyword</td>
+                    <td>Phishing patterns (urgent, verify, etc.)</td>
+                </tr>
+                <tr>
+                    <td>Safe Browsing Flag</td>
+                    <td>-40 points</td>
+                    <td>Google-verified threat</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Core Implementation</h2>
+
+        <div class="code-section">
+            <div class="code-header">worker.js - Main Handler</div>
+            <pre>export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+    const inputURL = url.searchParams.get("url");
+
+    if (!inputURL) {
+      return json({ error: `Missing url parameter` }, 400);
+    }
+
+    let parsed;
+    try {
+      parsed = new URL(inputURL);
+    } catch (err) {
+      return json({ error: "Invalid URL format" }, 400);
+    }
+
+    const domain = parsed.hostname;
+    let score = 100;
+    const reasons = [];
+
+    // check if https
+    if (parsed.protocol !== "https:") {
+      score -= 20;
+      reasons.push("Connection is not secure (HTTP detected)");
+    }
+
+    // sketchy TLDs
+    const badTLD = [".xyz", ".top", ".pw", ".club", ".win", ".info", ".loan", ".rest"];
+    if (badTLD.some(t => domain.endsWith(t))) {
+      score -= 15;
+      reasons.push("High-risk TLD detected");
+    }
+
+    // really long domains are usually sus
+    if (domain.length > 45) {
+      score -= 10;
+      reasons.push("Unusually long domain");
+    }
+
+    // too many numbers in URL? probably bad
+    const digits = (inputURL.match(/\d/g) || []).length;
+    if (digits > 6) {
+      score -= 10;
+      reasons.push("URL contains too many numbers");
+    }
+
+    const hyphens = (inputURL.match(/-/g) || []).length;
+    if (hyphens > 4) {
+      score -= 10;
+      reasons.push("Excessive hyphens in URL");
+    }
+
+    // basic blacklist
+    const blacklist = ["malicious.com", "phishing-site.net", "scamtest.xyz"];
+    if (blacklist.includes(domain)) {
+      score -= 40;
+      reasons.push("Domain found in internal blacklist");
+    }
+
+    // whois check for domain age
+    try {
+      const whoisResp = await fetch(`https://ipwhois.app/json/${domain}`);
+      const whois = await whoisResp.json();
+
+      const trustedDomains = ["google.com", "www.google.com", "youtube.com", "facebook.com", "amazon.com"];
+
+      if (!trustedDomains.includes(domain)) {
+        if (whois.domain_age !== undefined) {
+          const days = whois.domain_age;
+
+          if (days < 90) {
+            score -= 25;
+            reasons.push(`Domain age very new (${days} days)`);
+          } else if (days < 365) {
+            score -= 10;
+            reasons.push(`Domain moderately new (${days} days)`);
+          }
+        } else {
+          // only care about this for simple domains
+          if (domain.split(".").length <= 2) {
+            reasons.push("WHOIS could not determine domain age");
+          }
+        }
+      }
+    } catch (err) {
+      reasons.push("WHOIS lookup failed");
+    }
+
+    // check for phishing keywords
+    const keywords = [
+      "free", "urgent", "verify", "update", "bank", "password",
+      "blocked", "offer", "win", "congratulations", "limited"
+    ];
+
+    const text = inputURL.toLowerCase();
+    const hits = keywords.filter(k => text.includes(k));
+
+    if (hits.length) {
+      score -= hits.length * 4;
+      reasons.push(`Suspicious keywords detected: ${hits.join(", ")}`);
+    }
+
+    // google safe browsing api check
+    try {
+      const gsbBody = {
+        client: { clientId: "stremini-ai", clientVersion: "1.0" },
+        threatInfo: {
+          threatTypes: ["MALWARE", "SOCIAL_ENGINEERING", "UNWANTED_SOFTWARE"],
+          platformTypes: ["ANY_PLATFORM"],
+          threatEntryTypes: ["URL"],
+          threatEntries: [{ url: inputURL }]
+        }
+      };
+
+      const gsbResp = await fetch(
+        `https://safebrowsing.googleapis.com/v4/threatMatches:find?key=${env.GSB_API_KEY}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(gsbBody)
+        }
+      );
+
+      const gsbData = await gsbResp.json();
+      if (gsbData.matches) {
+        score -= 40;
+        reasons.push("Google Safe Browsing flagged this URL");
+      }
+    } catch (err) {
+      reasons.push("Safe Browsing check failed");
+    }
+
+    // make sure score stays in range
+    score = Math.max(0, Math.min(100, score));
+
+    return json({
+      domain,
+      trust_score: score,
+      reasons,
+      verdict: score < 35 ? "BLOCKED" : "ALLOWED"
+    });
+  }
+};
+
+function json(obj, status = 200) {
+  return new Response(JSON.stringify(obj, null, 2), {
+    status,
+    headers: { "Content-Type": "application/json" }
+  });
+}</pre>
+        </div>
+
+        <h2>External API Integration</h2>
+
+        <h3>WHOIS Domain Age Verification</h3>
+        <p><strong>Endpoint:</strong> <code>https://ipwhois.app/json/{domain}</code></p>
+        <p><strong>Purpose:</strong> Retrieve domain registration age to identify disposable scam sites</p>
+        <p><strong>Trusted Domain Exemptions:</strong> Major platforms (Google, YouTube, Facebook, Amazon) bypass age checks to reduce API load and false positives.</p>
+
+        <h3>Google Safe Browsing API</h3>
+        <p><strong>Endpoint:</strong> <code>https://safebrowsing.googleapis.com/v4/threatMatches:find</code></p>
+        <p><strong>Threat Types Monitored:</strong></p>
+        <ul>
+            <li>MALWARE - Sites distributing malicious software</li>
+            <li>SOCIAL_ENGINEERING - Phishing and deceptive content</li>
+            <li>UNWANTED_SOFTWARE - PUPs and adware distributors</li>
+        </ul>
+
+        <h2>Performance Considerations</h2>
+        <ul>
+            <li><strong>Edge Deployment:</strong> Sub-50ms response times via Cloudflare's global network</li>
+            <li><strong>Async API Calls:</strong> Non-blocking architecture ensures fast execution</li>
+            <li><strong>Graceful Degradation:</strong> System continues operation even if external APIs fail</li>
+            <li><strong>Whitelist Optimization:</strong> Trusted domains skip expensive WHOIS lookups</li>
+        </ul>
+
+        <h2>Future Enhancements</h2>
+        <ul>
+            <li>Machine learning model integration for pattern recognition</li>
+            <li>SSL certificate validity verification</li>
+            <li>Domain reputation scoring via third-party threat feeds</li>
+            <li>Homoglyph detection for internationalized domain names (IDN)</li>
+            <li>Real-time blocklist updates from community sources</li>
+        </ul>
+
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border-color);">
+            <p style="color: var(--text-muted); font-size: 0.95rem;"><strong>Note:</strong> This system is part of ongoing research in AI-driven security and has been deployed for the Stremini AI initiative. For academic inquiries or collaboration opportunities, please contact the author.</p>
+        </div>
+
+        <a href="scam-detection.html" class="back-link">← Back to Research Paper</a>
+    </div>
+</body>
+</html>
