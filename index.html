@@ -168,7 +168,6 @@
         .cta-button {
             display: inline-block;
             padding: 1rem 2.5rem;
-            /* ************* CHANGE: Set button background to Black ************* */
             background: var(--text-main); 
             color: #fff;
             text-decoration: none;
@@ -178,17 +177,42 @@
             margin-top: 1rem;
             font-size: 0.9rem;
             letter-spacing: 0.5px;
-            border: 1px solid var(--text-main); /* Match border to new background */
+            border: 1px solid var(--text-main); 
+            margin-bottom: 1rem; /* Added margin for new button */
         }
 
         .cta-button:hover {
-            /* Keep hover state distinct, using accent color */
             background: var(--accent-color); 
             color: #fff; 
             border-color: var(--accent-color); 
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
         }
+        
+        /* New styling for the secondary CV button to make it visually distinct but related */
+        .secondary-cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent; /* Transparent background */
+            color: var(--text-main); /* Dark text */
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 0.5rem; /* Reduced margin */
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--text-main); /* Dark border */
+        }
+
+        .secondary-cta:hover {
+            background: var(--text-main); /* Black background on hover */
+            color: #fff; /* White text on hover */
+            border-color: var(--text-main);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        
 
         section {
             max-width: 1100px;
@@ -390,7 +414,22 @@
             .logo { margin: 0 auto; }
             .hero h1 { font-size: 2.8rem; }
             section { padding: 4rem 1.5rem; }
-            .cta-button { display: block; width: 100%; margin-top: 0.5rem; }
+            
+            /* Adjust button display for mobile */
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+                max-width: 300px; /* Optional: limit width */
+                margin: 0 auto;
+            }
+            .cta-button, .secondary-cta { 
+                display: block; 
+                width: 100%; 
+                margin-top: 0; /* Override previous margin */
+            }
+            
             .view-full-project, .proof-button, .research-link, .research-button { 
                 display: block; 
                 width: 100%; 
@@ -423,7 +462,11 @@
             <h1>Vishwajeet Shashikant Adkine</h1>
             <h2>Aspiring AI Engineer & Researcher</h2> 
             <p>Aspiring to be an AI engineer, I'm passionate about developing scalable, ethical, and accessible artificial intelligence systems. Experienced in leading international tech teams, building AI-integrated applications, and conducting independent research in AI reliability and agri-tech innovation.</p>
-            <a href="#contact" class="cta-button">Get In Touch</a>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Get In Touch</a>
+                <a href="cv.html" class="secondary-cta">View Updated CV</a>
+            </div>
             <div class="social-links">
                 <a href="mailto:vishwajeetadkine705@gmail.com" title="Email">Email</a>
                 <a href="https://www.instagram.com/vishwajeet_streminiai/" title="Instagram">Instagram</a>
