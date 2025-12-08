@@ -178,8 +178,9 @@
         }
 
         .cta-button:hover {
-            background: transparent;
-            color: var(--accent-color);
+            background: var(--text-main); /* Changed hover background */
+            color: #fff; /* Changed hover text color */
+            border-color: var(--text-main); /* Changed hover border color */
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
         }
@@ -300,8 +301,9 @@
         }
 
         .view-full-project:hover, .proof-button:hover, .research-link:hover, .research-button:hover {
-            background: var(--text-main);
-            border-color: var(--text-main);
+            background: var(--text-main); /* Changed hover background for buttons */
+            border-color: var(--text-main); /* Changed hover border color */
+            color: #fff; /* Ensured text remains white on hover */
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
         }
@@ -457,6 +459,10 @@
             <div class="card">
                 <h3>School Connect AI Olympiad</h3>
                 <p>Top International Ranker</p>
+            </div>
+            <div class="card">
+                <h3>Sco Maths Olympiad</h3>
+                <p>National Rank: 14</p>
             </div>
         </div>
         <a href="https://drive.google.com/drive/folders/1mg0SHKM6rXX0trGhEEkcIn_9B6d5ovsP?usp=sharing" class="proof-button">View Honors & Certificates</a>
