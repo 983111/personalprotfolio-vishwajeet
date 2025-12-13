@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vishwajeet Adkine - Aspiring AI Engineer & Researcher</title>
-    
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
             --accent-color: #1a3c34;
             --accent-light: #e8eceb;
             --border-color: #E5E5E0;
-            
+            
             --radius: 12px;
             --shadow-sm: 0 2px 8px rgba(26, 60, 52, 0.04);
             --shadow-hover: 0 12px 30px rgba(26, 60, 52, 0.08);
@@ -57,7 +57,7 @@
             text-underline-offset: 4px;
             font-weight: 500;
         }
-        
+        
         a:visited {
             color: var(--accent-color);
             text-decoration-color: var(--accent-color);
@@ -73,11 +73,11 @@
             text-decoration: none;
             color: var(--text-muted);
         }
-        
+        
         .nav-links a:hover {
             color: var(--accent-color);
         }
-        
+        
         nav {
             position: fixed;
             top: 20px;
@@ -122,7 +122,7 @@
             text-align: center;
             padding: 8rem 2rem 4rem;
         }
-        
+        
         .hero h1 {
             font-size: clamp(3rem, 6vw, 4.5rem);
             font-weight: 600;
@@ -157,7 +157,7 @@
             text-decoration: none; 
             text-decoration-color: transparent;
         }
-        
+        
         .social-links a:hover {
             color: var(--text-main);
             transform: scale(1.1);
@@ -168,9 +168,8 @@
         .cta-button {
             display: inline-block;
             padding: 1rem 2.5rem;
-            /* MODIFIED: Transparent background, dark text/border to match secondary-cta */
-            background: transparent; 
-            color: var(--text-main);
+            background: var(--text-main); 
+            color: #fff;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
@@ -179,42 +178,41 @@
             font-size: 0.9rem;
             letter-spacing: 0.5px;
             border: 1px solid var(--text-main); 
-            margin-bottom: 1rem;
+            margin-bottom: 1rem; /* Added margin for new button */
         }
 
         .cta-button:hover {
-            /* MODIFIED: Hover state to match secondary-cta hover */
-            background: var(--text-main); 
+            background: var(--accent-color); 
             color: #fff; 
-            border-color: var(--text-main); 
+            border-color: var(--accent-color); 
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
         }
-        
-        /* Secondary CTA remains the same, used for visual consistency */
+        
+        /* New styling for the secondary CV button to make it visually distinct but related */
         .secondary-cta {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: transparent;
-            color: var(--text-main);
+            background: transparent; /* Transparent background */
+            color: var(--text-main); /* Dark text */
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
             transition: all 0.3s;
-            margin-top: 0.5rem;
+            margin-top: 0.5rem; /* Reduced margin */
             font-size: 0.9rem;
             letter-spacing: 0.5px;
-            border: 1px solid var(--text-main);
+            border: 1px solid var(--text-main); /* Dark border */
         }
 
         .secondary-cta:hover {
-            background: var(--text-main);
-            color: #fff;
+            background: var(--text-main); /* Black background on hover */
+            color: #fff; /* White text on hover */
             border-color: var(--text-main);
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
         }
-        
+        
 
         section {
             max-width: 1100px;
@@ -246,18 +244,18 @@
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: default; 
         }
-        
+        
         .card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
             border-color: var(--accent-color);
         }
-        
+        
         .card h3 {
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
         }
-        
+        
         .year, .project-role {
             color: var(--accent-color);
             font-size: 0.9rem;
@@ -265,7 +263,7 @@
             display: block;
             font-weight: 600;
         }
-        
+        
         .card li {
             color: var(--text-muted);
             padding-left: 1.2rem;
@@ -295,13 +293,13 @@
             font-weight: 500;
             text-underline-offset: 0;
         }
-        
+        
         .project-link:hover {
             background: var(--accent-color);
             color: #fff;
             transform: none;
         }
-        
+        
         .view-full-project, .proof-button, .research-link, .research-button {
             display: inline-block;
             padding: 0.8rem 1.5rem;
@@ -317,7 +315,7 @@
             box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
             margin-right: 1rem;
         }
-        
+        
         .research-button {
             margin-top: 1rem;
             padding: 0.6rem 1.2rem;
@@ -325,7 +323,7 @@
             border-radius: 6px;
             box-shadow: none;
         }
-        
+        
         .view-full-project:visited, .proof-button:visited, .research-link:visited, .research-button:visited {
              color: #fff; 
              background: var(--accent-color); 
@@ -338,7 +336,7 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
         }
-        
+        
         .research-card h3 {
             font-size: 1.3rem;
             color: var(--text-main);
@@ -416,7 +414,7 @@
             .logo { margin: 0 auto; }
             .hero h1 { font-size: 2.8rem; }
             section { padding: 4rem 1.5rem; }
-            
+            
             /* Adjust button display for mobile */
             .hero-buttons {
                 display: flex;
@@ -431,7 +429,7 @@
                 width: 100%; 
                 margin-top: 0; /* Override previous margin */
             }
-            
+            
             .view-full-project, .proof-button, .research-link, .research-button { 
                 display: block; 
                 width: 100%; 
@@ -464,7 +462,7 @@
             <h1>Vishwajeet Shashikant Adkine</h1>
             <h2>Aspiring AI Engineer & Researcher</h2> 
             <p>Aspiring to be an AI engineer, I'm passionate about developing scalable, ethical, and accessible artificial intelligence systems. Experienced in leading international tech teams, building AI-integrated applications, and conducting independent research in AI reliability and agri-tech innovation.</p>
-            
+            
             <div class="hero-buttons">
                 <a href="#contact" class="cta-button">Get In Touch</a>
                 <a href="cv.html" class="secondary-cta">View Updated CV</a>
@@ -480,7 +478,7 @@
         <h2 class="section-title">Education</h2>
         <div class="grid">
             <div class="card">
-                <h3>Gokulnath Secondary & Higher Secondary School </h3>
+                <h3>Gokulnath Secondary & Higher Secondary School</h3>
                 <span class="year">Current Studies</span>
                 <ul>
                     <li>School Topper in Class 11th: 93.17%</li> 
@@ -624,7 +622,7 @@
     <section id="research">
         <h2 class="section-title">Research & Publications</h2>
         <div class="grid">
-            
+            
             <div class="card research-card">
                 <div>
                     <h3>Improving Temporal Awareness in LLMs</h3>
@@ -642,7 +640,7 @@
                 </div>
                 <a href="self-verification.html" class="research-button">View Details</a>
             </div>
-            
+            
             <div class="card research-card">
                 <div>
                     <h3>AI-Driven Scam Detection</h3>
@@ -651,7 +649,7 @@
                 </div>
                 <a href="scam-detection.html" class="research-button">View Details</a>
             </div>
-            
+            
             <div class="card research-card">
                 <div>
                     <h3>Prompt Injection Defense</h3>
@@ -660,7 +658,7 @@
                 </div>
                 <a href="prompt-defense.html" class="research-button">View Details</a>
             </div>
-            
+            
             <div class="card research-card">
                 <div>
                     <h3>Problems Faced by Indian Farmers</h3>
@@ -692,12 +690,12 @@
                 <h3>Event Organizer - School Farewell</h3>
                 <p>Led a 20-member team managing comprehensive event logistics for 200+ attendees. Awarded "Most Beautiful Organization" for exceptional planning and execution.</p>
             </div>
-            
+            
             <div class="card">
                 <h3>Team Lead - Stremini AI</h3>
                 <p>Oversaw technical milestones, recruitment processes, and global team coordination across multiple time zones. Managed a diverse team of developers and operations personnel.</p>
             </div>
-            
+            
             <div class="card">
                 <h3>Family Business Support - Agriculture</h3>
                 <p>Managed agricultural shop operations and provided hands-on assistance to farmers in applying for government subsidies, gaining practical insights that inspired KhetiAI development.</p>
