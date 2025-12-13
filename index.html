@@ -1,729 +1,738 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishwajeet Adkine - Aspiring AI Engineer & Researcher</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwajeet Adkine - Aspiring AI Engineer & Researcher</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --bg-color: #FDFBF7;
-            --card-bg: #ffffff;
-            --text-main: #1C1C1C; /* Black/Near Black */
-            --text-muted: #555555;
-            --accent-color: #1a3c34;
-            --accent-light: #e8eceb;
-            --border-color: #E5E5E0;
-            
-            --radius: 12px;
-            --shadow-sm: 0 2px 8px rgba(26, 60, 52, 0.04);
-            --shadow-hover: 0 12px 30px rgba(26, 60, 52, 0.08);
-        }
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --card-bg: #ffffff;
+            --text-main: #1C1C1C;
+            --text-muted: #555555;
+            --accent-color: #1a3c34;
+            --accent-light: #e8eceb;
+            --border-color: #E5E5E0;
+            --radius: 12px;
+        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.65;
-            overflow-x: hidden;
-            background-image: radial-gradient(#d8d6d0 1px, transparent 1px);
-            background-size: 32px 32px;
-        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            overflow-x: hidden;
+            background-image: radial-gradient(#d8d6d0 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
 
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--text-main);
-            letter-spacing: -0.03em;
-            line-height: 1.2;
-        }
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
 
-        a {
-            color: var(--accent-color);
-            transition: color 0.2s, background-color 0.2s, opacity 0.2s;
-            text-decoration: underline;
-            text-decoration-color: var(--accent-color);
-            text-decoration-thickness: 2px;
-            text-underline-offset: 4px;
-            font-weight: 500;
-        }
-        
-        a:visited {
-            color: var(--accent-color);
-            text-decoration-color: var(--accent-color);
-        }
+        a {
+            color: var(--accent-color);
+            transition: color 0.2s, background-color 0.2s, opacity 0.2s;
+            text-decoration: underline;
+            text-decoration-color: var(--accent-color);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            font-weight: 500;
+        }
+        
+        a:visited {
+            color: var(--accent-color);
+            text-decoration-color: var(--accent-color);
+        }
 
-        a:hover {
-            color: var(--text-main);
-            text-decoration-color: var(--text-main);
-            opacity: 1;
-        }
+        a:hover {
+            color: var(--text-main);
+            text-decoration-color: var(--text-main);
+            opacity: 1;
+        }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-        
-        nav {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 1000px;
-            background: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            border: 1px solid var(--border-color);
-            border-radius: 50px; 
-            padding: 0.8rem 2rem;
-            box-shadow: var(--shadow-sm);
-        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1000px;
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border: 1px solid var(--border-color);
+            border-radius: 50px; 
+            padding: 0.8rem 2rem;
+            box-shadow: 0 4px 12px rgba(26, 60, 52, 0.06);
+        }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
 
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 8rem 2rem 4rem;
-        }
-        
-        .hero h1 {
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
 
-        .hero h2 {
-            font-size: 1.6rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
+        .hero h2 {
+            font-size: 1.6rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
 
-        .hero p {
-            font-size: 1.15rem;
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
-            color: var(--text-muted);
-            font-weight: 300;
-        }
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
 
-        .social-links {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
 
-        .social-links a {
-            font-size: 1.5rem;
-            color: var(--accent-color); 
-            text-decoration: none; 
-            text-decoration-color: transparent;
-        }
-        
-        .social-links a:hover {
-            color: var(--text-main);
-            transform: scale(1.1);
-            text-decoration: underline; 
-            text-decoration-color: var(--text-main);
-        }
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--accent-color); 
+            text-decoration: none; 
+            text-decoration-color: transparent;
+        }
+        
+        .social-links a:hover {
+            color: var(--text-main);
+            transform: scale(1.1);
+            text-decoration: underline; 
+            text-decoration-color: var(--text-main);
+        }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--text-main); 
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            border: 1px solid var(--text-main); 
-            margin-bottom: 1rem; /* Added margin for new button */
-        }
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            font-size: 0.88rem;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--accent-color);
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
+            text-underline-offset: 0;
+        }
 
-        .cta-button:hover {
-            background: var(--accent-color); 
-            color: #fff; 
-            border-color: var(--accent-color); 
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        /* New styling for the secondary CV button to make it visually distinct but related */
-        .secondary-cta {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: transparent; /* Transparent background */
-            color: var(--text-main); /* Dark text */
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-            margin-top: 0.5rem; /* Reduced margin */
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            border: 1px solid var(--text-main); /* Dark border */
-        }
+        .cta-button:hover {
+            background: var(--text-main);
+            color: #fff;
+            border-color: var(--text-main);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
+        }
+        
+        .secondary-cta {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+            font-size: 0.88rem;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--accent-color);
+            text-underline-offset: 0;
+        }
 
-        .secondary-cta:hover {
-            background: var(--text-main); /* Black background on hover */
-            color: #fff; /* White text on hover */
-            border-color: var(--text-main);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-        
+        .secondary-cta:hover {
+            background: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(26, 60, 52, 0.3);
+        }
 
-        section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 2.5rem;
-        }
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 2.5rem;
+        }
 
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            font-weight: 700;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 0.5rem;
+        }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.8rem;
-        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
 
-        .card {
-            background: var(--card-bg);
-            padding: 2.2rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            cursor: default; 
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-color);
-        }
-        
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .year, .project-role {
-            color: var(--accent-color);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: block;
-            font-weight: 600;
-        }
-        
-        .card li {
-            color: var(--text-muted);
-            padding-left: 1.2rem;
-        }
+        .card {
+            background: var(--card-bg);
+            padding: 2.2rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(26, 60, 52, 0.06);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: default; 
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(26, 60, 52, 0.08);
+            border-color: var(--accent-color);
+        }
+        
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .year, .project-role {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 600;
+        }
+        
+        .card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0;
+        }
+        
+        .card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
 
-        .card li::before {
-            content: '•';
-            color: var(--accent-color);
-            position: relative;
-            left: -0.5rem;
-        }
+        .card ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
 
-        .project-links {
-            margin-top: 1rem;
-        }
+        .project-links {
+            margin-top: 1rem;
+        }
 
-        .project-link {
-            padding: 0.6rem 1.2rem;
-            background: var(--accent-light);
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            text-decoration: none;
-            border-radius: 6px;
-            display: inline-block;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            text-underline-offset: 0;
-        }
-        
-        .project-link:hover {
-            background: var(--accent-color);
-            color: #fff;
-            transform: none;
-        }
-        
-        .view-full-project, .proof-button, .research-link, .research-button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            margin-top: 1.5rem;
-            background: var(--accent-color);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-size: 0.88rem;
-            border: 1px solid var(--accent-color);
-            box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
-            margin-right: 1rem;
-        }
-        
-        .research-button {
-            margin-top: 1rem;
-            padding: 0.6rem 1.2rem;
-            font-size: 0.85rem;
-            border-radius: 6px;
-            box-shadow: none;
-        }
-        
-        .view-full-project:visited, .proof-button:visited, .research-link:visited, .research-button:visited {
-             color: #fff; 
-             background: var(--accent-color); 
-        }
+        .project-link {
+            padding: 0.6rem 1.2rem;
+            background: var(--accent-light);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            text-underline-offset: 0;
+        }
+        
+        .project-link:hover {
+            background: var(--accent-color);
+            color: #fff;
+            transform: none;
+        }
+        
+        .view-full-project, .proof-button, .research-link, .research-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin-top: 1.5rem;
+            background: var(--accent-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.88rem;
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
+            margin-right: 1rem;
+            text-underline-offset: 0;
+        }
+        
+        .research-button {
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            box-shadow: none;
+        }
+        
+        .view-full-project:visited, .proof-button:visited, .research-link:visited, .research-button:visited {
+             color: #fff; 
+             background: var(--accent-color); 
+        }
 
-        .view-full-project:hover, .proof-button:hover, .research-link:hover, .research-button:hover {
-            background: var(--text-main); 
-            border-color: var(--text-main); 
-            color: #fff; 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
-        }
-        
-        .research-card h3 {
-            font-size: 1.3rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-        }
-        .research-card p {
-            color: var(--text-muted);
-            margin-bottom: 0;
-        }
+        .view-full-project:hover, .proof-button:hover, .research-link:hover, .research-button:hover {
+            background: var(--text-main); 
+            border-color: var(--text-main); 
+            color: #fff; 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
+        }
+        
+        .research-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+        .research-card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
 
-        .skills-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        .skill-category {
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-        }
-        .skill-category h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        .skill-tag {
-            display: inline-block;
-            background: var(--accent-light);
-            color: var(--text-main);
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            margin: 0.3rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .skill-category {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+        }
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .skill-tag {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--text-main);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            margin: 0.3rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.05rem;
-        }
-        .contact-item a {
-            color: var(--accent-color);
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-        .contact-item a:visited {
-            color: var(--accent-color);
-        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.05rem;
+        }
+        .contact-item a {
+            color: var(--accent-color);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .contact-item a:visited {
+            color: var(--accent-color);
+        }
 
-        .contact-item a:hover {
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 2px 4px;
-            text-decoration: none;
-            border-radius: 2px;
-        }
+        .contact-item a:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 2px 4px;
+            text-decoration: none;
+            border-radius: 2px;
+        }
 
-        @media (max-width: 768px) {
-            nav {
-                width: 95%;
-                padding: 0.8rem 1.5rem;
-                bottom: 20px; 
-                top: auto;
-            }
-            .nav-links { display: none; } 
-            .logo { margin: 0 auto; }
-            .hero h1 { font-size: 2.8rem; }
-            section { padding: 4rem 1.5rem; }
-            
-            /* Adjust button display for mobile */
-            .hero-buttons {
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                width: 100%;
-                max-width: 300px; /* Optional: limit width */
-                margin: 0 auto;
-            }
-            .cta-button, .secondary-cta { 
-                display: block; 
-                width: 100%; 
-                margin-top: 0; /* Override previous margin */
-            }
-            
-            .view-full-project, .proof-button, .research-link, .research-button { 
-                display: block; 
-                width: 100%; 
-                margin-right: 0;
-                margin-top: 0.75rem;
-            }
-            .project-card { 
-                display: flex; 
-                flex-direction: column;
-            }
-        }
-    </style>
+        @media (max-width: 768px) {
+            nav {
+                width: 95%;
+                padding: 0.8rem 1.5rem;
+                bottom: 20px; 
+                top: auto;
+            }
+            .nav-links { display: none; } 
+            .logo { margin: 0 auto; }
+            .hero h1 { font-size: 2.8rem; }
+            section { padding: 4rem 1.5rem; }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            .cta-button, .secondary-cta { 
+                display: block; 
+                width: 100%; 
+                margin-top: 0;
+            }
+            
+            .view-full-project, .proof-button, .research-link, .research-button { 
+                display: block; 
+                width: 100%; 
+                margin-right: 0;
+                margin-top: 0.75rem;
+            }
+            .project-card { 
+                display: flex; 
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">VA.</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Connect</a></li>
-            </ul>
-        </div>
-    </nav>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">VA.</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Vishwajeet Shashikant Adkine</h1>
-            <h2>Aspiring AI Engineer & Researcher</h2> 
-            <p>Aspiring to be an AI engineer, I'm passionate about developing scalable, ethical, and accessible artificial intelligence systems. Experienced in leading international tech teams, building AI-integrated applications, and conducting independent research in AI reliability and agri-tech innovation.</p>
-            
-            <div class="hero-buttons">
-                <a href="#contact" class="cta-button">Get In Touch</a>
-                <a href="cv.html" class="secondary-cta">View Updated CV</a>
-            </div>
-            <div class="social-links">
-                <a href="mailto:vishwajeetadkine705@gmail.com" title="Email">Email</a>
-                <a href="https://www.instagram.com/vishwajeet_streminiai/" title="Instagram">Instagram</a>
-            </div>
-        </div>
-    </section>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Vishwajeet Shashikant Adkine</h1>
+            <h2>Aspiring AI Engineer & Researcher</h2> 
+            <p>Aspiring to be an AI engineer, I'm passionate about developing scalable, ethical, and accessible artificial intelligence systems. Experienced in leading international tech teams, building AI-integrated applications, and conducting independent research in AI reliability and agri-tech innovation.</p>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Get In Touch</a>
+                <a href="cv.html" class="secondary-cta">View Updated CV</a>
+            </div>
+            <div class="social-links">
+                <a href="mailto:vishwajeetadkine705@gmail.com" title="Email">Email</a>
+                <a href="https://www.instagram.com/vishwajeet_streminiai/" title="Instagram">Instagram</a>
+            </div>
+        </div>
+    </section>
 
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Gokulnath Secondary & Higher Secondary School</h3>
-                <span class="year">Current Studies</span>
-                <ul>
-                    <li>School Topper in Class 11th: 93.17%</li> 
-                    <li>Class 12th expected topper based on previous results</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Scottish Academy (CBSE)</h3>
-                <span class="year">Former Student</span>
-                <ul>
-                    <li>Class 10: 85% (Top 5 in English)</li>
-                    <li>Class 9: 92.75%</li>
-                </ul>
-            </div>
-        </div>
-        <a href="https://drive.google.com/drive/folders/1lSu3zSzK5nUoyVcBfjg5gVVGa4lw37Xp?usp=sharing" class="proof-button">View Academic Proofs</a>
-    </section>
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Gokulnath Secondary & Higher Secondary School</h3>
+                <span class="year">Current Studies</span>
+                <ul>
+                    <li>School Topper in Class 11th: 93.17%</li> 
+                    <li>Class 12th expected topper based on previous results</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Scottish Academy (CBSE)</h3>
+                <span class="year">Former Student</span>
+                <ul>
+                    <li>Class 10: 85% (Top 5 in English)</li>
+                    <li>Class 9: 92.75%</li>
+                </ul>
+            </div>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1lSu3zSzK5nUoyVcBfjg5gVVGa4lw37Xp?usp=sharing" class="proof-button">View Academic Proofs</a>
+    </section>
 
-    <section id="honors">
-        <h2 class="section-title">Honors & Achievements</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>IMUN Maths Olympiad</h3>
-                <p>Certificate of Excellence & Letter of Recommendation (2025)</p>
-            </div>
-            <div class="card">
-                <h3>School Connect AI Olympiad</h3>
-                <p>Top International Ranker</p>
-            </div>
-            <div class="card">
-                <h3>Sco Maths Olympiad</h3>
-                <p>National Rank: 14</p>
-            </div>
-        </div>
-        <a href="https://drive.google.com/drive/folders/1mg0SHKM6rXX0trGhEEkcIn_9B6d5ovsP?usp=sharing" class="proof-button">View Honors & Certificates</a>
-    </section>
+    <section id="honors">
+        <h2 class="section-title">Honors & Achievements</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>IMUN Maths Olympiad</h3>
+                <p>Certificate of Excellence & Letter of Recommendation (2025)</p>
+            </div>
+            <div class="card">
+                <h3>School Connect AI Olympiad</h3>
+                <p>Top International Ranker</p>
+            </div>
+            <div class="card">
+                <h3>Sco Maths Olympiad</h3>
+                <p>National Rank: 14</p>
+            </div>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1mg0SHKM6rXX0trGhEEkcIn_9B6d5ovsP?usp=sharing" class="proof-button">View Honors & Certificates</a>
+    </section>
 
-    <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Programming</h3>
-                <div>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">C++</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Web Development</h3>
-                <div>
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">Firebase</span>
-                    <span class="skill-tag">Cloudflare Workers</span>
-                    <span class="skill-tag">Vercel</span>
-                    <span class="skill-tag">REST APIs</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>AI & Tools</h3>
-                <div>
-                    <span class="skill-tag">Google Gemini API</span>
-                    <span class="skill-tag">Prompt Engineering</span>
-                    <span class="skill-tag">Safe Browsing API</span>
-                    <span class="skill-tag">WHOIS</span>
-                    <span class="skill-tag">NLP</span>
-                    <span class="skill-tag">ML Basics</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Other Tools</h3>
-                <div>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Canva</span>
-                    <span class="skill-tag">SEO</span>
-                    <span class="skill-tag">Google Search Console</span>
-                    <span class="skill-tag">Blogger</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Soft Skills</h3>
-                <div>
-                    <span class="skill-tag">Leadership</span>
-                    <span class="skill-tag">Problem Solving</span>
-                    <span class="skill-tag">Research</span>
-                    <span class="skill-tag">Team Management</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming</h3>
+                <div>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">C++</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Web Development</h3>
+                <div>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">Cloudflare Workers</span>
+                    <span class="skill-tag">Vercel</span>
+                    <span class="skill-tag">REST APIs</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>AI & Tools</h3>
+                <div>
+                    <span class="skill-tag">Google Gemini API</span>
+                    <span class="skill-tag">Prompt Engineering</span>
+                    <span class="skill-tag">Safe Browsing API</span>
+                    <span class="skill-tag">WHOIS</span>
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">ML Basics</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Other Tools</h3>
+                <div>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Canva</span>
+                    <span class="skill-tag">SEO</span>
+                    <span class="skill-tag">Google Search Console</span>
+                    <span class="skill-tag">Blogger</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Soft Skills</h3>
+                <div>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Research</span>
+                    <span class="skill-tag">Team Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="projects">
-        <h2 class="section-title">Major Projects & Initiatives</h2>
-        <div class="grid">
-            <div class="project-card card">
-                <div>
-                    <h3>KhetiAI</h3>
-                    <span class="project-role">Founder | June 2025 – Present</span>
-                    <p>AI-powered digital agriculture platform for farmers, focused on integrating crop guidance, marketplace, weather insights, and task scheduling.</p>
-                    <ul>
-                        <li>Led a 7-member global team (operations, development, marketing).</li>
-                        <li>Production-ready app is complete with core features: AI Plant Disease Detector, AI Chatbot, Marketplace, Weather Forecast, and Budget Management.</li>
-                        <li>The app is expected to launch on the Play Store before the scheduled date.</li>
-                        <li>Reached 5.5K+ users on social media, projected 20K by Dec 2025.</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="project-link">Website</a> 
-                        <a href="https://www.instagram.com/khetiplus.ai/" class="project-link">Instagram</a>
-                    </div>
-                </div>
-                <a href="https://my-portfolio-delta-weld-18.vercel.app/" class="view-full-project">View Full Project Details</a>
-                <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="proof-button">View KhetiAI Proofs</a>
-            </div>
+    <section id="projects">
+        <h2 class="section-title">Major Projects & Initiatives</h2>
+        <div class="grid">
+            <div class="project-card card">
+                <div>
+                    <h3>KhetiAI</h3>
+                    <span class="project-role">Founder | June 2025 – Present</span>
+                    <p>AI-powered digital agriculture platform for farmers, focused on integrating crop guidance, marketplace, weather insights, and task scheduling.</p>
+                    <ul>
+                        <li>Led a 7-member global team (operations, development, marketing).</li>
+                        <li>Production-ready app is complete with core features: AI Plant Disease Detector, AI Chatbot, Marketplace, Weather Forecast, and Budget Management.</li>
+                        <li>The app is expected to launch on the Play Store before the scheduled date.</li>
+                        <li>Reached 5.5K+ users on social media, projected 20K by Dec 2025.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="project-link">Website</a> 
+                        <a href="https://www.instagram.com/khetiplus.ai/" class="project-link">Instagram</a>
+                    </div>
+                </div>
+                <a href="https://my-portfolio-delta-weld-18.vercel.app/" class="view-full-project">View Full Project Details</a>
+                <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="proof-button">View KhetiAI Proofs</a>
+            </div>
 
-            <div class="project-card card">
-                <div>
-                    <h3>Stremini AI</h3>
-                    <span class="project-role">Co-Founder & Lead Developer | Aug 2025 – Present</span>
-                    <p>Startup focused on building self-tuned AI systems for everyday life automation. The team consisted of 20 total members with 10 developers.</p>
-                    <ul>
-                        <li>Managed the website and the app development as the Lead Developer.</li>
-                        <li>Developed a Website Trust Score System using WHOIS & Safe Browsing APIs.</li>
-                        <li>Extracted 30,000+ vulnerabilities from NVD for scam detection backend.</li>
-                        <li>Created a Gemini 2.5 Flash API chatbot hosted on Cloudflare Worker.</li>
-                        <li>I developed the Cloudflare Worker API endpoint for features like the Chatbot, automation, AI-powered keyboard, and Scam detection.</li>
-                        <li>Managed branding, SEO (score 78), and GSC indexing.</li>
-                        <li>Coordinated with other developers to build the app MVP within the deadline.</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://www.stremini.site/" class="project-link">Website</a>
-                        <a href="https://www.instagram.com/streminiai/" class="project-link">Instagram</a>
-                    </div>
-                </div>
-                <a href="https://streminiai-protfolio.vercel.app/" class="view-full-project">View Full Project Details</a>
-                <a href="https://drive.google.com/drive/folders/1_B6cbjjJ0xu3G0eOa7IHKpuEn4Xradfe?usp=sharing" class="proof-button">View Stremini AI Proofs</a>
-            </div>
-        </div>
-    </section>
+            <div class="project-card card">
+                <div>
+                    <h3>Stremini AI</h3>
+                    <span class="project-role">Co-Founder & Lead Developer | Aug 2025 – Present</span>
+                    <p>Startup focused on building self-tuned AI systems for everyday life automation. The team consisted of 20 total members with 10 developers.</p>
+                    <ul>
+                        <li>Managed the website and the app development as the Lead Developer.</li>
+                        <li>Developed a Website Trust Score System using WHOIS & Safe Browsing APIs.</li>
+                        <li>Extracted 30,000+ vulnerabilities from NVD for scam detection backend.</li>
+                        <li>Created a Gemini 2.5 Flash API chatbot hosted on Cloudflare Worker.</li>
+                        <li>I developed the Cloudflare Worker API endpoint for features like the Chatbot, automation, AI-powered keyboard, and Scam detection.</li>
+                        <li>Managed branding, SEO (score 78), and GSC indexing.</li>
+                        <li>Coordinated with other developers to build the app MVP within the deadline.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://www.stremini.site/" class="project-link">Website</a>
+                        <a href="https://www.instagram.com/streminiai/" class="project-link">Instagram</a>
+                    </div>
+                </div>
+                <a href="https://streminiai-protfolio.vercel.app/" class="view-full-project">View Full Project Details</a>
+                <a href="https://drive.google.com/drive/folders/1_B6cbjjJ0xu3G0eOa7IHKpuEn4Xradfe?usp=sharing" class="proof-button">View Stremini AI Proofs</a>
+            </div>
+        </div>
+    </section>
 
-    <section id="research">
-        <h2 class="section-title">Research & Publications</h2>
-        <div class="grid">
-            
-            <div class="card research-card">
-                <div>
-                    <h3>Improving Temporal Awareness in LLMs</h3>
-                    <span class="project-role">AI Reliability & Safety</span>
-                    <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time.</p>
-                </div>
-                <a href="temporal-awareness.html" class="research-button">View Full Paper</a>
-            </div>
+    <section id="research">
+        <h2 class="section-title">Research & Publications</h2>
+        <div class="grid">
+            
+            <div class="card research-card">
+                <div>
+                    <h3>Improving Temporal Awareness in LLMs</h3>
+                    <span class="project-role">AI Reliability & Safety</span>
+                    <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time.</p>
+                </div>
+                <a href="temporal-awareness.html" class="research-button">View Full Paper</a>
+            </div>
 
-            <div class="card research-card">
-                <div>
-                    <h3>Self-Verification Prompting</h3>
-                    <span class="project-role">AI Reliability & Safety</span>
-                    <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
-                </div>
-                <a href="self-verification.html" class="research-button">View Details</a>
-            </div>
-            
-            <div class="card research-card">
-                <div>
-                    <h3>AI-Driven Scam Detection</h3>
-                    <span class="project-role">AI Security & Reliability</span>
-                    <p>A multi-talented AI detective that combines WHOIS, NLP, and Safe Browsing to spot sophisticated text and link pattern scams.</p>
-                </div>
-                <a href="scam-detection.html" class="research-button">View Details</a>
-            </div>
-            
-            <div class="card research-card">
-                <div>
-                    <h3>Prompt Injection Defense</h3>
-                    <span class="project-role">AI Reliability & Safety</span>
-                    <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization).</p>
-                </div>
-                <a href="prompt-defense.html" class="research-button">View Details</a>
-            </div>
-            
-            <div class="card research-card">
-                <div>
-                    <h3>Problems Faced by Indian Farmers</h3>
-                    <span class="project-role">Agri-Tech Research</span>
-                    <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
-                </div>
-                <a href="agritech-research.html" class="research-button">View Study</a>
-            </div>
+            <div class="card research-card">
+                <div>
+                    <h3>Self-Verification Prompting</h3>
+                    <span class="project-role">AI Reliability & Safety</span>
+                    <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
+                </div>
+                <a href="self-verification.html" class="research-button">View Details</a>
+            </div>
+            
+            <div class="card research-card">
+                <div>
+                    <h3>AI-Driven Scam Detection</h3>
+                    <span class="project-role">AI Security & Reliability</span>
+                    <p>A multi-talented AI detective that combines WHOIS, NLP, and Safe Browsing to spot sophisticated text and link pattern scams.</p>
+                </div>
+                <a href="scam-detection.html" class="research-button">View Details</a>
+            </div>
+            
+            <div class="card research-card">
+                <div>
+                    <h3>Prompt Injection Defense</h3>
+                    <span class="project-role">AI Reliability & Safety</span>
+                    <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization).</p>
+                </div>
+                <a href="prompt-defense.html" class="research-button">View Details</a>
+            </div>
+            
+            <div class="card research-card">
+                <div>
+                    <h3>Problems Faced by Indian Farmers</h3>
+                    <span class="project-role">Agri-Tech Research</span>
+                    <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
+                </div>
+                <a href="agritech-research.html" class="research-button">View Study</a>
+            </div>
 
-            <div class="card research-card">
-                <div>
-                    <h3>Interdisciplinary JEE E-book (WIP)</h3>
-                    <span class="project-role">Interdisciplinary Research | Expected Nov 2025</span>
-                    <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
-                </div>
-                <a href="jee-ebook.html" class="research-button">View Abstract</a>
-            </div>
+            <div class="card research-card">
+                <div>
+                    <h3>Interdisciplinary JEE E-book (WIP)</h3>
+                    <span class="project-role">Interdisciplinary Research | Expected Nov 2025</span>
+                    <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
+                </div>
+                <a href="jee-ebook.html" class="research-button">View Abstract</a>
+            </div>
 
-        </div>
-        <div style="text-align: center;">
-            <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">View Full Research Blog</a>
-        </div>
-    </section>
+        </div>
+        <div style="text-align: center;">
+            <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">View Full Research Blog</a>
+        </div>
+    </section>
 
-    <section id="leadership">
-        <h2 class="section-title">Leadership & Management Experience</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Event Organizer - School Farewell</h3>
-                <p>Led a 20-member team managing comprehensive event logistics for 200+ attendees. Awarded "Most Beautiful Organization" for exceptional planning and execution.</p>
-            </div>
-            
-            <div class="card">
-                <h3>Team Lead - Stremini AI</h3>
-                <p>Oversaw technical milestones, recruitment processes, and global team coordination across multiple time zones. Managed a diverse team of developers and operations personnel.</p>
-            </div>
-            
-            <div class="card">
-                <h3>Family Business Support - Agriculture</h3>
-                <p>Managed agricultural shop operations and provided hands-on assistance to farmers in applying for government subsidies, gaining practical insights that inspired KhetiAI development.</p>
-            </div>
-        </div>
-    </section>
+    <section id="leadership">
+        <h2 class="section-title">Leadership & Management Experience</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Event Organizer - School Farewell</h3>
+                <p>Led a 20-member team managing comprehensive event logistics for 200+ attendees. Awarded "Most Beautiful Organization" for exceptional planning and execution.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Team Lead - Stremini AI</h3>
+                <p>Oversaw technical milestones, recruitment processes, and global team coordination across multiple time zones. Managed a diverse team of developers and operations personnel.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Family Business Support - Agriculture</h3>
+                <p>Managed agricultural shop operations and provided hands-on assistance to farmers in applying for government subsidies, gaining practical insights that inspired KhetiAI development.</p>
+            </div>
+        </div>
+    </section>
 
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem;">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's connect!
-            </p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">Email:</span>
-                    <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">Location:</span>
-                    <span>India</span>
-                </div>
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">Instagram:</span>
-                    <a href="https://www.instagram.com/vishwajeet_streminiai/">@vishwajeet_streminiai</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem;">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's connect!
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">Email:</span>
+                    <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">Location:</span>
+                    <span>India</span>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">Instagram:</span>
+                    <a href="https://www.instagram.com/vishwajeet_streminiai/">@vishwajeet_streminiai</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
