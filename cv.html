@@ -43,39 +43,40 @@
             text-transform: uppercase;
         }
         
-        h4 { font-size: 1rem; font-weight: 600; margin-top: 1rem; color: var(--accent-color); }
+        h4 { font-size: 1rem; font-weight: 600; margin-top: 1rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.05em;}
 
         a { color: var(--accent-color); text-decoration: underline; font-weight: 500; }
 
         .cv-container {
             max-width: 950px;
             margin: 30px auto;
-            padding: 2.5rem;
+            padding: 3rem;
             background: var(--card-bg);
             border-radius: var(--radius);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border-color);
         }
 
-        .header { text-align: center; margin-bottom: 1.5rem; }
-        .header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .contact-info { font-size: 0.9rem; color: var(--text-muted); }
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .contact-info { font-size: 0.95rem; color: var(--text-muted); }
 
-        .entry { margin-bottom: 1.2rem; padding-left: 1.2rem; border-left: 3px solid var(--accent-light); }
+        .entry { margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--accent-light); }
         .entry-header { display: flex; justify-content: space-between; align-items: flex-start; }
-        .entry-title { font-weight: 700; font-size: 1.1rem; }
-        .entry-subtitle { font-size: 0.95rem; color: var(--accent-color); font-weight: 500; }
-        .entry-meta { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+        .entry-title { font-weight: 700; font-size: 1.15rem; }
+        .entry-subtitle { font-size: 1rem; color: var(--accent-color); font-weight: 600; margin-top: 0.1rem; }
 
-        .description-list { list-style: none; margin-top: 0.5rem; }
-        .description-list li { position: relative; padding-left: 1.2rem; margin-bottom: 0.3rem; font-size: 0.92rem; }
+        .description-list { list-style: none; margin-top: 0.6rem; }
+        .description-list li { position: relative; padding-left: 1.3rem; margin-bottom: 0.4rem; font-size: 0.95rem; text-align: justify; }
         .description-list li::before { content: '•'; color: var(--accent-color); position: absolute; left: 0; font-weight: bold; }
         
-        .project-links-list { list-style: none; display: flex; gap: 1rem; margin-top: 0.4rem; padding-left: 1.2rem; }
-        .project-links-list a { font-size: 0.8rem; text-decoration: none; border-bottom: 1px solid; }
+        .project-links-list { list-style: none; display: flex; gap: 1.5rem; margin-top: 0.5rem; padding-left: 1.3rem; }
+        .project-links-list a { font-size: 0.85rem; text-decoration: none; border-bottom: 2px solid; font-weight: 600; }
 
-        .skills-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.5rem; }
-        .skill-tag { display: inline-block; background: var(--accent-light); padding: 0.2rem 0.5rem; border-radius: 4px; margin: 0.1rem; font-size: 0.8rem; font-weight: 500; }
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem; }
+        .skill-tag { display: inline-block; background: var(--accent-light); padding: 0.25rem 0.6rem; border-radius: 4px; margin: 0.15rem; font-size: 0.85rem; font-weight: 500; }
+
+        .research-paper-title { font-weight: 600; color: var(--text-main); font-style: italic; display: block; margin-top: 0.5rem; }
 
         @media (max-width: 768px) { .cv-container { padding: 1.5rem; } .entry-header { flex-direction: column; } .skills-grid { grid-template-columns: 1fr; } }
     </style>
@@ -89,13 +90,14 @@
             <strong>Email:</strong> <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a> | 
             <strong>Location:</strong> India | <br>
             <strong>Portfolio:</strong> <a href="https://personalprotfolio-vishwajeet-kh8z.vercel.app/">Personal Portfolio</a> | 
-            <strong>Instagram:</strong> <a href="https://instagram.com/vishwajeet_streminiai">@vishwajeet_streminiai</a>
+            <strong>Instagram:</strong> <a href="https://instagram.com/vishwajeet_streminiai">@vishwajeet_streminiai</a> |
+            <strong>Blog:</strong> <a href="https://vishwajeetadkine.blogspot.com/">Research Blog</a>
         </div>
     </div>
 
     <div class="section">
         <h2>PROFILE SUMMARY</h2>
-        <p>Aspiring AI engineer and researcher with proven experience in building production-ready AI applications and leading international tech teams. Specialized in developing scalable, ethical AI systems, agentic workflows, and deep learning research with a focus on agricultural technology and transformer reliability.</p>
+        <p>Aspiring AI engineer and researcher with proven experience in building production-ready AI applications and leading international tech teams. Specialized in developing scalable, ethical AI systems, agentic workflows, and deep learning theory. Focus areas include agricultural technology, transformer reliability, and AI safety automation.</p>
     </div>
 
     <div class="section">
@@ -103,7 +105,6 @@
         <div class="entry">
             <div class="entry-header">
                 <div class="entry-title">Gokulnath Secondary & Higher Secondary School</div>
-                <div class="entry-meta">2024 - Present</div>
             </div>
             <ul class="description-list">
                 <li>Class 12: Expected 94-98% (Predicted Topper)</li>
@@ -113,7 +114,6 @@
         <div class="entry">
             <div class="entry-header">
                 <div class="entry-title">Scottish Academy (CBSE)</div>
-                <div class="entry-meta">Former Student</div>
             </div>
             <ul class="description-list">
                 <li>Class 10: 85% (Top 5 in English)</li>
@@ -128,48 +128,20 @@
         <div class="entry">
             <div class="entry-header">
                 <div>
-                    <div class="entry-title">FinPlanAgent</div>
-                    <div class="entry-subtitle">AI Agent for Personalized Financial Planning</div>
-                </div>
-                <div class="entry-meta">2025 - Present</div>
-            </div>
-            <ul class="description-list">
-                <li>Developing an autonomous AI agent for multi-step financial reasoning and automated bank statement categorization.</li>
-                <li>Built a simulation engine for "What-if" scenarios (e.g., impact of loans or investments on long-term net worth).</li>
-                <li>Integrating Explainable AI (XAI) to provide logic-based, transparent financial advice.</li>
-            </ul>
-        </div>
-
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <div class="entry-title">Mentor – AI-Driven Fashion Tech Platform</div>
-                    <div class="entry-subtitle">Startup Advisor & Technical Lead</div>
-                </div>
-                <div class="entry-meta">Remote | 2025</div>
-            </div>
-            <ul class="description-list">
-                <li>Mentored the design of a fashion platform using computer vision and AR for a "Live Fitting Room" experience.</li>
-                <li>Advised on technical architecture for fit analysis, garment recognition pipelines, and color matching.</li>
-                <li>Guided the strategy for circular fashion (rent/swap) ecosystems and monetization models.</li>
-            </ul>
-        </div>
-
-        <div class="entry">
-            <div class="entry-header">
-                <div>
                     <div class="entry-title">Founder – KhetiPlus</div>
-                    <div class="entry-subtitle">AI-Powered Agricultural Platform</div>
+                    <div class="entry-subtitle">Production-ready AI Agricultural Platform</div>
                 </div>
-                <div class="entry-meta">June 2025 - Present</div>
             </div>
             <ul class="description-list">
-                <li>App Launch Ready: Features AI chatbot, Plant Disease Detector (CV), and equipment marketplace.</li>
-                <li>Led 7-member global team across operations and development.</li>
-                <li>Achieved 5.5K+ users on social media, projected 20K by Dec 2025.</li>
+                <li>Developed a production-ready application featuring an AI chatbot for agricultural guidance and an AI plant disease detector using Computer Vision.</li>
+                <li>Built a comprehensive ecosystem including secure authentication, weather forecasts, budget management, and an equipment marketplace.</li>
+                <li>Led a 7-member global team across operations, development, and marketing; coordinated with Flutter developers for cross-platform implementation.</li>
+                <li>Engineered a stable backend for AI features using Cloudflare Workers and hosted via Vercel.</li>
+                <li>Achieved 5.5K+ users on social media, with a projected growth to 20K.</li>
             </ul>
             <ul class="project-links-list">
                 <li><a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/">Website</a></li>
+                <li><a href="https://www.instagram.com/khetiplus.ai">Instagram</a></li>
             </ul>
         </div>
 
@@ -177,17 +149,50 @@
             <div class="entry-header">
                 <div>
                     <div class="entry-title">Co-Founder & Lead Developer – Stremini AI</div>
-                    <div class="entry-subtitle">AI Automation & Safety Platform</div>
+                    <div class="entry-subtitle">Production-ready AI Automation Platform</div>
                 </div>
-                <div class="entry-meta">August 2025 - Present</div>
             </div>
             <ul class="description-list">
-                <li>Successfully built an innovative floating AI chatbot using real-time browser data and Serper API.</li>
-                <li>Integrated AI safety features (hallucination reduction and prompt injection defense).</li>
-                <li>Developed a scam detection system using WHOIS & Google Safe Browsing APIs.</li>
+                <li>Successfully built an innovative floating AI chatbot drawing real-time data from the browser and Serper API.</li>
+                <li>Integrated robust AI safety features including advanced hallucination reduction and defenses against jailbreak and prompt injection attempts.</li>
+                <li>Developed a functional scam detection system with vulnerability tagging using WHOIS & Google Safe Browsing APIs.</li>
+                <li>Managed SEO (Score 78) and Google Search Console indexing; built Cloudflare Worker endpoints for backend functionality.</li>
+                <li>Currently developing autonomous AI keyboard and automation features for investor showcasing.</li>
             </ul>
             <ul class="project-links-list">
                 <li><a href="https://stremini.site">Website</a></li>
+                <li><a href="https://www.instagram.com/streminiai">Instagram</a></li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="entry-title">FinPlanAgent</div>
+                    <div class="entry-subtitle">Autonomous AI Agent for Personalized Financial Planning</div>
+                </div>
+            </div>
+            <ul class="description-list">
+                <li>Developing an autonomous agent capable of multi-step reasoning for bank statement analysis and income/spending categorization.</li>
+                <li>Implementing "What-if" simulation engines to model long-term financial impacts of loans, investments, and major purchases.</li>
+                <li>Focusing on Explainable AI (XAI) to provide transparent, logic-based financial recommendations.</li>
+                <li>Utilizing Agentic workflows to detect overspending risks and suggest optimized real-time budget adjustments.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="entry-title">Mentor – AI-Driven Fashion Tech Platform</div>
+                    <div class="entry-subtitle">Startup Project Advisory & Technical Guidance</div>
+                </div>
+            </div>
+            <ul class="description-list">
+                <li>Mentored the design and development of a consumer platform integrating real-time computer vision and AR interaction.</li>
+                <li>Guided the conceptualization of a Live AR “Fitting Room SOS” feature enabling real-time feedback using visual intelligence.</li>
+                <li>Advised on building an integrated circular fashion ecosystem for renting, swapping, and monetizing wardrobes.</li>
+                <li>Defined technical architecture including mobile frontend, backend APIs, and AI pipelines for garment recognition, fit analysis, and color matching.</li>
+                <li>Provided strategic feedback on user experience, sustainability impact, and monetization models.</li>
             </ul>
         </div>
     </div>
@@ -196,61 +201,61 @@
         <h2>RESEARCH & PUBLICATIONS</h2>
         
         <div class="entry">
-            <div class="entry-title">Spectral Properties of Attention Matrices in Transformer Models</div>
-            <div class="entry-subtitle">Deep Learning Theory Research</div>
+            <div class="entry-title">Theoretical Deep Learning Research</div>
+            <span class="research-paper-title">“Spectral Properties of Attention Matrices in Transformer Models: Insights into Stability and Expressivity”</span>
             <ul class="description-list">
-                <li>Problem: Investigating how eigenvalues and singular values of attention matrices impact learning stability.</li>
-                <li>Researching Frobenius and spectral norms to define bounds on model sensitivity relative to sequence length.</li>
-                <li>Exploring the links between attention sparsity and spectral distribution for improved expressivity.</li>
+                <li>Investigating the eigenvalues and singular values of attention matrices to uncover patterns in learning stability and generalization.</li>
+                <li>Analyzing Frobenius and spectral norms and their scaling properties with sequence length.</li>
+                <li>Studying relations between attention sparsity and spectral distribution to define mathematical bounds on model expressivity.</li>
             </ul>
         </div>
 
         <div class="entry">
-            <div class="entry-title">AI Reliability & Safety Research</div>
+            <div class="entry-title">AI Reliability & Safety Publications</div>
             <ul class="description-list">
-                <li><strong>Temporal Awareness:</strong> Real-time prompt-grounding via API injection.</li>
-                <li><strong>Self-Verification Prompting:</strong> Two-step system reducing hallucinations in chatbots.</li>
-                <li><strong>Prompt Injection Defense:</strong> Semantic filtering for context sanitization and jailbreak prevention.</li>
-                <li><strong>AI Scam Detection:</strong> Combined WHOIS, Safe Browsing, and NLP patterns for threat detection.</li>
+                <li><strong>Improving Temporal Awareness in LLMs:</strong> Research on real-time prompt-grounding via API injection.</li>
+                <li><strong>Self-Verification Prompting for Reliable Chatbots:</strong> Development of a two-step system to reduce hallucinations.</li>
+                <li><strong>Prompt Injection Defense:</strong> Semantic filter research for context sanitization and jailbreak prevention.</li>
+                <li><strong>AI-Driven Scam Detection:</strong> Combined research using text patterns, WHOIS, and Safe Browsing APIs.</li>
             </ul>
         </div>
 
         <div class="entry">
             <div class="entry-title">Agri-Tech & Education Research</div>
             <ul class="description-list">
-                <li><strong>Core Problems of Indian Farmers (2025):</strong> Primary research on AI-driven resource management in Maharashtra.</li>
-                <li><strong>JEE Interdisciplinary E-book:</strong> 80+ page publication linking Physics, Math, and AI concepts.</li>
-            </ul>
-            <ul class="project-links-list">
-                <li><a href="https://vishwajeetadkine.blogspot.com/?m=1">Read Research Blog</a></li>
+                <li><strong>Indian Farmer Analysis:</strong> Primary research studying region-specific challenges in Maharashtra and Telangana, exploring AI-driven analytics for resource management.</li>
+                <li><strong>Interdisciplinary JEE Concepts:</strong> Authoring an 80+ Page E-book exploring links between Physics, Math, and AI logic.</li>
             </ul>
         </div>
     </div>
 
     <div class="section">
-        <h2>SKILLS, HONORS & LEADERSHIP</h2>
+        <h2>SKILLS & HONORS</h2>
         <div class="skills-grid">
             <div>
                 <h4>TECHNICAL SKILLS</h4>
                 <div style="margin-top:0.5rem">
-                    <span class="skill-tag">Python</span> <span class="skill-tag">JavaScript</span> <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Python</span> <span class="skill-tag">JavaScript</span> <span class="skill-tag">C++</span> <span class="skill-tag">HTML/CSS</span>
                     <span class="skill-tag">Cloudflare Workers</span> <span class="skill-tag">Vercel</span> <span class="skill-tag">Firebase</span>
-                    <span class="skill-tag">Google Gemini API</span> <span class="skill-tag">NLP</span> <span class="skill-tag">Computer Vision</span>
+                    <span class="skill-tag">Google Gemini API</span> <span class="skill-tag">Agentic AI</span> <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">Computer Vision</span> <span class="skill-tag">REST APIs</span> <span class="skill-tag">Git</span> <span class="skill-tag">SEO</span>
                 </div>
                 <h4 style="margin-top:1.2rem">LEADERSHIP</h4>
                 <ul class="description-list">
-                    <li>Built/managed international teams for KhetiPlus & Stremini AI.</li>
-                    <li>Led 20-member team managing school farewell for 200+ attendees.</li>
+                    <li>Built and managed international teams for two AI startups.</li>
+                    <li>Technical Lead overseeing milestones, recruitment, and global coordination.</li>
+                    <li>Event Organizer: Led 20-member team managing school events for 200+ attendees.</li>
                 </ul>
             </div>
             <div>
-                <h4>HONORS & CERTS</h4>
-                <ul class="description-list">
-                    <li>SCO Maths Olympiad: National Rank 14 (2025)</li>
-                    <li>IMUN Maths Olympiad: Excellence & LOR (2025)</li>
-                    <li>School Connect AI Olympiad: Top International Ranker</li>
-                    <li>Machine Learning (Stanford, Andrew Ng)</li>
-                    <li>Python Specialization (U. Michigan)</li>
+                <h4>HONORS & CERTIFICATIONS</h4>
+                <ul class="description-list" style="margin-top: 0.5rem;">
+                    <li><strong>SCO Maths Olympiad:</strong> National Rank 14</li>
+                    <li><strong>IMUN Maths Olympiad:</strong> Certificate of Excellence & LOR</li>
+                    <li><strong>School Connect AI Olympiad:</strong> Top International Ranker</li>
+                    <li><strong>Machine Learning:</strong> Stanford University (Andrew Ng)</li>
+                    <li><strong>Python for Everybody:</strong> University of Michigan</li>
+                    <li><strong>Prompt Engineering for Developers:</strong> DeepLearning.AI</li>
                 </ul>
             </div>
         </div>
@@ -258,7 +263,7 @@
 
     <div class="section">
         <h2>REFERENCES</h2>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">Available upon request.</p>
+        <p style="font-size: 0.95rem; color: var(--text-muted);">Available upon request.</p>
     </div>
 </div>
 
