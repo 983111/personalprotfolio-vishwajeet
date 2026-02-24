@@ -11,13 +11,13 @@
 
     <style>
         :root {
-            --bg-color: #FDFBF7;
+            --bg-color: #f4f8ff;
             --card-bg: #ffffff;
-            --text-main: #1C1C1C;
-            --text-muted: #555555;
-            --accent-color: #1a3c34;
-            --accent-light: #e8eceb;
-            --border-color: #E5E5E0;
+            --text-main: #162033;
+            --text-muted: #5a6b85;
+            --accent-color: #2f6fed;
+            --accent-light: #e8f0ff;
+            --border-color: #d8e4ff;
             --radius: 12px;
         }
 
@@ -34,8 +34,8 @@
             color: var(--text-main);
             line-height: 1.65;
             overflow-x: hidden;
-            background-image: radial-gradient(#d8d6d0 1px, transparent 1px);
-            background-size: 32px 32px;
+            background-image: radial-gradient(circle at 12% 18%, rgba(47,111,237,0.12), transparent 38%), radial-gradient(circle at 88% 8%, rgba(61,184,255,0.16), transparent 34%), linear-gradient(135deg, #f7faff 0%, #edf4ff 48%, #f5f9ff 100%);
+            background-attachment: fixed;
         }
 
         h1, h2, h3, h4 {
@@ -82,13 +82,13 @@
             transform: translateX(-50%);
             width: 90%;
             max-width: 1000px;
-            background: rgba(253, 251, 247, 0.95);
+            background: rgba(255, 255, 255, 0.86);
             backdrop-filter: blur(12px);
             z-index: 1000;
             border: 1px solid var(--border-color);
             border-radius: 50px; 
             padding: 0.8rem 2rem;
-            box-shadow: 0 4px 12px rgba(26, 60, 52, 0.06);
+            box-shadow: 0 10px 28px rgba(32, 76, 175, 0.12);
         }
 
         .nav-container {
@@ -163,53 +163,59 @@
         }
 
         .cta-button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.7rem;
+            background: linear-gradient(135deg, #2f6fed, #2359c9);
             color: #fff;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: all 0.25s ease;
             margin-top: 1rem;
             font-size: 0.88rem;
-            letter-spacing: 0.5px;
-            border: 1px solid var(--accent-color);
+            letter-spacing: 0.3px;
+            border: 1px solid #1e56cc;
             margin-bottom: 0.5rem;
-            box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
+            box-shadow: 0 10px 22px rgba(47, 111, 237, 0.28);
             text-underline-offset: 0;
         }
 
         .cta-button:hover {
-            background: var(--text-main);
+            background: linear-gradient(135deg, #2359c9, #1c4bb0);
             color: #fff;
-            border-color: var(--text-main);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
+            border-color: #1c4bb0;
+            transform: translateY(-3px);
+            box-shadow: 0 16px 26px rgba(47, 111, 237, 0.32);
         }
         
         .secondary-cta {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: transparent;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.82rem 1.6rem;
+            background: rgba(255,255,255,0.75);
             color: var(--accent-color);
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: all 0.25s ease;
             margin-top: 0.5rem;
             font-size: 0.88rem;
-            letter-spacing: 0.5px;
-            border: 1px solid var(--accent-color);
+            letter-spacing: 0.3px;
+            border: 1px solid #b7ccff;
             text-underline-offset: 0;
+            box-shadow: 0 8px 18px rgba(60,120,255,0.12);
         }
 
         .secondary-cta:hover {
-            background: var(--accent-color);
-            color: #fff;
-            border-color: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(26, 60, 52, 0.3);
+            background: #e9f1ff;
+            color: #1d4eb3;
+            border-color: #8fb1ff;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 24px rgba(47,111,237,0.22);
         }
 
         section {
@@ -238,7 +244,7 @@
             padding: 2.2rem;
             border-radius: var(--radius);
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(26, 60, 52, 0.06);
+            box-shadow: 0 10px 28px rgba(32, 76, 175, 0.12);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: default; 
         }
@@ -290,38 +296,40 @@
         }
 
         .project-link {
-            padding: 0.6rem 1.2rem;
-            background: var(--accent-light);
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
+            padding: 0.62rem 1.2rem;
+            background: #eef4ff;
+            color: #245cca;
+            border: 1px solid #b8ceff;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 999px;
             display: inline-block;
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: 600;
             text-underline-offset: 0;
+            transition: all 0.2s ease;
         }
         
         .project-link:hover {
-            background: var(--accent-color);
+            background: #2f6fed;
             color: #fff;
-            transform: none;
+            border-color: #2f6fed;
+            transform: translateY(-2px);
         }
         
         .view-full-project, .proof-button, .research-link, .research-button {
             display: inline-block;
             padding: 0.8rem 1.5rem;
             margin-top: 1.5rem;
-            background: var(--accent-color);
+            background: linear-gradient(135deg, #2f6fed, #2359c9);
             color: #fff;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 999px;
             font-weight: 600;
             transition: all 0.3s;
             font-size: 0.88rem;
-            border: 1px solid var(--accent-color);
-            box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
+            border: 1px solid #1f57c9;
+            box-shadow: 0 8px 20px rgba(47, 111, 237, 0.24);
             margin-right: 1rem;
             text-underline-offset: 0;
         }
@@ -340,11 +348,11 @@
         }
 
         .view-full-project:hover, .proof-button:hover, .research-link:hover, .research-button:hover {
-            background: var(--text-main); 
-            border-color: var(--text-main); 
+            background: linear-gradient(135deg, #1d4eb3, #193f8e); 
+            border-color: #193f8e; 
             color: #fff; 
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
+            box-shadow: 0 14px 24px rgba(47, 111, 237, 0.28);
         }
         
         .research-card h3 {
