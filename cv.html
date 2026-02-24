@@ -3,390 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishwajeet Adkine - CV</title>
+    <title>Vishwajeet Adkine — Research CV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f4f8ff;
+            --bg: #fafafa;
             --card: #ffffff;
-            --ink: #162033;
-            --muted: #5a6b85;
-            --accent: #2f6fed;
-            --accent-light: #e8f0ff;
-            --border: #d8e4ff;
-            --green: #1a7a4a;
-            --green-light: #e6f4ed;
-            --radius: 12px;
+            --ink: #111827;
+            --muted: #6b7280;
+            --accent: #1d4ed8;
+            --accent-light: #eff6ff;
+            --border: #e5e7eb;
+            --rule: #d1d5db;
+            --green: #065f46;
+            --green-bg: #ecfdf5;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--ink);
-            line-height: 1.6;
-            background-image:
-                radial-gradient(circle at 12% 18%, rgba(47,111,237,0.10), transparent 36%),
-                radial-gradient(circle at 88% 8%, rgba(61,184,255,0.13), transparent 32%),
-                linear-gradient(135deg, #f7faff 0%, #edf4ff 50%, #f5f9ff 100%);
-            background-attachment: fixed;
+            line-height: 1.65;
+            font-size: 14px;
         }
-        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; color: var(--ink); letter-spacing: -0.02em; }
-        h2 {
-            font-size: 1.35rem;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.3rem;
-            margin: 1.5rem 0 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-        a { color: var(--accent); text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
 
-        .wrap {
-            max-width: 920px;
-            margin: 28px auto;
-            padding: 2.4rem 2.8rem;
+        .page {
+            max-width: 860px;
+            margin: 32px auto;
             background: var(--card);
-            border-radius: var(--radius);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.05);
+            padding: 3rem 3.4rem;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
             border: 1px solid var(--border);
         }
 
-        .header { text-align: center; margin-bottom: 1.6rem; }
-        .header h1 { font-size: 2.3rem; font-weight: 700; margin-bottom: 0.25rem; }
-        .header .role { font-size: 0.93rem; color: var(--muted); font-weight: 500; margin-bottom: 0.4rem; }
-        .header .contacts { font-size: 0.87rem; color: var(--muted); }
+        /* HEADER */
+        .header { margin-bottom: 1.8rem; border-bottom: 2px solid var(--ink); padding-bottom: 1rem; }
+        .header h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+            margin-bottom: 0.3rem;
+        }
+        .header .tagline {
+            font-size: 0.88rem;
+            color: var(--muted);
+            font-weight: 500;
+            margin-bottom: 0.45rem;
+        }
+        .header .contacts {
+            font-size: 0.83rem;
+            color: var(--muted);
+        }
+        .header .contacts a { color: var(--accent); text-decoration: none; }
+        .header .contacts a:hover { text-decoration: underline; }
 
-        .entry { margin-bottom: 1.2rem; padding-left: 1.1rem; border-left: 3px solid var(--accent-light); }
-        .entry-title { font-weight: 700; font-size: 1.03rem; }
-        .entry-sub { font-size: 0.9rem; color: var(--accent); font-weight: 600; margin-top: 0.03rem; }
+        /* SECTION */
+        h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 0.25rem;
+            margin: 1.8rem 0 0.85rem;
+        }
 
-        ul.bl { list-style: none; margin-top: 0.45rem; }
+        /* ENTRY */
+        .entry { margin-bottom: 1.3rem; }
+        .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+        .entry-title { font-weight: 700; font-size: 0.95rem; }
+        .entry-sub { font-size: 0.85rem; color: var(--muted); }
+        .entry-date { font-size: 0.8rem; color: var(--muted); white-space: nowrap; font-style: italic; }
+
+        /* BULLETS */
+        ul.bl { list-style: none; margin-top: 0.4rem; }
         ul.bl li {
             position: relative;
-            padding-left: 1.15rem;
+            padding-left: 1.1rem;
             margin-bottom: 0.28rem;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+            color: #1f2937;
         }
-        ul.bl li::before { content: '•'; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
+        ul.bl li::before { content: '—'; color: var(--muted); position: absolute; left: 0; }
 
-        .tags { margin-top: 0.4rem; }
+        /* RESEARCH QUESTION CALLOUT */
+        .rq {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            padding: 0.5rem 0.85rem;
+            margin: 0.5rem 0;
+            font-size: 0.85rem;
+            border-radius: 0 4px 4px 0;
+        }
+        .rq strong { color: var(--accent); }
+
+        /* PAPER ITEM */
+        .paper { margin-bottom: 1.1rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
+        .paper-title { font-size: 0.9rem; font-weight: 600; font-style: italic; }
+        .paper-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.1rem; }
+        .paper-status {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.1rem 0.45rem;
+            border-radius: 3px;
+            margin-left: 0.4rem;
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .paper-status.pr { background: var(--green-bg); color: var(--green); }
+
+        /* METRICS TABLE */
+        .mt-wrap { overflow-x: auto; margin: 0.6rem 0; }
+        table.m {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+        }
+        table.m th {
+            background: #f1f5f9;
+            color: var(--ink);
+            padding: 0.32rem 0.65rem;
+            border: 1px solid var(--border);
+            text-align: left;
+            font-weight: 600;
+        }
+        table.m td { padding: 0.28rem 0.65rem; border: 1px solid var(--border); }
+        table.m tr:nth-child(even) td { background: #fafafa; }
+        .hi { font-weight: 700; color: var(--green); }
+
+        /* TAGS */
+        .tags { margin: 0.4rem 0; }
         .tag {
             display: inline-block;
             background: var(--accent-light);
             color: var(--accent);
-            padding: 0.16rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.76rem;
+            padding: 0.14rem 0.46rem;
+            border-radius: 3px;
+            font-size: 0.74rem;
             font-weight: 600;
-            margin: 0.08rem;
+            margin: 0.07rem;
         }
-        .tag.g { background: var(--green-light); color: var(--green); }
+        .tag.g { background: var(--green-bg); color: var(--green); }
 
-        .paper-title {
-            font-style: italic;
-            font-weight: 600;
-            font-size: 0.91rem;
-            margin: 0.3rem 0 0.18rem;
-            display: block;
-        }
-
-        .slabel {
-            font-size: 0.76rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            margin: 0.75rem 0 0.25rem;
-        }
-
-        .mt-wrap { overflow-x: auto; margin-top: 0.5rem; }
-        table.m {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.83rem;
-        }
-        table.m th {
-            background: var(--accent-light);
-            color: var(--accent);
-            padding: 0.35rem 0.65rem;
-            border: 1px solid var(--border);
-            text-align: left;
-            font-weight: 700;
-        }
-        table.m td { padding: 0.3rem 0.65rem; border: 1px solid var(--border); }
-        table.m tr:nth-child(even) td { background: #f9fbff; }
-        .hi { font-weight: 700; color: var(--green); }
-
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; margin-top: 0.6rem; }
-        .skill-tag {
-            display: inline-block;
-            background: var(--accent-light);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            margin: 0.1rem;
+        /* SKILLS */
+        .skills-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.45rem; }
+        .st {
+            background: #f1f5f9;
+            color: var(--ink);
+            padding: 0.18rem 0.5rem;
+            border-radius: 3px;
             font-size: 0.8rem;
-            font-weight: 500;
         }
 
-        .links { display: flex; gap: 1rem; margin-top: 0.35rem; flex-wrap: wrap; }
-        .links a { font-size: 0.8rem; font-weight: 600; color: var(--accent); border-bottom: 1.5px solid var(--accent); }
+        /* AWARDS TABLE */
+        table.aw { width: 100%; font-size: 0.87rem; border-collapse: collapse; }
+        table.aw td { padding: 0.28rem 0.5rem; vertical-align: top; }
+        table.aw td:first-child { font-weight: 600; white-space: nowrap; padding-right: 1.2rem; }
+        table.aw td:last-child { color: var(--muted); font-size: 0.82rem; }
 
-        @media (max-width: 680px) {
-            .wrap { padding: 1.3rem; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .header h1 { font-size: 1.7rem; }
+        /* GITHUB LINK */
+        .gh { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-top: 0.3rem; display: inline-block; }
+        .gh::before { content: '↗ '; }
+
+        @media (max-width: 640px) {
+            .page { padding: 1.5rem; }
+            .header h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-<div class="wrap">
+<div class="page">
 
-    <!-- HEADER -->
+    <!-- ── HEADER ── -->
     <div class="header">
-        <h1>VISHWAJEET SHASHIKANT ADKINE</h1>
-        <div class="role">AI/LLM Engineer &nbsp;·&nbsp; Mobile App Developer &nbsp;·&nbsp; ML Systems Builder &nbsp;·&nbsp; Security Researcher</div>
+        <h1>Vishwajeet Shashikant Adkine</h1>
+        <div class="tagline">Independent AI Researcher &nbsp;·&nbsp; High School Student &nbsp;·&nbsp; India</div>
         <div class="contacts">
-            <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a> &nbsp;|&nbsp; India &nbsp;|&nbsp;
-            <a href="https://personalprotfolio-vishwajeet-kh8z.vercel.app/">Portfolio</a> &nbsp;|&nbsp;
-            <a href="https://instagram.com/vishwajeet_streminiai">@vishwajeet_streminiai</a> &nbsp;|&nbsp;
-            <a href="https://vishwajeetadkine.blogspot.com/">Research Blog</a>
+            <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a>
+            &nbsp;·&nbsp; <a href="https://personalprotfolio-vishwajeet-kh8z.vercel.app/">Portfolio</a>
+            &nbsp;·&nbsp; <a href="https://vishwajeetadkine.blogspot.com/">Research Blog</a>
+            &nbsp;·&nbsp; GitHub: <a href="#">github.com/vishwajeet-adkine</a>
         </div>
     </div>
 
-    <!-- PROFILE -->
-    <h2>Profile Summary</h2>
-    <p style="font-size:0.91rem;color:var(--muted);">AI engineer specialising in LLM architecture, agentic systems, ML pipelines, and serverless deployment. Builds autonomous agents, multi-modal apps, scam detection engines, and interactive research papers. Focused on reliability, interpretability, and production-scale AI.</p>
+    <!-- ── RESEARCH INTERESTS ── -->
+    <h2>Research Interests</h2>
+    <p style="font-size:0.88rem; color:#374151; line-height:1.7;">
+        Theoretical foundations of deep learning — particularly <strong>optimisation dynamics</strong>, <strong>spectral properties of neural operators</strong>, and <strong>AI safety &amp; reliability</strong>. I study how and why gradient-based learning converges or fails, how attention mechanisms organise information spectrally, and how interpretable ML pipelines can be made robust against adversarial misuse (scam detection, prompt injection). Long-term interest: understanding generalisation through the lens of dynamical systems.
+    </p>
 
-    <!-- EDUCATION -->
+    <!-- ── EDUCATION ── -->
     <h2>Education</h2>
     <div class="entry">
-        <div class="entry-title">Gokulnath Secondary & Higher Secondary School</div>
-        <ul class="bl">
-            <li>Class 12: Expected 94–98% — Predicted Topper &nbsp;|&nbsp; Class 11: 93.17% — School Topper</li>
-        </ul>
-    </div>
-    <div class="entry">
-        <div class="entry-title">Scottish Academy (CBSE)</div>
-        <ul class="bl">
-            <li>Class 10: 85% — Top 5 in English &nbsp;|&nbsp; Class 9: 92.75%</li>
-        </ul>
-    </div>
-
-    <!-- PROJECTS -->
-    <h2>Major Projects & Experience</h2>
-
-    <div class="entry">
-        <div class="entry-title">Stremini AI — Co-Founder & Lead Developer</div>
-        <div class="entry-sub">Mobile App · AI Systems · Agentic Orchestration</div>
-        <ul class="bl">
-            <li>Deterministic code-generation agent with "Read-Fix-Verify" autonomous remediation protocol.</li>
-            <li>Android UI automation via Accessibility Services with multi-step intent interpretation pipelines.</li>
-            <li>Multi-LLM orchestration for a context-aware AI keyboard; heuristic preprocessing for hallucination mitigation.</li>
-            <li>LLM-powered scam detection engine analysing text, URLs, and images with WHOIS/Safe Browsing APIs.</li>
-            <li>Serverless AI on Cloudflare Workers integrated with Flutter (Dart) and Kotlin mobile apps.</li>
-        </ul>
-        <div class="links"><a href="https://stremini.site">Website</a><a href="https://www.instagram.com/streminiai">Instagram</a></div>
-    </div>
-
-    <div class="entry">
-        <div class="entry-title">Scholira — Co-Founder &nbsp;|&nbsp; AI Scholarship & Course Finder</div>
-        <ul class="bl">
-            <li>Hallucination-free TF-IDF + rule-based search for 100% accurate eligibility matching.</li>
-            <li>Full-stack RAG with React/TypeScript transparent ranking UI; dynamic GPA/location/test-score filtering.</li>
-        </ul>
-    </div>
-
-    <div class="entry">
-        <div class="entry-title">KhetiAI / KhetiPlus — Founder &nbsp;|&nbsp; Agricultural AI Platform</div>
-        <ul class="bl">
-            <li>Serverless edge AI backend with multi-modal crop diagnosis pipeline and strict JSON schema enforcement.</li>
-            <li>Fault-tolerant exponential backoff networking; led 7-member global team to 5.5K+ social media followers.</li>
-        </ul>
-        <div class="links"><a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/">Website</a><a href="https://www.instagram.com/khetiplus.ai">Instagram</a></div>
-    </div>
-
-    <div class="entry">
-        <div class="entry-title">FinPlanAgent — Creator &nbsp;|&nbsp; Financial Advisory Platform</div>
-        <ul class="bl">
-            <li>"What-if" financial simulation; TF-IDF anomaly detection for spending categorisation; LLM output sanitisation for clean XAI delivery.</li>
-        </ul>
-    </div>
-
-    <div class="entry">
-        <div class="entry-title">Styfi — AI Mentor &nbsp;|&nbsp; Fashion Technology Platform</div>
-        <ul class="bl">
-            <li>Cloudflare Workers dynamic multi-provider routing; multi-image virtual try-on; token optimisation for latency and cost reduction.</li>
-        </ul>
-    </div>
-
-    <!-- RESEARCH -->
-    <h2>Research & ML Systems</h2>
-
-    <!-- Paper 1 -->
-    <div class="entry">
-        <div class="entry-title">Interactive Research Paper — Gradient Descent as a Dynamical System</div>
-        <div class="entry-sub">Journal of Optimization Dynamics · Vol. 1, 2025 · Interactive Paper</div>
-        <span class="paper-title">"Gradient Descent as a Dynamical System: Stability, Phase Transitions, and Convergence"</span>
-        <div class="tags">
-            <span class="tag">Fixed Point Analysis</span><span class="tag">Spectral Stability</span>
-            <span class="tag">Phase Transitions</span><span class="tag">4 Interactive Canvas Figures</span>
-        </div>
-        <ul class="bl">
-            <li>Proved fixed points of the update map Φ_η are exactly the stationary points of L, independent of learning rate η.</li>
-            <li>Derived stability criterion ρ(I − ηH) &lt; 1; optimal η* = 2/(λ_min + λ_max) minimising spectral radius to (κ−1)/(κ+1).</li>
-            <li>Characterised three regimes — geometric convergence, critical oscillation (ρ = 1), explosive divergence — analogous to dynamical bifurcations.</li>
-            <li>Tight convergence bound ‖θ_t − θ*‖ ≤ ρ^t · ‖θ_0 − θ*‖; T(ε) = O(κ · log 1/ε) for optimal step size.</li>
-            <li>Built 4 live simulations: real-time trajectory (Rosenbrock/saddle/quadratic), bifurcation diagram, theory-vs-empirical comparison, complex-plane Jacobian eigenvalue explorer.</li>
-            <li>Discussed momentum as complex eigenvalue rotation yielding O(√κ) convergence improvement; global convergence corollary under L-smoothness and μ-strong convexity.</li>
-        </ul>
-    </div>
-
-    <!-- Paper 2 -->
-    <div class="entry">
-        <div class="entry-title">Interactive Research Paper — Spectral Properties of Attention Matrices in Transformers</div>
-        <div class="entry-sub">Journal of Theoretical Deep Learning · Vol. 2, 2025 · Interactive Paper</div>
-        <span class="paper-title">"Spectral Properties of Attention Matrices: Eigenvalue Concentration, Singular Value Decay, Norm Scaling, and Expressivity Bounds"</span>
-        <div class="tags">
-            <span class="tag">Eigenvalue Analysis</span><span class="tag">Norm Scaling</span>
-            <span class="tag">Sparsity–Spectrum Duality</span><span class="tag">5 Interactive Figures</span>
-        </div>
-        <ul class="bl">
-            <li><strong>Eigenvalue Concentration:</strong> Modelled training dynamics λᵢ(t) → dominant real eigenvalues; confirmed row-stochastic spectrum lies within unit disk, Perron eigenvalue = 1.</li>
-            <li><strong>Power-Law Singular Decay:</strong> Established σᵢ ≈ C/i^α, α ∈ [0.5, 1.0]; proved r_eff ~ O(n^{(2α−1)/α}), collapsing to O(√n) in deep layers.</li>
-            <li><strong>Stability Theorem:</strong> Proved softmax normalisation guarantees ‖A‖_F = O(√n) and ‖A‖_spec = O(log n) — theoretical basis for long-context numerical stability.</li>
-            <li><strong>Sparsity–Spectrum Duality:</strong> Effective rank ≈ exp(H(attention)); &gt;90% sparsity for simple tasks, 60–80% for complex reasoning.</li>
-            <li>5 live simulations: eigenvalue evolution animation, log-log singular decay, norm vs. sequence length, sparsity explorer with live matrix sampling, expressivity–efficiency trade-off surface.</li>
-        </ul>
-    </div>
-
-    <!-- LSTM -->
-    <div class="entry">
-        <div class="entry-title">Character-Level LSTM — From-Scratch Pure NumPy Implementation</div>
-        <div class="tags">
-            <span class="tag">Pure NumPy</span><span class="tag">BPTT</span><span class="tag">Adam Optimiser</span>
-            <span class="tag.g g">97.6% Loss Reduction</span>
-        </div>
-        <ul class="bl">
-            <li>Built LSTM forward and backward propagation, embedding layers, and linear decoder entirely in NumPy — no deep learning frameworks.</li>
-            <li>Manual BPTT engine with Adam optimiser for stable gradient flow across long text sequences.</li>
-            <li>Gradient clipping (threshold 5.0) and Xavier initialisation to mitigate vanishing/exploding gradients.</li>
-            <li>Training loss reduced from 3.258 → 0.076 (~97.6% reduction) over 300 epochs; coherent text generation via temperature-controlled sampling.</li>
-        </ul>
-    </div>
-
-    <!-- Scam Detection -->
-    <div class="entry">
-        <div class="entry-title">Scam Detection System — Interpretable ML + LLM + Heuristics Pipeline</div>
-        <div class="entry-sub">End-to-End AI Security System · Published Research Paper</div>
-        <span class="paper-title">"An Interpretable Multi-Signal Scam Detection System Using Machine Learning and Large Language Models" — Vishwajeet Adkine, Feb 2025</span>
-        <div class="tags">
-            <span class="tag">Logistic Regression</span><span class="tag">Random Forest</span>
-            <span class="tag">Flask / FastAPI</span><span class="tag">28K-URL Dataset</span>
-            <span class="tag g">99.96% URL Accuracy</span><span class="tag g">100% Scam Recall</span>
-        </div>
-
-        <div class="slabel">Dataset</div>
-        <ul class="bl">
-            <li><strong>Scam URL Dataset (~28,000 URLs):</strong> 50% malicious (URLhaus active malware) + 50% benign (Tranco Top 1M); features include IP usage, URL length, executable extensions, special chars, shorteners, risky TLDs.</li>
-            <li><strong>Text Scam Dataset (1,000 samples):</strong> 60% scam / 40% safe; template-based with 10 base templates + noise mutations; capped manual score [-20,+20] as 16th feature to prevent data leakage.</li>
-        </ul>
-
-        <div class="slabel">Feature Engineering — 16 Features</div>
-        <ul class="bl">
-            <li><strong>Text (f1–f8):</strong> Urgency keywords, money terms, sensitive requests (OTP/PIN/CVV), off-platform contact, text length, exclamation count, uppercase ratio, digit ratio.</li>
-            <li><strong>URL (f9–f15):</strong> URL count, URL-word ratio, IP-based URL, shortener (bit.ly/tinyurl), risky TLD, domain spoofing, verified domain (google/github/paypal).</li>
-        </ul>
-
-        <div class="slabel">ML Models</div>
-        <ul class="bl">
-            <li><strong>Text Classifier:</strong> Logistic Regression — L2 regularisation, L-BFGS solver, 5-fold sigmoid (Platt) calibration; served via Flask REST API; joblib serialisation.</li>
-            <li><strong>URL Detector:</strong> Random Forest — structural lexical features; 99.96% accuracy; FastAPI with JSON confidence + CRITICAL/HIGH/LOW risk classification.</li>
-        </ul>
-
-        <div class="slabel">Model Evaluation</div>
-        <div class="mt-wrap">
-            <table class="m">
-                <thead><tr><th>Metric</th><th>Safe Class</th><th>Scam Class</th><th>Overall</th></tr></thead>
-                <tbody>
-                    <tr><td>Precision</td><td>0.98</td><td class="hi">0.95</td><td>—</td></tr>
-                    <tr><td>Recall</td><td>0.92</td><td class="hi">1.00</td><td>—</td></tr>
-                    <tr><td>F1-Score</td><td>0.95</td><td class="hi">0.97</td><td>—</td></tr>
-                    <tr><td>ROC-AUC</td><td colspan="2">—</td><td class="hi">~0.99</td></tr>
-                    <tr><td>5-Fold CV Accuracy</td><td colspan="2">—</td><td class="hi">~0.97 ± 0.02</td></tr>
-                    <tr><td>Inference Latency</td><td colspan="2">—</td><td class="hi">&lt; 5ms</td></tr>
-                    <tr><td>URL Detector Accuracy</td><td colspan="2">—</td><td class="hi">99.96%</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <ul class="bl" style="margin-top:0.5rem;">
-            <li>Evaluation script produces 9 figures: confusion matrix, per-class bar chart, ROC, PR curve, score distribution, LR coefficient feature importance, 5-fold box plots, calibration curve, threshold analysis.</li>
-            <li>Top scam features: sensitive terms f3 (+0.42), urgency f1 (+0.35), URL shorteners f12 (+0.28); verified domain f15 (−0.18) is strongest safety signal.</li>
-            <li>Ensemble: ML (0.6) + heuristics (0.2) + LLM gating (0.2); LLM invoked only for confidence 0.4–0.6, cutting API costs ~90%.</li>
-            <li>Weekly retraining strategy; documented source, temporal, and benign-class bias limitations.</li>
-        </ul>
-    </div>
-
-    <!-- Safety Pubs -->
-    <div class="entry">
-        <div class="entry-title">AI Reliability & Safety Publications</div>
-        <ul class="bl">
-            <li>Improving Temporal Awareness in LLMs — real-time prompt-grounding via API injection.</li>
-            <li>Self-Verification Prompting for Reliable Chatbots — two-step hallucination reduction.</li>
-            <li>Prompt Injection Defense via Context Sanitisation — semantic filters for jailbreak prevention.</li>
-            <li>AI-Driven Scam Detection using Text and Link Patterns — WHOIS + Safe Browsing API research.</li>
-        </ul>
-    </div>
-
-    <!-- SKILLS & HONORS -->
-    <h2>Skills & Honors</h2>
-    <div class="skills-grid">
-        <div>
-            <div class="slabel">Technical Skills</div>
+        <div class="entry-head">
             <div>
-                <span class="skill-tag">LLMs & Prompt Engineering</span>
-                <span class="skill-tag">Agentic AI</span>
-                <span class="skill-tag">RAG</span>
-                <span class="skill-tag">NLP & TF-IDF</span>
-                <span class="skill-tag">Logistic Regression</span>
-                <span class="skill-tag">Random Forest</span>
-                <span class="skill-tag">LSTM (NumPy)</span>
-                <span class="skill-tag">Feature Engineering</span>
-                <span class="skill-tag">Multi-modal Vision</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Dart / Flutter</span>
-                <span class="skill-tag">Kotlin</span>
-                <span class="skill-tag">Cloudflare Workers</span>
-                <span class="skill-tag">Flask / FastAPI</span>
-                <span class="skill-tag">React / TypeScript</span>
-                <span class="skill-tag">Firebase</span>
-                <span class="skill-tag">Git</span>
+                <div class="entry-title">Gokulnath Higher Secondary School</div>
+                <div class="entry-sub">Class 12 (expected) — Mathematics, Physics, Computer Science</div>
             </div>
-            <div class="slabel" style="margin-top:0.9rem;">Leadership</div>
-            <ul class="bl">
-                <li>Built and managed international teams for KhetiPlus and Stremini AI.</li>
-                <li>Technical Lead — milestones, recruitment, global coordination.</li>
-            </ul>
+            <div class="entry-date">2024–2025</div>
         </div>
-        <div>
-            <div class="slabel">Honors & Certifications</div>
-            <ul class="bl">
-                <li><strong>SCO Maths Olympiad:</strong> National Rank 14</li>
-                <li><strong>IMUN Maths Olympiad:</strong> Certificate of Excellence & LOR</li>
-                <li><strong>School Connect AI Olympiad:</strong> Top International Ranker</li>
-                <li><strong>Machine Learning:</strong> Stanford University (Andrew Ng)</li>
-                <li><strong>Python for Everybody:</strong> University of Michigan</li>
-                <li><strong>Prompt Engineering for Developers:</strong> DeepLearning.AI</li>
-            </ul>
-        </div>
+        <ul class="bl">
+            <li>Class 12 projected: 94–98% (predicted school topper) &nbsp;·&nbsp; Class 11: 93.17% (school topper)</li>
+        </ul>
     </div>
 
+    <!-- ── RESEARCH MANUSCRIPTS ── -->
+    <h2>Research Manuscripts &amp; Preprints</h2>
+
+    <div class="paper">
+        <div class="paper-title">"Gradient Descent as a Dynamical System: Stability, Phase Transitions, and Convergence" <span class="paper-status">Independent Manuscript</span></div>
+        <div class="paper-meta">Vishwajeet Adkine &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a href="#" style="color:var(--accent);font-size:0.8rem;">PDF ↗</a></div>
+        <div class="rq"><strong>Research Question:</strong> Under what conditions does gradient descent on a smooth loss behave as a stable fixed-point iteration, and how does learning rate determine qualitative phase-transition behaviour?</div>
+        <ul class="bl">
+            <li>Framed update rule as discrete-time map Φ_η; proved fixed points are exactly stationary points of L, independent of η.</li>
+            <li>Derived Theorem 1: local stability iff ρ(I − ηH) &lt; 1; derived optimal η* = 2/(λ_min + λ_max) minimising ρ to (κ−1)/(κ+1).</li>
+            <li>Characterised three dynamical regimes — geometric convergence, critical oscillation, explosive divergence — with bifurcation analysis.</li>
+            <li>Convergence bound: ‖θ_t − θ*‖ ≤ ρ^t · ‖θ_0 − θ*‖; sample complexity T(ε) = O(κ · log 1/ε).</li>
+            <li>Discussed momentum as complex-eigenvalue rotation achieving O(√κ) convergence improvement.</li>
+            <li>Accompanied by open-source interactive visualisation (4 live Canvas figures: trajectory, bifurcation, theory-vs-empirical, eigenvalue explorer).</li>
+        </ul>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">"Spectral Properties of Attention Matrices: Eigenvalue Concentration, Singular Value Decay, Norm Scaling, and Expressivity Bounds" <span class="paper-status">Independent Manuscript</span></div>
+        <div class="paper-meta">Vishwajeet Adkine &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a href="#" style="color:var(--accent);font-size:0.8rem;">PDF ↗</a></div>
+        <div class="rq"><strong>Research Question:</strong> How does the spectral structure of softmax attention matrices evolve during training, and what does it imply for expressivity, stability, and sparsity in transformers?</div>
+        <ul class="bl">
+            <li>Proved eigenvalue concentration: training dynamics drive λᵢ(t) toward dominant real components; full spectrum lies within unit disk (row-stochastic property).</li>
+            <li>Established power-law singular decay σᵢ ≈ C/i^α, α ∈ [0.5, 1.0]; effective rank r_eff = O(n^{(2α−1)/α}) collapses to O(√n) in deep layers.</li>
+            <li>Stability Theorem: softmax normalisation guarantees ‖A‖_F = O(√n) and ‖A‖_spec = O(log n) — theoretical basis for long-context numerical stability.</li>
+            <li>Formalised sparsity–expressivity duality: effective rank ≈ exp(H(attention)); derived practical sparsity guidelines.</li>
+            <li>Accompanied by open-source interactive visualisation (5 live figures: eigenvalue evolution, log-log singular decay, norm scaling, sparsity explorer, expressivity surface).</li>
+        </ul>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">"An Interpretable Multi-Signal Scam Detection System Using Machine Learning and Large Language Models" <span class="paper-status pr">Published — Blog / Preprint</span></div>
+        <div class="paper-meta">Vishwajeet Adkine &nbsp;·&nbsp; Feb 2025 &nbsp;·&nbsp; <a href="https://vishwajeetadkine.blogspot.com/" style="color:var(--accent);font-size:0.8rem;">Read ↗</a></div>
+        <div class="rq"><strong>Research Question:</strong> Can a lightweight interpretable ML pipeline match LLM-scale accuracy for scam detection while being cost-efficient enough for real-time mobile deployment?</div>
+        <ul class="bl">
+            <li><strong>Dataset:</strong> ~28,000 URLs (50% malicious from URLhaus, 50% benign from Tranco Top 1M); 1,000 text samples (60/40 scam/safe) via structured template synthesis.</li>
+            <li><strong>Features:</strong> 16 hand-engineered signals — urgency keywords, money terms, sensitive info requests, URL shorteners, risky TLDs, domain spoofing, verified domains, capped heuristic score.</li>
+            <li><strong>Models:</strong> Logistic Regression with L2 + 5-fold Platt calibration (text); Random Forest (URL); ensemble with cost-gated LLM fallback.</li>
+            <li><strong>Results:</strong> Scam recall 1.00, scam F1 0.97, ROC-AUC ~0.99, 5-fold CV ~0.97 ± 0.02, URL accuracy 99.96%, inference &lt;5ms.</li>
+            <li><strong>Cost efficiency:</strong> LLM invoked only for confidence ∈ [0.4, 0.6] — ~90% API cost reduction; fully documented bias analysis and weekly retraining pipeline.</li>
+            <li>Evaluation produces 9 reproducibility figures (confusion matrix, ROC, PR, calibration curve, feature importances, threshold sweep).</li>
+        </ul>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">Additional Research Notes</div>
+        <ul class="bl" style="margin-top:0.35rem;">
+            <li>Self-Verification Prompting for Reliable Chatbots — two-step hallucination reduction protocol.</li>
+            <li>Prompt Injection Defense via Context Sanitisation — semantic filters for jailbreak prevention.</li>
+            <li>Improving Temporal Awareness in LLMs — real-time prompt-grounding via API injection.</li>
+        </ul>
+    </div>
+
+    <!-- ── FROM-SCRATCH IMPLEMENTATION ── -->
+    <h2>Technical Research Implementation</h2>
+
+    <div class="entry">
+        <div class="entry-head">
+            <div>
+                <div class="entry-title">Character-Level LSTM — Pure NumPy, From Scratch</div>
+                <div class="entry-sub">Study in gradient dynamics and numerical optimisation</div>
+            </div>
+            <div class="entry-date">2024</div>
+        </div>
+        <div class="rq"><strong>Research Question:</strong> Can manually implementing BPTT and Adam in raw NumPy — without any framework — expose failure modes in gradient flow that abstracted libraries conceal?</div>
+        <ul class="bl">
+            <li>Built LSTM forward and backward pass, embedding layer, and linear decoder entirely in NumPy; no PyTorch, TensorFlow, or autograd.</li>
+            <li>Manual BPTT engine with Adam optimiser; gradient clipping (threshold 5.0) and Xavier initialisation to observe and mitigate vanishing/exploding gradients directly.</li>
+            <li>Training loss: 3.258 → 0.076 (~97.6% reduction) over 300 epochs; text generation via temperature-controlled sampling.</li>
+            <li>Implementation served as empirical testbed for gradient dynamics studied in the dynamical systems manuscript above.</li>
+        </ul>
+        <a href="#" class="gh">github.com/vishwajeet-adkine/lstm-numpy</a>
+    </div>
+
+    <!-- ── APPLIED RESEARCH PROJECTS ── -->
+    <h2>Applied Research Projects</h2>
+
+    <div class="entry">
+        <div class="entry-head">
+            <div>
+                <div class="entry-title">Stremini AI — AI Reliability &amp; Safety System</div>
+                <div class="entry-sub">Scam detection, agentic code repair, LLM safety pipelines</div>
+            </div>
+        </div>
+        <ul class="bl">
+            <li>Deterministic code-generation agent with "Read-Fix-Verify" autonomous remediation — designed around failure-mode analysis, not just capability.</li>
+            <li>Multi-signal scam detection engine (text + URL + image) with WHOIS and Safe Browsing API; real-world deployment of paper above.</li>
+            <li>Context-aware LLM keyboard with heuristic preprocessing and hallucination mitigation; serverless inference via Cloudflare Workers.</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-head">
+            <div>
+                <div class="entry-title">Scholira — Hallucination-Free Retrieval System</div>
+                <div class="entry-sub">AI Scholarship Finder · TF-IDF + rule-based (no generative hallucination)</div>
+            </div>
+        </div>
+        <ul class="bl">
+            <li>Deliberate choice of non-generative retrieval (TF-IDF + deterministic rules) to guarantee 100% factual accuracy in scholarship eligibility matching — a case study in knowing when not to use LLMs.</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-head">
+            <div>
+                <div class="entry-title">KhetiAI / FinPlanAgent / Styfi</div>
+                <div class="entry-sub">Agricultural AI · Financial Advisory · Fashion Vision</div>
+            </div>
+        </div>
+        <ul class="bl">
+            <li>Multi-modal generative pipelines with strict JSON schema enforcement, exponential backoff fault tolerance, and LLM output sanitisation for clean explainability.</li>
+            <li>FinPlanAgent: "What-if" financial simulation with TF-IDF anomaly detection and reasoning trace suppression for XAI compliance.</li>
+        </ul>
+    </div>
+
+    <!-- ── HONOURS ── -->
+    <h2>Honors &amp; Awards</h2>
+    <table class="aw">
+        <tr><td>National Rank 14</td><td>SCO Mathematics Olympiad</td></tr>
+        <tr><td>Certificate of Excellence + LOR</td><td>IMUN Mathematics Olympiad</td></tr>
+        <tr><td>Top International Rank</td><td>School Connect AI Olympiad</td></tr>
+    </table>
+
+    <!-- ── CERTIFICATIONS ── -->
+    <h2>Certifications</h2>
+    <ul class="bl">
+        <li><strong>Machine Learning Specialisation</strong> — Stanford University / DeepLearning.AI (Andrew Ng)</li>
+        <li><strong>Python for Everybody</strong> — University of Michigan</li>
+        <li><strong>Prompt Engineering for Developers</strong> — DeepLearning.AI</li>
+    </ul>
+
+    <!-- ── TECHNICAL SKILLS ── -->
+    <h2>Technical Skills</h2>
+    <div class="skills-row">
+        <span class="st">Python</span>
+        <span class="st">NumPy</span>
+        <span class="st">Logistic Regression</span>
+        <span class="st">Random Forest</span>
+        <span class="st">LSTM (from scratch)</span>
+        <span class="st">Feature Engineering</span>
+        <span class="st">NLP / TF-IDF</span>
+        <span class="st">RAG</span>
+        <span class="st">LLM Orchestration</span>
+        <span class="st">Agentic Systems</span>
+        <span class="st">Prompt Engineering</span>
+        <span class="st">Flask / FastAPI</span>
+        <span class="st">JavaScript</span>
+        <span class="st">Dart / Flutter</span>
+        <span class="st">Kotlin</span>
+        <span class="st">Cloudflare Workers</span>
+        <span class="st">React / TypeScript</span>
+        <span class="st">C++</span>
+        <span class="st">Git</span>
+        <span class="st">Firebase</span>
+    </div>
+
+    <!-- ── REFERENCES ── -->
     <h2>References</h2>
-    <p style="font-size:0.91rem;color:var(--muted);">Available upon request.</p>
+    <p style="font-size:0.87rem; color:var(--muted);">Available upon request.</p>
 
 </div>
 </body>
