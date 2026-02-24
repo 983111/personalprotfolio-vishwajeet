@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improving Temporal Awareness in LLMs - Research</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Block copied directly from the index.html template for perfect font and style consistency */
+        :root {
+            --bg-color: #f5f0e8;
+            --card-bg: #ece6d6;
+            --text-main: #0f0e0b;
+            --text-muted: #7a7060;
+            --accent-color: #b85c2c;
+            --accent-light: #c8bfa8;
+            --border-color: #c8bfa8;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            background-image: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(0,0,0,0.02) 60px, rgba(0,0,0,0.02) 61px);
+            background-size: 32px 32px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: underline;
+            text-decoration-color: var(--accent-color);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            color: var(--text-main);
+            text-decoration-color: var(--text-main);
+        }
+
+        .research-detail-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(15, 14, 11, 0.08);
+        }
+        
+        @media (max-width: 768px) {
+            .research-detail-container {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        .research-detail-container h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .research-detail-container h2 {
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .research-detail-container h3 {
+            font-size: 1.2rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-detail-container .author {
+            color: var(--text-muted);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 400;
+        }
+        
+        .research-detail-container .date {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        .research-detail-container strong {
+            color: var(--accent-color);
+        }
+
+        .research-detail-container p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .research-detail-container ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0;
+        }
+        
+        .research-detail-container ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-detail-container ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .ref-list li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            list-style: decimal;
+            margin-left: 1.5rem;
+        }
+        
+        .ref-list li::before {
+            content: none; /* Override bullet for refs */
+        }
+
+
+        .back-link, .proof-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin-top: 1.5rem;
+            background: var(--accent-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.88rem;
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
+            margin-right: 1rem;
+            text-underline-offset: 0;
+            text-decoration: none;
+        }
+        
+        .back-link {
+            background: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+        
+        .back-link:hover {
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(26, 60, 52, 0.3);
+        }
+
+        .proof-button:hover {
+            background: var(--text-main);
+            border-color: var(--text-main);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="research-detail-container">
+        <h1> Improving Temporal Awareness in LLMs</h1>
+        <span class="author">Author: Vishwajeet Adkine | AI Reliability & Safety</span>
+        <span class="date">Research Topic: Improving Temporal Awareness </span>
+        
+        <h2>Abstract</h2>
+        <p>Large Language Models (LLMs) suffer from a knowledge cutoff, limiting their utility for tasks requiring current or evolving information, such as financial analysis. This paper addresses this limitation by proposing and evaluating a system that combines Retrieval-Augmented Generation (RAG) for factual grounding and Function Calling for real-time data access. We demonstrate that this integrated approach effectively mitigates temporal conflict, improves the accuracy of outputs, and provides a robust framework for agentic workflows, ultimately boosting LLM reliability in dynamic environments.</p>
+        
+        <h2>Introduction</h2>
+        <h3>Context</h3>
+        <p>LLMs have revolutionized AI but rely on static, historical training data, making them susceptible to temporal generalization failures and the "outdated knowledge" problem (as seen in papers discussing temporal conflict and knowledge cutoffs).</p>
+
+        <h3>Problem Statement</h3>
+        <p>The core challenge is the LLM's inability to access and incorporate knowledge that appeared after its training cutoff date, leading to inaccurate or hallucinated answers, especially in fast-changing domains like finance.</p>
+
+        <h3>Proposed Solution</h3>
+        <p>We investigate LLM Grounding via two primary methods:</p>
+        <ul>
+            <li> Retrieval-Augmented Generation (RAG): Injecting relevant external text/documents into the context.</li>
+            <li> External Tool Integration (Function Calling): Allowing the model to execute code (like calling a Stock Market API) for real-time data.</li>
+        </ul>
+        
+        <h2>Methodology: Integrated Grounding Framework</h2>
+        <h3>Framework Design</h3>
+        <p>A comparison of three systems (see AWS case study on RAG vs. Customization):</p>
+        <ul>
+            <li> Baseline: The vanilla LLM (pre-knowledge cutoff).</li>
+            <li> RAG-Augmented System: Uses an external document index and a systematic review of RAG systems to retrieve and pass documents into the LLM's context.</li>
+            <li> Tool-Augmented System (Proposed): Integrates Function Calling capabilities (as described in Google Cloud docs) to allow the LLM to access live financial data (e.g., using Financial Modeling Prep APIs).</li>
+        </ul>
+
+        <h3>Evaluation</h3>
+        <ul>
+            <li> Data: A custom benchmark based on temporal reasoning papers (like TIME/TEST OF TIME) and specific questions requiring post-cutoff financial knowledge.</li>
+            <li> Metrics: We use established LLM Evaluation Metrics to measure Accuracy, Temporal Relevance, and Factual Grounding.</li>
+            <li> Robustness Measures: We implement strategies to handle operational issues like API errors, incorporating concepts of fault tolerance (retries, fallbacks) and error handling in agentic workflows (SHIELDA).</li>
+        </ul>
+
+        <h2>Results and Discussion</h2>
+        <ul>
+            <li> RAG Effectiveness: The RAG-Augmented System significantly outperforms the Baseline in answering general factual questions, confirming its role in providing static grounding.</li>
+            <li> Temporal Superiority: The Tool-Augmented System demonstrates the highest accuracy for time-sensitive queries, successfully retrieving and utilizing up-to-the-minute data to resolve temporal conflicts.</li>
+            <li> Agentic Considerations: While highly accurate, the Tool-Augmented System introduces challenges related to latency optimization (reducing API call delays) and cost optimization (managing the price of function calls).</li>
+            <li> Security Note: The integration of external tools necessitates a discussion on implementing defense mechanisms against Prompt Injection Attacks.</li>
+        </ul>
+        
+        <h2>Conclusion and Future Work</h2>
+        <h3>Conclusion</h3>
+        <p>The combined strategy of RAG for broad factual context and Function Calling for dynamic, real-time data offers a highly effective defense against the inherent knowledge cutoff of LLMs, validating the power of Context Engineering.</p>
+        
+        <h3>Future Work</h3>
+        <ul>
+            <li>Further research on optimizing the trade-off between latency/cost and accuracy in tool-augmented agents.</li>
+            <li>Developing standardized methods for preventing and detecting multimodal prompt injection attacks in complex workflows.</li>
+        </ul>
+
+        <h2>References</h2>
+        <ul class="ref-list">
+            <li> All the provided arXiv, Neptune, Aisera, AWS, Google Cloud, and other source links, formatted consistently </li>
+        </ul>
+        
+        <div style="margin-top: 3rem;">
+            <a href="temporal-awareness-writeup.html" class="proof-button">View Technical Paper →</a>
+            <a href="index.html#research" class="back-link">← Back to Research Overview</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwajeet Adkine - CV</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f4f8ff;
+            --card-bg: #ffffff;
+            --text-main: #162033;
+            --text-muted: #5a6b85;
+            --accent-color: #2f6fed;
+            --accent-light: #e8f0ff;
+            --border-color: #d8e4ff;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 12% 18%, rgba(47,111,237,0.12), transparent 38%), radial-gradient(circle at 88% 8%, rgba(61,184,255,0.16), transparent 34%), linear-gradient(135deg, #f7faff 0%, #edf4ff 48%, #f5f9ff 100%);
+            background-attachment: fixed;
+        }
+        
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; color: var(--text-main); letter-spacing: -0.02em; }
+
+        h2 {
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        h4 { font-size: 1rem; font-weight: 600; margin-top: 1rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.05em;}
+
+        a { color: var(--accent-color); text-decoration: underline; font-weight: 500; }
+
+        .cv-container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 3rem;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .contact-info { font-size: 0.95rem; color: var(--text-muted); }
+
+        .entry { margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--accent-light); }
+        .entry-header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .entry-title { font-weight: 700; font-size: 1.15rem; }
+        .entry-subtitle { font-size: 1rem; color: var(--accent-color); font-weight: 600; margin-top: 0.1rem; }
+
+        .description-list { list-style: none; margin-top: 0.6rem; }
+        .description-list li { position: relative; padding-left: 1.3rem; margin-bottom: 0.4rem; font-size: 0.95rem; text-align: justify; }
+        .description-list li::before { content: '•'; color: var(--accent-color); position: absolute; left: 0; font-weight: bold; }
+        
+        .project-links-list { list-style: none; display: flex; gap: 1.5rem; margin-top: 0.5rem; padding-left: 1.3rem; }
+        .project-links-list a { font-size: 0.85rem; text-decoration: none; border-bottom: 2px solid; font-weight: 600; }
+
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem; }
+        .skill-tag { display: inline-block; background: var(--accent-light); padding: 0.25rem 0.6rem; border-radius: 4px; margin: 0.15rem; font-size: 0.85rem; font-weight: 500; }
+
+        .research-paper-title { font-weight: 600; color: var(--text-main); font-style: italic; display: block; margin-top: 0.5rem; }
+
+        @media (max-width: 768px) { .cv-container { padding: 1.5rem; } .entry-header { flex-direction: column; } .skills-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <div class="header">
+        <h1>VISHWAJEET SHASHIKANT ADKINE</h1>
+        <div class="contact-info">
+            <strong>AI/LLM Engineer | Mobile App Developer | ML Systems Builder | Security Researcher</strong><br>
+            <strong>Email:</strong> <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a> | 
+            <strong>Location:</strong> India | <br>
+            <strong>Portfolio:</strong> <a href="https://personalprotfolio-vishwajeet-kh8z.vercel.app/">Personal Portfolio</a> | 
+            <strong>Instagram:</strong> <a href="https://instagram.com/vishwajeet_streminiai">@vishwajeet_streminiai</a> |
+            <strong>Blog:</strong> <a href="https://vishwajeetadkine.blogspot.com/">Research Blog</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>PROFILE SUMMARY</h2>
+        <p>AI engineer and systems developer specializing in Large Language Model architecture, agentic systems, machine learning pipelines, and serverless AI deployment. Experienced in building autonomous agents, multi-modal AI applications, scam detection engines, and production-scale ML systems. Strong focus on reliability, interpretability, security, and scalable AI infrastructure.</p>
+    </div>
+
+    <div class="section">
+        <h2>EDUCATION</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Gokulnath Secondary & Higher Secondary School</div>
+            </div>
+            <ul class="description-list">
+                <li>Class 12: Expected 94-98% (Predicted Topper)</li>
+                <li>Class 11: 93.17% (School Topper)</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Scottish Academy (CBSE)</div>
+            </div>
+            <ul class="description-list">
+                <li>Class 10: 85% (Top 5 in English)</li>
+                <li>Class 9: 92.75%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>MAJOR PROJECTS & PROFESSIONAL EXPERIENCE</h2>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="entry-title">Stremini AI - Co-Founder & Lead Developer</div>
+                    <div class="entry-subtitle">Mobile App, AI Systems & Agentic Orchestration</div>
+                </div>
+            </div>
+            <ul class="description-list">
+                <li><strong>AI / LLM Engineering & Agent Systems:</strong> Architected a deterministic code generation agent using advanced reasoning models to enable high-precision autonomous code writing, debugging, and repository management. Designed a "Read-Fix-Verify" protocol for autonomous code remediation.</li>
+                <li><strong>Mobile Automation:</strong> Developed non-intrusive agentic control systems for Android UI automation using Accessibility Services, and built multi-step intent interpretation pipelines to execute complex device actions autonomously.</li>
+                <li><strong>LLM Reliability & Orchestration:</strong> Implemented orchestration layers across multiple LLMs for a context-aware AI keyboard. Improved model reliability using heuristic preprocessing and hallucination mitigation strategies.</li>
+                <li><strong>Security & Scam Detection Engine:</strong> Engineered an LLM-powered scam detection system analyzing text, URLs, and images, utilizing localized heuristic scoring mechanisms and WHOIS/Safe Browsing APIs.</li>
+                <li><strong>Cross-Platform AI Deployment:</strong> Built serverless deployment infrastructure using Cloudflare Workers, developing scalable AI endpoints and integrating backend services with Flutter (Dart) and Kotlin mobile applications.</li>
+            </ul>
+            <ul class="project-links-list">
+                <li><a href="https://stremini.site">Website</a></li>
+                <li><a href="https://www.instagram.com/streminiai">Instagram</a></li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="entry-title">Scholira - Co-Founder</div>
+                    <div class="entry-subtitle">AI Scholarship & Course Finder Platform</div>
+                </div>
+            </div>
+            <ul class="description-list">
+                <li><strong>Deterministic Information Retrieval:</strong> Built a hallucination-free search engine using TF-IDF scoring and rule-based filtering, ensuring 100% accurate eligibility matching for scholarships and courses.</li>
+                <li><strong>Multi-Dimensional Query Processing:</strong> Developed dynamic filtering pipelines for structured eligibility conditions including GPA, location, and test scores, alongside advanced user-data matching algorithms.</li>
+                <li><strong>Full-Stack RAG System:</strong> Built frontend using React and TypeScript with a transparent match explanation interface. Implemented retrieval-based architecture explaining ranking decisions to users.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="entry-title">KhetiAI / KhetiPlus - Founder</div>
+                    <div class="entry-subtitle">Agricultural AI Platform</div>
+                </div>
+            </div>
+            <ul class="description-list">
+                <li><strong>Edge AI Backend:</strong> Built a serverless edge AI backend connecting a Flutter mobile app with generative AI models for real-time agricultural guidance.</li>
+                <li><strong>Vision & Diagnostics:</strong> Developed a structured crop diagnosis pipeline using multi-modal vision models. Implemented strict JSON schema enforcement for reliable diagnostic outputs.</li>
+                <li><strong>Infrastructure & Leadership:</strong> Engineered fault-tolerant networking using exponential backoff and retry logic. Led a 7-member global team, achieving 5.5K+ users on social media with a streamlined, single-page download site structure.</li>
+            </ul>
+            <ul class="project-links-list">
+                <li><a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/">Website</a></li>
+                <li><a href="https://www.instagram.com/khetiplus.ai">Instagram</a></li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="entry-title">FinPlanAgent - Creator</div>
+                    <div class="entry-subtitle">Intelligent Financial Advisory Platform</div>
+                </div>
+            </div>
+            <ul class="description-list">
+                <li>Developed an interactive financial advisory system delivering personalized insights and "What-if" simulations to model long-term financial impacts.</li>
+                <li>Designed a hybrid financial analysis engine utilizing TF-IDF vectorization and statistical anomaly detection for spending categorization and subscription tracking.</li>
+                <li>Built an LLM output sanitization pipeline removing internal reasoning traces for clean XAI (Explainable AI) delivery.</li>
+                <li>Implemented dynamic context management architecture using CSV ingestion and optimized budget constraints.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <div class="entry-title">Styfi - AI Mentor</div>
+                    <div class="entry-subtitle">AI-Driven Fashion Technology Platform</div>
+                </div>
+            </div>
+            <ul class="description-list">
+                <li><strong>Edge AI Infrastructure:</strong> Architected serverless backend with Cloudflare Workers for dynamic routing between multiple AI providers, optimizing model selection for generative fashion tasks.</li>
+                <li><strong>LLM Recommendation Engine:</strong> Developed autonomous trend analysis and structured JSON output pipelines for real-time frontend integration.</li>
+                <li><strong>Multi-Modal Vision Systems:</strong> Built image enhancement pipelines upgrading product images into studio-quality outputs. Engineered a multi-image virtual try-on system and implemented token optimization strategies to reduce latency and cost.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>RESEARCH & ML SYSTEMS DEVELOPMENT</h2>
+        
+        <div class="entry">
+            <div class="entry-title">Scam Detection - ML Security Research Project</div>
+            <ul class="description-list">
+                <li>Designed an interpretable logistic regression scam detection model using proprietary behavioral features, prioritizing model explainability and high recall.</li>
+                <li>Architected a hybrid defense system combining ML classification, heuristics, and LLM safety layers.</li>
+                <li>Built an end-to-end ML pipeline including feature engineering, training, calibration, deployed as a high-availability REST API using Flask. Developed synthetic data generation producing 1000+ samples.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-title">Cybersecurity Dataset & Threat Intelligence</div>
+            <ul class="description-list">
+                <li>Created a balanced threat intelligence dataset containing ~28,000 URLs, combining malicious links and trusted domains.</li>
+                <li>Engineered a feature extraction pipeline generating structural URL signals and trained a high-performance Random Forest classifier for threat detection.</li>
+                <li>Conducted bias analysis, designed a weekly retraining strategy to prevent model decay, and deployed real-time inference via FastAPI.</li>
+            </ul>
+        </div>
+        
+        <div class="entry">
+            <div class="entry-title">Theoretical Deep Learning Research</div>
+            <span class="research-paper-title">"Spectral Properties of Attention Matrices in Transformer Models: Insights into Stability and Expressivity"</span>
+            <ul class="description-list">
+                <li>Investigating the eigenvalues and singular values of attention matrices to uncover patterns in learning stability and generalization.</li>
+                <li>Analyzing Frobenius and spectral norms and their scaling properties with sequence length.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-title">AI Reliability & Safety Publications</div>
+            <ul class="description-list">
+                <li><strong>Improving Temporal Awareness in LLMs:</strong> Research on real-time prompt-grounding via API injection.</li>
+                <li><strong>Self-Verification Prompting for Reliable Chatbots:</strong> Development of a two-step system to reduce hallucinations.</li>
+                <li><strong>Prompt Injection Defense using Context Sanitization:</strong> Semantic filter research for jailbreak prevention and context security.</li>
+                <li><strong>AI-Driven Scam Detection using Text and Link Patterns:</strong> Combined research using text analysis, WHOIS, and Safe Browsing APIs.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>SKILLS & HONORS</h2>
+        <div class="skills-grid">
+            <div>
+                <h4>TECHNICAL SKILLS</h4>
+                <div style="margin-top:0.5rem">
+                    <span class="skill-tag">Large Language Models (LLMs)</span>
+                    <span class="skill-tag">Agentic AI Systems</span>
+                    <span class="skill-tag">RAG</span>
+                    <span class="skill-tag">NLP & TF-IDF</span>
+                    <span class="skill-tag">Logistic Regression</span>
+                    <span class="skill-tag">Random Forest</span>
+                    <span class="skill-tag">Feature Engineering</span>
+                    <span class="skill-tag">Model Reliability</span>
+                    <span class="skill-tag">Multi-modal Vision Systems</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Cloudflare Workers</span>
+                    <span class="skill-tag">Vercel</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">REST APIs (Flask/FastAPI)</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+                <h4 style="margin-top:1.2rem">LEADERSHIP</h4>
+                <ul class="description-list">
+                    <li>Built and managed international teams for two AI startups (KhetiPlus, Stremini AI).</li>
+                    <li>Technical Lead overseeing technical milestones, recruitment, and global team coordination.</li>
+                </ul>
+            </div>
+            <div>
+                <h4>HONORS & CERTIFICATIONS</h4>
+                <ul class="description-list" style="margin-top: 0.5rem;">
+                    <li><strong>SCO Maths Olympiad:</strong> National Rank 14</li>
+                    <li><strong>IMUN Maths Olympiad:</strong> Certificate of Excellence & LOR</li>
+                    <li><strong>School Connect AI Olympiad:</strong> Top International Ranker</li>
+                    <li><strong>Machine Learning:</strong> Stanford University (Andrew Ng)</li>
+                    <li><strong>Python for Everybody:</strong> University of Michigan</li>
+                    <li><strong>Prompt Engineering for Developers:</strong> DeepLearning.AI</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>REFERENCES</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted);">Available upon request.</p>
+    </div>
+</div>
+
+</body>
+</html>

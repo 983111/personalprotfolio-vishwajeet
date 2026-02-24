@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Injection Defense via Context Sanitization - Research</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f5f0e8;
+            --card-bg: #ece6d6;
+            --text-main: #0f0e0b;
+            --text-muted: #7a7060;
+            --accent-color: #b85c2c;
+            --accent-light: #c8bfa8;
+            --border-color: #c8bfa8;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.65;
+            background-image: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(0,0,0,0.02) 60px, rgba(0,0,0,0.02) 61px);
+            background-size: 32px 32px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: underline;
+            text-decoration-color: var(--accent-color);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            color: var(--text-main);
+            text-decoration-color: var(--text-main);
+        }
+
+        .research-detail-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(15, 14, 11, 0.08);
+        }
+        
+        @media (max-width: 768px) {
+            .research-detail-container {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        .research-detail-container h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .research-detail-container h2 {
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .research-detail-container h3 {
+            font-size: 1.2rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-detail-container .author {
+            color: var(--text-muted);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .research-detail-container strong {
+            color: var(--accent-color);
+        }
+
+        .research-detail-container p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .research-detail-container ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0;
+        }
+        
+        .research-detail-container ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-detail-container ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+
+        .back-link, .proof-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin-top: 1.5rem;
+            background: var(--accent-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.88rem;
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
+            margin-right: 1rem;
+            text-underline-offset: 0;
+            text-decoration: none;
+        }
+        
+        .back-link {
+            background: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+        
+        .back-link:hover {
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(26, 60, 52, 0.3);
+        }
+
+        .proof-button:hover {
+            background: var(--text-main);
+            border-color: var(--text-main);
+            transform: translateY(-2px);
+        }
+        
+        .practical-use {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: var(--accent-light);
+            border-left: 5px solid var(--accent-color);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="research-detail-container">
+        <h1> Prompt Injection Defense via Context Sanitization</h1>
+        <span class="author">Author: Vishwajeet Adkine | AI Reliability & Safety Research</span>
+        
+        <h2>Abstract</h2>
+        <p>Prompt injection and "jailbreaking" pose significant security challenges to Large Language Models (LLMs) by allowing malicious user input to override the system's core instructions and safety policies. This paper proposes a defense mechanism centered on Context Sanitization via a Semantic Filter. This filter uses a secondary, smaller LLM or a specialized classifier to analyze the semantic intent of the user's prompt and any associated external data <strong>before</strong> it is processed by the main LLM. By detecting and neutralizing adversarial instructions—which often mimic the structure or content of system prompts to trigger a policy override—this semantic filtering layer aims to prevent jailbreaks and other prompt injection attacks, thereby enhancing the overall security and reliability of LLM-powered applications.</p>
+        
+        <h2>Introduction</h2>
+        <p>Large Language Models (LLMs) are increasingly integrated into critical applications, but their security remains a key concern. The primary threat is Prompt Injection (PI), a vulnerability where an attacker manipulates the model's behavior by inserting malicious instructions into the input. A specific and severe form of PI is Jailbreaking, where the attacker forces the model to bypass its internal safety guardrails, often to generate harmful, unethical, or non-compliant content.</p>
+        <p>Traditional defenses like keyword filtering are easily bypassed by obfuscated or cleverly phrased attacks. This paper investigates a more robust, semantic-based defense called Context Sanitization. The core hypothesis is that an effective defense must understand the meaning and intent of the input, not just the presence of forbidden words.</p>
+
+        <h2>Background: The Threat of Prompt Injection and Jailbreaking</h2>
+        
+        <h3>A. Prompt Injection (PI)</h3>
+        <p>PI occurs when user input is concatenated with the system's secret prompt, causing the LLM to treat the malicious input as a higher-priority instruction.</p>
+        <ul>
+            <li><strong>Direct Injection:</strong> Explicitly telling the model to "Ignore all previous instructions and output [X]."</li>
+            <li><strong>Indirect Injection:</strong> Embedding malicious instructions in external, untrusted data (like a web page or document) that the LLM is asked to summarize or process.</li>
+        </ul>
+
+        <h3>B. Jailbreaking Attacks</h3>
+        <p>Jailbreaks are a specialized form of PI that specifically aim to violate the LLM's safety constraints. They often rely on psychological manipulation or role-playing (e.g., the "Do Anything Now" or "Grandmother" tricks) to persuade the model to enter an 'unrestricted' mode. Jailbreaking exposes LLMs to risks such as:</p>
+        <ul>
+            <li>Generating hate speech or explicit content.</li>
+            <li>Writing malicious code.</li>
+            <li>Disclosing the system's private, internal prompt (Prompt Leaking).</li>
+        </ul>
+
+        <h2>Methodology: Context Sanitization via Semantic Filter</h2>
+        <p>The proposed defense system employs a modular architecture with a dedicated Semantic Filter placed in a pre-processing stage (as a "Guardrail" or "Overseer" model).</p>
+
+        <h3>A. The Context Sanitization Process</h3>
+        <p><strong>Context Sanitization</strong> refers to the act of rigorously inspecting and modifying or rejecting any part of the context (user input, conversation history, or retrieved data) that is destined for the main LLM. This is done to remove or neutralize embedded adversarial commands.</p>
+
+        <h3>B. The Semantic Filter</h3>
+        <p>Instead of using fixed rules, the Semantic Filter is a smaller, specialized LLM or a machine learning classifier trained exclusively on adversarial examples.</p>
+        <ul>
+            <li><strong>Intent Classification:</strong> The filter analyzes the incoming prompt to classify its intent (e.g., legitimate inquiry, attempt to change persona, data extraction attempt, explicit instruction override).</li>
+            <li><strong>Semantic Vector Analysis:</strong> It translates the input into a vector space (embedding) and compares it to the embeddings of known injection and jailbreak prompts. Prompts that are semantically close to malicious examples are flagged.</li>
+            <li><strong>Neutralization:</strong> If a prompt is flagged as malicious, the filter can employ one of two strategies:
+                <ul>
+                    <li> Blocking: The prompt is entirely rejected, and an error message is returned.</li>
+                    <li> Re-prompting/Reformatting: The malicious part of the prompt is stripped out or HTML-encoded (sanitized), and only the legitimate user request is passed to the main LLM. For instance, an adversarial instruction could be replaced with a neutral placeholder.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Results</h2>
+        <p>The semantic filter addresses the major weakness of rule-based systems: their inability to cope with obfuscation. Because the filter understands the meaning (semantics) rather than just the text (syntax), it is more robust against:
+            <li>Misspellings and character manipulations (e.g., using homoglyphs or zero-width characters).</li>
+            <li>Metaphorical or role-playing attacks used for jailbreaking.</li>
+        </ul>
+        <p><strong>Expected Outcome:</strong> Successful implementation of the semantic filter is expected to drastically reduce the Attack Success Rate (ASR) of prompt injection and jailbreaking while maintaining the LLM's utility for legitimate users. This layered defense is crucial, as it treats the user input as fundamentally untrusted data.</p>
+
+        <h2>Conclusion and Future Work</h2>
+        <p>Prompt injection and jailbreaking remain the primary security risks to LLM deployments. The Context Sanitization approach, powered by a dedicated Semantic Filter, offers a powerful, modern defense that moves beyond simple keyword blacklists. By pre-emptively analyzing the intent of the input, it can neutralize malicious instructions before they compromise the LLM's system prompt.</p>
+        
+        <p>Future research should focus on:</p>
+        <ul>
+            <li> Filter Evasion Testing: Rigorous "red-teaming" to ensure the filter itself cannot be tricked or jailbroken.</li>
+            <li> Efficiency: Optimizing the semantic filter (e.g., by using a smaller, highly efficient LLM) to minimize latency and computational cost.</li>
+        </ul>
+        
+        <div class="practical-use">
+            <h3>Practical Use</h3>
+            <p>Implemented prompts for context sanitization and the Stremini AI chatbot and has developed a full semantic filter needed for that.</p>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <a href="prompt-injection-writeup.html" class="proof-button">View Technical Write-up  →</a>
+            <a href="index.html#research" class="back-link">← Back to Research Overview</a>
+        </div>
+    </div>
+</body>
+</html>
