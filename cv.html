@@ -81,6 +81,17 @@
         .entry-sub { font-size: 0.85rem; color: var(--muted); }
         .entry-date { font-size: 0.8rem; color: var(--muted); white-space: nowrap; font-style: italic; }
 
+        /* EDUCATION HIGHLIGHT */
+        .edu-highlight {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            padding: 0.5rem 0.85rem;
+            margin: 0.5rem 0;
+            font-size: 0.85rem;
+            border-radius: 0 4px 4px 0;
+        }
+        .edu-highlight strong { color: #92400e; }
+
         /* BULLETS */
         ul.bl { list-style: none; margin-top: 0.4rem; }
         ul.bl li {
@@ -104,7 +115,7 @@
         .rq strong { color: var(--accent); }
 
         /* PAPER ITEM */
-        .paper { margin-bottom: 1.1rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
+        .paper { margin-bottom: 1.4rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
         .paper-title { font-size: 0.9rem; font-weight: 600; font-style: italic; }
         .paper-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.1rem; }
         .paper-status {
@@ -119,24 +130,14 @@
         }
         .paper-status.pr { background: var(--green-bg); color: var(--green); }
 
-        /* METRICS TABLE */
-        .mt-wrap { overflow-x: auto; margin: 0.6rem 0; }
-        table.m {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.82rem;
+        /* ASSUMPTION NOTE */
+        .assumption {
+            display: inline-block;
+            font-size: 0.72rem;
+            color: var(--muted);
+            font-style: italic;
+            margin-left: 0.3rem;
         }
-        table.m th {
-            background: #f1f5f9;
-            color: var(--ink);
-            padding: 0.32rem 0.65rem;
-            border: 1px solid var(--border);
-            text-align: left;
-            font-weight: 600;
-        }
-        table.m td { padding: 0.28rem 0.65rem; border: 1px solid var(--border); }
-        table.m tr:nth-child(even) td { background: #fafafa; }
-        .hi { font-weight: 700; color: var(--green); }
 
         /* TAGS */
         .tags { margin: 0.4rem 0; }
@@ -150,7 +151,6 @@
             font-weight: 600;
             margin: 0.07rem;
         }
-        .tag.g { background: var(--green-bg); color: var(--green); }
 
         /* SKILLS */
         .skills-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.45rem; }
@@ -184,7 +184,7 @@
     <!-- ── HEADER ── -->
     <div class="header">
         <h1>Vishwajeet Shashikant Adkine</h1>
-        <div class="tagline">Independent AI Researcher &nbsp;·&nbsp; High School Student &nbsp;·&nbsp; India</div>
+        <div class="tagline">AI Researcher &nbsp;·&nbsp; High School Student, India &nbsp;·&nbsp; Independent</div>
         <div class="contacts">
             <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a>
             &nbsp;·&nbsp; <a href="https://personalprotfolio-vishwajeet-kh8z.vercel.app/">Portfolio</a>
@@ -193,10 +193,10 @@
         </div>
     </div>
 
-    <!-- ── RESEARCH INTERESTS ── -->
-    <h2>Research Interests</h2>
-    <p style="font-size:0.88rem; color:#374151; line-height:1.7;">
-        Theoretical foundations of deep learning — particularly <strong>optimisation dynamics</strong>, <strong>spectral properties of neural operators</strong>, and <strong>AI safety &amp; reliability</strong>. I study how and why gradient-based learning converges or fails, how attention mechanisms organise information spectrally, and how interpretable ML pipelines can be made robust against adversarial misuse (scam detection, prompt injection). Long-term interest: understanding generalisation through the lens of dynamical systems.
+    <!-- ── RESEARCH STATEMENT ── -->
+    <h2>Research Statement</h2>
+    <p style="font-size:0.88rem; color:#374151; line-height:1.75;">
+        I study the theoretical foundations of deep learning — particularly <strong>optimisation dynamics</strong>, <strong>spectral properties of neural operators</strong>, and <strong>AI safety and reliability</strong>. My current work examines why gradient-based learning converges or fails, how attention mechanisms organise information spectrally, and how interpretable ML pipelines can be hardened against adversarial misuse. My longer-term interest is understanding generalisation through the lens of dynamical systems theory.
     </p>
 
     <!-- ── EDUCATION ── -->
@@ -204,103 +204,105 @@
     <div class="entry">
         <div class="entry-head">
             <div>
-                <div class="entry-title">Gokulnath Higher Secondary School</div>
-                <div class="entry-sub">Class 12 (expected) — Mathematics, Physics, Computer Science</div>
+                <div class="entry-title">Gokulnath Higher Secondary School &nbsp;·&nbsp; Nanded, India</div>
+                <div class="entry-sub">Class 12 (expected 2025) — Mathematics, Physics, Computer Science</div>
             </div>
-            <div class="entry-date">2024–2025</div>
+            <div class="entry-date">2023–2025</div>
+        </div>
+        <div class="edu-highlight">
+            <strong>Note for reviewers:</strong> All research manuscripts and technical implementations listed below were completed independently during secondary school, without institutional affiliation or faculty supervision.
         </div>
         <ul class="bl">
-            <li>Class 12 projected: 94–98% (predicted school topper) &nbsp;·&nbsp; Class 11: 93.17% (school topper)</li>
+            <li>Class 11 final: <strong>93.17%</strong> (school rank 1) &nbsp;·&nbsp; Class 12 projected: 94–98%</li>
         </ul>
     </div>
 
     <!-- ── RESEARCH MANUSCRIPTS ── -->
-    <h2>Research Manuscripts &amp; Preprints</h2>
+    <h2>Research Manuscripts</h2>
+    <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.8rem; font-style:italic;">All manuscripts are independent works; none have undergone formal peer review. Theoretical claims are analytical derivations under stated assumptions, supported by numerical simulation.</p>
 
     <div class="paper">
-        <div class="paper-title">"Gradient Descent as a Dynamical System: Stability, Phase Transitions, and Convergence" <span class="paper-status">Independent Manuscript</span></div>
-        <div class="paper-meta">Vishwajeet Adkine &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a href="#" style="color:var(--accent);font-size:0.8rem;">PDF ↗</a></div>
-        <div class="rq"><strong>Research Question:</strong> Under what conditions does gradient descent on a smooth loss behave as a stable fixed-point iteration, and how does learning rate determine qualitative phase-transition behaviour?</div>
+        <div class="paper-title">"Gradient Descent as a Dynamical System: Stability, Phase Transitions, and Convergence" <span class="paper-status">Independent Manuscript · 2025</span></div>
+        <div class="paper-meta">Vishwajeet Adkine &nbsp;·&nbsp; <a href="#" style="color:var(--accent);font-size:0.8rem;">PDF ↗</a></div>
+        <div class="rq"><strong>Central question:</strong> Under what conditions does gradient descent on a smooth loss behave as a stable fixed-point iteration, and how does learning rate govern qualitative phase-transition behaviour?</div>
         <ul class="bl">
-            <li>Framed update rule as discrete-time map Φ_η; proved fixed points are exactly stationary points of L, independent of η.</li>
-            <li>Derived Theorem 1: local stability iff ρ(I − ηH) &lt; 1; derived optimal η* = 2/(λ_min + λ_max) minimising ρ to (κ−1)/(κ+1).</li>
-            <li>Characterised three dynamical regimes — geometric convergence, critical oscillation, explosive divergence — with bifurcation analysis.</li>
-            <li>Convergence bound: ‖θ_t − θ*‖ ≤ ρ^t · ‖θ_0 − θ*‖; sample complexity T(ε) = O(κ · log 1/ε).</li>
-            <li>Discussed momentum as complex-eigenvalue rotation achieving O(√κ) convergence improvement.</li>
-            <li>Accompanied by open-source interactive visualisation (4 live Canvas figures: trajectory, bifurcation, theory-vs-empirical, eigenvalue explorer).</li>
+            <li>Framed the gradient descent update as a discrete-time dynamical map; characterised fixed points as stationary points of the loss, independent of step size.</li>
+            <li>Derived conditions for local stability in terms of spectral radius of the update operator; identified an analytically optimal learning rate that minimises the condition-number-dependent convergence factor.</li>
+            <li>Characterised three qualitative regimes — geometric convergence, critical oscillation, and divergence — via bifurcation analysis; derived sample complexity scaling with condition number.</li>
+            <li>Discussed momentum as a mechanism for complex-eigenvalue rotation, achieving improved convergence scaling over vanilla gradient descent.</li>
+            <li>Accompanied by open-source interactive visualisation (trajectory explorer, bifurcation diagram, eigenvalue explorer).</li>
+        </ul>
+        <a href="#" class="gh">github.com/vishwajeet-adkine/gradient-dynamics</a>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">"Spectral Properties of Attention Matrices: Eigenvalue Concentration, Singular Value Decay, Norm Scaling, and Expressivity Bounds" <span class="paper-status">Independent Manuscript · 2025</span></div>
+        <div class="paper-meta">Vishwajeet Adkine &nbsp;·&nbsp; <a href="#" style="color:var(--accent);font-size:0.8rem;">PDF ↗</a></div>
+        <div class="rq"><strong>Central question:</strong> How does the spectral structure of softmax attention matrices evolve during training, and what does this imply for expressivity, stability, and sparsity in transformers?</div>
+        <ul class="bl">
+            <li>Analysed conditions under which training dynamics drive attention eigenvalues toward dominant real components; leveraged the row-stochastic structure of softmax to bound the full spectrum within the unit disk.</li>
+            <li>Examined power-law decay of singular values empirically and analytically; characterised how effective rank collapses in deeper layers — with implications for low-rank approximation methods.</li>
+            <li>Derived bounds on Frobenius and spectral norms of attention matrices under softmax normalisation <span class="assumption">(under assumptions stated in the manuscript)</span>; discussed implications for long-context numerical stability.</li>
+            <li>Formalised a sparsity–expressivity trade-off via an information-theoretic argument linking effective rank to attention entropy; derived practical guidelines for sparsity thresholds.</li>
+            <li>Accompanied by open-source interactive visualisation (eigenvalue evolution, singular decay, norm scaling, sparsity and expressivity explorers).</li>
+        </ul>
+        <a href="#" class="gh">github.com/vishwajeet-adkine/attention-spectral</a>
+    </div>
+
+    <div class="paper">
+        <div class="paper-title">"An Interpretable Multi-Signal Scam Detection System Using Machine Learning and Large Language Models" <span class="paper-status pr">Published — Research Blog · Feb 2025</span></div>
+        <div class="paper-meta">Vishwajeet Adkine &nbsp;·&nbsp; <a href="https://vishwajeetadkine.blogspot.com/" style="color:var(--accent);font-size:0.8rem;">Read ↗</a></div>
+        <div class="rq"><strong>Central question:</strong> Can a lightweight interpretable ML pipeline match LLM-scale accuracy for scam detection while remaining practical for real-time mobile deployment?</div>
+        <ul class="bl">
+            <li><strong>Data:</strong> ~28,000 URLs (balanced; malicious from URLhaus, benign from Tranco Top 1M); 1,000 text samples synthesised via structured templates.</li>
+            <li><strong>Approach:</strong> 16 hand-engineered heuristic features; Logistic Regression with L2 regularisation and Platt calibration (text); Random Forest (URL); ensemble with cost-gated LLM fallback on low-confidence inputs.</li>
+            <li><strong>Results:</strong> Scam recall 1.00, scam F1 0.97, ROC-AUC ~0.99, 5-fold CV ~0.97 ± 0.02, URL accuracy 99.96%, inference &lt;5 ms per query.</li>
+            <li><strong>Cost design:</strong> LLM invoked only when confidence ∈ [0.4, 0.6] — approximately 90% API call reduction; documented bias analysis and weekly retraining protocol.</li>
         </ul>
     </div>
 
     <div class="paper">
-        <div class="paper-title">"Spectral Properties of Attention Matrices: Eigenvalue Concentration, Singular Value Decay, Norm Scaling, and Expressivity Bounds" <span class="paper-status">Independent Manuscript</span></div>
-        <div class="paper-meta">Vishwajeet Adkine &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a href="#" style="color:var(--accent);font-size:0.8rem;">PDF ↗</a></div>
-        <div class="rq"><strong>Research Question:</strong> How does the spectral structure of softmax attention matrices evolve during training, and what does it imply for expressivity, stability, and sparsity in transformers?</div>
-        <ul class="bl">
-            <li>Proved eigenvalue concentration: training dynamics drive λᵢ(t) toward dominant real components; full spectrum lies within unit disk (row-stochastic property).</li>
-            <li>Established power-law singular decay σᵢ ≈ C/i^α, α ∈ [0.5, 1.0]; effective rank r_eff = O(n^{(2α−1)/α}) collapses to O(√n) in deep layers.</li>
-            <li>Stability Theorem: softmax normalisation guarantees ‖A‖_F = O(√n) and ‖A‖_spec = O(log n) — theoretical basis for long-context numerical stability.</li>
-            <li>Formalised sparsity–expressivity duality: effective rank ≈ exp(H(attention)); derived practical sparsity guidelines.</li>
-            <li>Accompanied by open-source interactive visualisation (5 live figures: eigenvalue evolution, log-log singular decay, norm scaling, sparsity explorer, expressivity surface).</li>
-        </ul>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">"An Interpretable Multi-Signal Scam Detection System Using Machine Learning and Large Language Models" <span class="paper-status pr">Published — Blog / Preprint</span></div>
-        <div class="paper-meta">Vishwajeet Adkine &nbsp;·&nbsp; Feb 2025 &nbsp;·&nbsp; <a href="https://vishwajeetadkine.blogspot.com/" style="color:var(--accent);font-size:0.8rem;">Read ↗</a></div>
-        <div class="rq"><strong>Research Question:</strong> Can a lightweight interpretable ML pipeline match LLM-scale accuracy for scam detection while being cost-efficient enough for real-time mobile deployment?</div>
-        <ul class="bl">
-            <li><strong>Dataset:</strong> ~28,000 URLs (50% malicious from URLhaus, 50% benign from Tranco Top 1M); 1,000 text samples (60/40 scam/safe) via structured template synthesis.</li>
-            <li><strong>Features:</strong> 16 hand-engineered signals — urgency keywords, money terms, sensitive info requests, URL shorteners, risky TLDs, domain spoofing, verified domains, capped heuristic score.</li>
-            <li><strong>Models:</strong> Logistic Regression with L2 + 5-fold Platt calibration (text); Random Forest (URL); ensemble with cost-gated LLM fallback.</li>
-            <li><strong>Results:</strong> Scam recall 1.00, scam F1 0.97, ROC-AUC ~0.99, 5-fold CV ~0.97 ± 0.02, URL accuracy 99.96%, inference &lt;5ms.</li>
-            <li><strong>Cost efficiency:</strong> LLM invoked only for confidence ∈ [0.4, 0.6] — ~90% API cost reduction; fully documented bias analysis and weekly retraining pipeline.</li>
-            <li>Evaluation produces 9 reproducibility figures (confusion matrix, ROC, PR, calibration curve, feature importances, threshold sweep).</li>
-        </ul>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Additional Research Notes</div>
+        <div class="paper-title">Working Notes &amp; Exploratory Research</div>
         <ul class="bl" style="margin-top:0.35rem;">
-            <li>Self-Verification Prompting for Reliable Chatbots — two-step hallucination reduction protocol.</li>
-            <li>Prompt Injection Defense via Context Sanitisation — semantic filters for jailbreak prevention.</li>
-            <li>Improving Temporal Awareness in LLMs — real-time prompt-grounding via API injection.</li>
+            <li>Self-verification prompting for hallucination reduction in LLM-based chatbots.</li>
+            <li>Prompt injection defence via semantic context sanitisation.</li>
+            <li>Improving temporal grounding in LLMs via real-time API injection.</li>
         </ul>
     </div>
 
-    <!-- ── FROM-SCRATCH IMPLEMENTATION ── -->
-    <h2>Technical Research Implementation</h2>
+    <!-- ── TECHNICAL IMPLEMENTATION ── -->
+    <h2>Research Implementation</h2>
 
     <div class="entry">
         <div class="entry-head">
             <div>
                 <div class="entry-title">Character-Level LSTM — Pure NumPy, From Scratch</div>
-                <div class="entry-sub">Study in gradient dynamics and numerical optimisation</div>
+                <div class="entry-sub">Empirical study in gradient dynamics and numerical optimisation</div>
             </div>
             <div class="entry-date">2024</div>
         </div>
-        <div class="rq"><strong>Research Question:</strong> Can manually implementing BPTT and Adam in raw NumPy — without any framework — expose failure modes in gradient flow that abstracted libraries conceal?</div>
+        <div class="rq"><strong>Motivation:</strong> Does implementing BPTT manually in raw NumPy — without any autograd framework — surface gradient failure modes that abstracted libraries conceal?</div>
         <ul class="bl">
-            <li>Built LSTM forward and backward pass, embedding layer, and linear decoder entirely in NumPy; no PyTorch, TensorFlow, or autograd.</li>
-            <li>Manual BPTT engine with Adam optimiser; gradient clipping (threshold 5.0) and Xavier initialisation to observe and mitigate vanishing/exploding gradients directly.</li>
-            <li>Training loss: 3.258 → 0.076 (~97.6% reduction) over 300 epochs; text generation via temperature-controlled sampling.</li>
-            <li>Implementation served as empirical testbed for gradient dynamics studied in the dynamical systems manuscript above.</li>
+            <li>Built complete LSTM forward and backward pass, embedding layer, and linear decoder in NumPy; no PyTorch, TensorFlow, or autograd dependency.</li>
+            <li>Manual BPTT with Adam optimiser; gradient clipping and Xavier initialisation to directly observe and study vanishing/exploding gradient behaviour.</li>
+            <li>Training loss reduced from 3.258 to 0.076 over 300 epochs; implementation served as an empirical testbed for the dynamical systems manuscript above.</li>
         </ul>
         <a href="#" class="gh">github.com/vishwajeet-adkine/lstm-numpy</a>
     </div>
 
-    <!-- ── APPLIED RESEARCH PROJECTS ── -->
-    <h2>Applied Research Projects</h2>
+    <!-- ── APPLIED PROJECTS ── -->
+    <h2>Applied Research Systems</h2>
 
     <div class="entry">
         <div class="entry-head">
             <div>
-                <div class="entry-title">Stremini AI — AI Reliability &amp; Safety System</div>
-                <div class="entry-sub">Scam detection, agentic code repair, LLM safety pipelines</div>
+                <div class="entry-title">Stremini AI — Safety-First AI Pipeline</div>
+                <div class="entry-sub">Scam detection · agentic code repair · LLM reliability</div>
             </div>
         </div>
         <ul class="bl">
-            <li>Deterministic code-generation agent with "Read-Fix-Verify" autonomous remediation — designed around failure-mode analysis, not just capability.</li>
-            <li>Multi-signal scam detection engine (text + URL + image) with WHOIS and Safe Browsing API; real-world deployment of paper above.</li>
+            <li>Multi-signal scam detection engine (text + URL + image) integrating WHOIS and Safe Browsing APIs; real-world deployment of the paper above.</li>
+            <li>Deterministic code-generation agent with autonomous "Read–Fix–Verify" remediation loop — designed around failure-mode analysis rather than capability maximisation.</li>
             <li>Context-aware LLM keyboard with heuristic preprocessing and hallucination mitigation; serverless inference via Cloudflare Workers.</li>
         </ul>
     </div>
@@ -308,25 +310,12 @@
     <div class="entry">
         <div class="entry-head">
             <div>
-                <div class="entry-title">Scholira — Hallucination-Free Retrieval System</div>
-                <div class="entry-sub">AI Scholarship Finder · TF-IDF + rule-based (no generative hallucination)</div>
+                <div class="entry-title">Scholira — Hallucination-Free Scholarship Retrieval</div>
+                <div class="entry-sub">TF-IDF + deterministic rules · deliberate non-generative design</div>
             </div>
         </div>
         <ul class="bl">
-            <li>Deliberate choice of non-generative retrieval (TF-IDF + deterministic rules) to guarantee 100% factual accuracy in scholarship eligibility matching — a case study in knowing when not to use LLMs.</li>
-        </ul>
-    </div>
-
-    <div class="entry">
-        <div class="entry-head">
-            <div>
-                <div class="entry-title">KhetiAI / FinPlanAgent / Styfi</div>
-                <div class="entry-sub">Agricultural AI · Financial Advisory · Fashion Vision</div>
-            </div>
-        </div>
-        <ul class="bl">
-            <li>Multi-modal generative pipelines with strict JSON schema enforcement, exponential backoff fault tolerance, and LLM output sanitisation for clean explainability.</li>
-            <li>FinPlanAgent: "What-if" financial simulation with TF-IDF anomaly detection and reasoning trace suppression for XAI compliance.</li>
+            <li>Deliberately chose non-generative retrieval (TF-IDF + rule-based matching) to guarantee factual accuracy in scholarship eligibility decisions — a case study in when not to use LLMs.</li>
         </ul>
     </div>
 
@@ -334,7 +323,7 @@
     <h2>Honors &amp; Awards</h2>
     <table class="aw">
         <tr><td>National Rank 14</td><td>SCO Mathematics Olympiad</td></tr>
-        <tr><td>Certificate of Excellence + LOR</td><td>IMUN Mathematics Olympiad</td></tr>
+        <tr><td>Certificate of Excellence + Letter of Recommendation</td><td>IMUN Mathematics Olympiad</td></tr>
         <tr><td>Top International Rank</td><td>School Connect AI Olympiad</td></tr>
     </table>
 
@@ -351,8 +340,7 @@
     <div class="skills-row">
         <span class="st">Python</span>
         <span class="st">NumPy</span>
-        <span class="st">Logistic Regression</span>
-        <span class="st">Random Forest</span>
+        <span class="st">Scikit-learn</span>
         <span class="st">LSTM (from scratch)</span>
         <span class="st">Feature Engineering</span>
         <span class="st">NLP / TF-IDF</span>
@@ -361,14 +349,12 @@
         <span class="st">Agentic Systems</span>
         <span class="st">Prompt Engineering</span>
         <span class="st">Flask / FastAPI</span>
-        <span class="st">JavaScript</span>
-        <span class="st">Dart / Flutter</span>
-        <span class="st">Kotlin</span>
-        <span class="st">Cloudflare Workers</span>
         <span class="st">React / TypeScript</span>
+        <span class="st">Dart / Flutter</span>
+        <span class="st">Cloudflare Workers</span>
+        <span class="st">Firebase</span>
         <span class="st">C++</span>
         <span class="st">Git</span>
-        <span class="st">Firebase</span>
     </div>
 
     <!-- ── REFERENCES ── -->
